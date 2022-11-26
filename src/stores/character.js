@@ -1,77 +1,123 @@
-import {defineStore} from 'pinia';
-import {ref} from 'vue';
+import { defineStore } from "pinia";
+import { ref } from "vue";
+import axios from "@/HttpConfig.js";
 
-export const useCharacterStore = defineStore('character', () => {
-
+export const useCharacterStore = defineStore("character", () => {
   const user_art = ref({
+    art: "",
+    main: {},
+    sub_stats: [],
+  });
+
+  const default_art = ref({
+    art: "flower",
     main: {
-      art: 'flower',
+      name: "HP",
+      value: "HP",
     },
     sub_stats: [],
-  })
+  });
 
-  function artClear() {
-    user_art.value.main = {}
-    user_art.value.sub_stats = []
+  const sort = ref({
+    best: [],
+    good: [],
+    normal: [],
+    bad: [],
+  });
+
+  const heroes = ref([]);
+
+  /** Проверяет есть ли сохраненные артефакты пользователя */
+  function is_user_art() {
+    if (!user_art.value.main.hasOwnProperty("name")) {
+      user_art.value = default_art.value;
+    }
   }
 
-  const heroes = ref([
-    {
-      "name": "Hu Tao",
-      "icon_url": "Geo.png",
-      "stats_profit": {
-        "flower": {
-          "HP": 100,
-        },
-        "feather": {
-          "ATK": 100,
-        },
-        "sands": {
-          "ATK_P": 100,
-          "DEF_P": 100,
-          "HP_P": 100,
-          "EM": 100, //elemental mastery, мастерство стихий
-          "ER": 100, //energy recharge, восстановление энергии
-        },
-        "goblet": {
-          "ATK_P": 100,
-          "DEF_P": 100,
-          "HP_P": 100,
-          "EM": 100,
-          "PHYS": 100,
-          "PYRO": 100,
-          "HYDRO": 100,
-          "DENDRO": 100,
-          "ELECTRO": 100,
-          "ANEMO": 100,
-          "CRYO": 100,
-          "GEO": 100,
-        },
-        "circlet": {
-          "ATK_P": 100,
-          "DEF_P": 100,
-          "HP_P": 100,
-          "EM": 100,
-          "CR": 100, //crit rate
-          "CD": 100, //crit damage
-          "HEAL": 100,
-        },
-        "substats": {
-          "ATK": 100,
-          "ATK_P": 0,
-          "DEF": 100,
-          "DEF_P": 100,
-          "HP": 100,
-          "HP_P": 100,
-          "EM": 100,
-          "ER": 100,
-          "CR": 100,
-          "CD": 100,
-        }
+  //Todo: Сделать вывод ошибки для пользователя
+  /**
+   * Получает персонажей с сервера
+   */
+  function get_hero() {
+    axios
+      .get("/characters/artifacts")
+      .then((res) => {
+        heroes.value = res.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  /** Очищает все характеристики артефакта пользователя */
+  function art_clear() {
+    user_art.value = {
+      art: "",
+      main: {},
+      sub_stats: [],
+    };
+  }
+
+  /** Сбрасывает сортировку */
+  function sort_default() {
+    sort.value = {
+      best: [],
+      good: [],
+      normal: [],
+      bad: [],
+    };
+  }
+
+  /**
+   * Считает баллы персонажа и отправляет их в сортировку
+   *
+   * @param {Object} user - Артефакты пользователя
+   */
+  function ferret(user) {
+    sort_default();
+    heroes.value.filter((h) => {
+      //Баллы за Основной стат
+      let score = h.statsProft[user.art][user.main.value];
+
+      //Если выбран арт с элементом
+      if (user.main.value === h.element)
+        score = h.statsProft[user.art].ELEM;
+
+      //Баллы за все побочные статы
+      user.sub_stats.map((stat) => {
+        score += h.statsProft.substats[stat];
+      });
+
+      let i = {
+        id: h.character_id,
+        icon_url: h.icon_url,
+        stats_profit: score,
+      };
+
+      sorted(i);
+    });
+  }
+
+  /**
+   * Сортирует персонажей по категориям
+   *
+   * @param {Object} hero - Один персонаж
+   */
+  function sorted(hero) {
+    const categories = ["best", "good", "normal", "bad"];
+    const a = [400, 370, 340, 300];
+
+    /**
+     * if Исключает всех героев у кого баллов меньше 300,
+     * хороший вариант, чтобы не перегружать интерфейс
+     */
+    for (let i = 0; i < a.length; i++) {
+      if (hero.stats_profit >= Number(a[i])) {
+        sort.value[categories[i]].push(hero);
+        break;
       }
     }
-  ]);
+  }
 
-
-  return {user_art, heroes, artClear};
+  return { user_art, sort, get_hero, art_clear, ferret, is_user_art };
 });

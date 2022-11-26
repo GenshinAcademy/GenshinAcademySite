@@ -11,8 +11,7 @@
   import Header from '@/components/Header.vue'
   import ArtTab from '@/components/ArtTab.vue'
   import HeroTier from '@/components/HeroTier.vue'
-  import Footer from '@/components/Footer.vue'
-</script>
+  import Footer from '@/components/Footer.vue'</script>
 
 <style lang="scss">
   body {
@@ -31,7 +30,7 @@
     max-width: 1920px;
     padding: $pd_vbig;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
     gap: $gp_big;
   }

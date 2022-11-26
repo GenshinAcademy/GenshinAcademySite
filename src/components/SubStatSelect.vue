@@ -1,42 +1,71 @@
 <template>
   <div class="art-sub-stats">
-    <p class="art-wrapper__title art-wrapper__title_white">Дополнительные <br> характеристики</p>
+    <p class="art-wrapper__title art-wrapper__title_white">
+      Дополнительные <br/>
+      характеристики
+    </p>
     <ul class="art-sub-stats__stats-list">
       <li
           v-for="stat in list.sub"
           :class="style(stat.value)"
           class="art-sub-stats__stats-item"
-          @click="selectedStat(stat.value)">
+          @click="selectedStat(stat.value)"
+      >
         {{ stat.name }}
       </li>
     </ul>
-    <p class="art-sub-stats__btn">Рассчитать</p>
+    <p class="art-sub-stats__btn" @click="ferret">Рассчитать</p>
   </div>
 </template>
 
 <script setup>
-  import {useListsStore} from '@/stores/lists.js';
-  import {useCharacterStore} from "@/stores/character.js";
+  import { useListsStore } from '@/stores/lists.js'
+  import { useCharacterStore } from '@/stores/character.js'
 
-  const art = useCharacterStore().user_art;
-  const list = useListsStore();
+  const store = useCharacterStore()
+  const hero = useCharacterStore()
+  const list = useListsStore()
 
+  /**
+   * Выбор sub_stat, при условии:
+   *
+   * 1. Характеристика основного и побочного не повторяется
+   * 2. Характеристика не существует в массиве
+   * 3. Характеристик не более 4 в массиве
+   *
+   * @param {String} stat - Пример: "DEF_P"
+   */
 
-  function selectedStat(stat) {
-    if (!art.sub_stats.includes(stat)) {
-      if (art.sub_stats.length < 4)
-        art.sub_stats.push(stat)
-    } else
-      art.sub_stats = art.sub_stats.filter((v) => {
-        return v !== stat
-      });
+  function selectedStat (stat) {
+    if (!store.user_art.main.value.includes(stat)) {
+      if (!store.user_art.sub_stats.includes(stat)) {
+        if (store.user_art.sub_stats.length < 4)
+          store.user_art.sub_stats.push(stat)
+      } else {
+        store.user_art.sub_stats = store.user_art.sub_stats.filter((v) => {
+          return v !== stat
+        })
+      }
+    }
   }
 
-  function style(stat) {
-    let check = art.sub_stats
+  /**
+   * Запускает оценку артефакта при условии:
+   *
+   * 1. Был выбрана основная характеристика
+   * 2. Побочных характеристик не менее 1
+   */
+  function ferret () {
+    if (store.user_art.main.hasOwnProperty('name'))
+      if (store.user_art.sub_stats.length >= 1)
+        hero.ferret(store.user_art)
+  }
+
+  function style (stat) {
+    let check = store.user_art.sub_stats
 
     return {
-      'active': check.includes(stat)
+      active: check.includes(stat),
     }
   }
 </script>
@@ -62,7 +91,11 @@
       padding: $pd_vsmall;
 
       &.active {
-        background: linear-gradient(93.56deg, rgba(118, 194, 117, 0.71) -5.42%, rgba(118, 194, 117, 0.76) 52.93%);
+        background: linear-gradient(
+                93.56deg,
+                rgba(118, 194, 117, 0.71) -5.42%,
+                rgba(118, 194, 117, 0.76) 52.93%
+        );
         border-width: 0 0 0 3px;
         border-style: solid;
         border-color: $bc_active_green;

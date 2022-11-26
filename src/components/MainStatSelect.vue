@@ -1,9 +1,11 @@
 <template>
   <ul class="art-stats__stats-list">
-    <li class="art-stats__stats-item"
+    <li
+        class="art-stats__stats-item"
         v-for="stat in props.view"
         :class="style(stat.name)"
-        @click="selectedStat(stat)">
+        @click="selectedStat(stat)"
+    >
       {{ stat.name }}
     </li>
     <li @click="hide" v-if="!isHide">Скрыть</li>
@@ -12,46 +14,51 @@
 </template>
 
 <script setup>
-  import {useCharacterStore} from "@/stores/character.js";
-  import {ref} from "vue";
+  import { useCharacterStore } from '@/stores/character.js'
+  import { ref } from 'vue'
 
-  const props = defineProps(['view', 'selectArt'])
-  const art = useCharacterStore().user_art
+  const store = useCharacterStore()
+  const props = defineProps(['view'])
 
-  const isHide = ref(false);
+  const isHide = ref(true)
 
-  defineExpose({isHide})
+  defineExpose({ isHide })
 
-  function selectedStat(stat) {
-    if (art.main.name !== stat.name) {
-      art.main = stat
-      art.main.art = props.selectArt
+  /**
+   * Выбирает основную характеристику при условии:
+   *
+   * 1. Характеристика не была выбрана
+   *
+   * @param {Object} stat - Характеристики артефакта
+   */
+  function selectedStat (stat) {
+    if (store.user_art.main.name !== stat.name) {
+      store.user_art.main = stat
+      isHide.value = true
     }
   }
 
-
-  function hide() {
+  /** Скрывает/открывает окно выбора характеристик */
+  function hide () {
     isHide.value = !isHide.value
   }
 
-
-  function style(stat) {
-    let check = art.main.name
+  function style (stat) {
+    let check = store.user_art.main.name
 
     return {
-      'active': stat === check,
-      'hide': stat !== check && isHide.value,
-      'piro': 'Бонус Пиро урона' === stat && stat === check,
-      'gidro': 'Бонус Гидро урона' === stat && stat === check,
-      'dendro': 'Бонус Дендро урона' === stat && stat === check,
-      'electro': 'Бонус Электро урона' === stat && stat === check,
-      'anemo': 'Бонус Анемо урона' === stat && stat === check,
-      'crio': 'Бонус Крио урона' === stat && stat === check,
-      'geo': 'Бонус Гео урона' === stat && stat === check,
+      active: stat === check,
+      hide: stat !== check && isHide.value,
+      piro: 'Бонус Пиро урона' === stat && stat === check,
+      gidro: 'Бонус Гидро урона' === stat && stat === check,
+      dendro: 'Бонус Дендро урона' === stat && stat === check,
+      electro: 'Бонус Электро урона' === stat && stat === check,
+      anemo: 'Бонус Анемо урона' === stat && stat === check,
+      crio: 'Бонус Крио урона' === stat && stat === check,
+      geo: 'Бонус Гео урона' === stat && stat === check,
     }
   }
 </script>
-
 
 <style lang="scss">
   .art-stats {
@@ -65,7 +72,6 @@
       display: flex;
       background: $bg_base_dark;
       border-radius: $br_big;
-
     }
 
     &__art-item {
@@ -75,7 +81,7 @@
 
       &.active {
         background: rgba(132, 128, 121, 0.18);
-        border-color: #FDFCE6;
+        border-color: #fdfce6;
         border-radius: 20px 20px 19px 20px;
 
         &.Aleft {
@@ -98,7 +104,6 @@
       border-radius: 0 0 38px 38px;
       z-index: 100;
 
-
       & li:last-child {
         font-size: $text_big;
         text-decoration: underline;
@@ -120,45 +125,44 @@
         background: rgba(202, 207, 173, 0.57);
         border-width: 0px 3px;
         border-style: solid;
-        border-color: #FDFCE6;
+        border-color: #fdfce6;
         border-radius: 12px;
 
         &.piro {
-          background: #CF8372;
-          border-color: #963D31;
+          background: #cf8372;
+          border-color: #963d31;
         }
 
         &.gidro {
-          background: #69A6BA;
+          background: #69a6ba;
           border-color: #186384;
         }
 
         &.dendro {
-          background: #71C454;
-          border-color: #176D2A;
+          background: #71c454;
+          border-color: #176d2a;
         }
 
         &.electro {
-          background: #AC7CCA;
-          border-color: #7137BC;
+          background: #ac7cca;
+          border-color: #7137bc;
         }
 
         &.anemo {
-          background: #79DB8F;
+          background: #79db8f;
           border-color: #419253;
         }
 
         &.crio {
-          background: #7EEFDB;
-          border-color: #5BA89A;
+          background: #7eefdb;
+          border-color: #5ba89a;
         }
 
         &.geo {
-          background: #E3D09E;
-          border-color: #A59771;
+          background: #e3d09e;
+          border-color: #a59771;
         }
       }
     }
-
   }
 </style>

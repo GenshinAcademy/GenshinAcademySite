@@ -1,38 +1,41 @@
 <template>
   <div class="tier-wrapper">
-    <div id="best">
-      <div class="hero" v-for="hero in heroes">
-        <img :src="`/${hero.icon_url}`" :alt="`${hero.name}`">
-      </div>
+    <div v-for="cat in categories" :id="cat">
+      <HeroBlock :heroes="heroes.sort[cat]"/>
     </div>
-    <div id="good"></div>
-    <div id="normal"></div>
-    <div id="bad"></div>
   </div>
 </template>
 
-
 <script setup>
-  import {useCharacterStore} from "@/stores/character.js";
+  import HeroBlock from '@/components/HeroBlock.vue'
+  import { useCharacterStore } from '@/stores/character.js'
+  import { onMounted } from 'vue'
 
-  const heroes = useCharacterStore().heroes
+  const heroes = useCharacterStore()
+  const categories = ['best', 'good', 'normal', 'bad']
+
+  onMounted(() => {
+    heroes.get_hero()
+  })
 
 </script>
-
 
 <style lang="scss">
   .tier-wrapper {
     width: 100%;
 
     & > div {
+      width: 100%;
+      height: 240px;
       box-shadow: 4px 4px 21px 7px rgb(0 0 0 / 25%);
       border-radius: $br_base;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
-      height: 240px;
+      gap: $gp_small;
       margin-bottom: $mg_big;
-      padding: $pd_vbig;
+      padding: $pd_small;
+      overflow: hidden;
     }
 
     #best {
@@ -52,6 +55,11 @@
     }
 
     .hero {
+      & img {
+        width: 155px;
+        height: 215px;
+        border-radius: 25px;
+      }
     }
   }
 </style>

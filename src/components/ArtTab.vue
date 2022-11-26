@@ -3,56 +3,63 @@
     <div class="art-stats">
       <p class="art-wrapper__title">Выбор Артефакта</p>
       <ul class="art-stats__art-list">
-        <li class="art-stats__art-item"
+        <li
+            class="art-stats__art-item"
             :class="style(art.name)"
             v-for="art in list"
-            @click="selectedArt(art.name, art.stat)">
-          <img :src="`/${art.name}.svg`" :alt="art.name">
+            @click="selectedArt(art.name, art.stat)"
+        >
+          <img :src="`/${art.name}.svg`" :alt="art.name"/>
         </li>
       </ul>
-      <MainStatSelect :view="viewMain" :selectArt="selectArt" ref="hide"/>
+      <MainStatSelect :view="viewMain" ref="hide"/>
     </div>
     <SubStatSelect/>
   </div>
 </template>
 
-
 <script setup>
-  import MainStatSelect from "@/components/MainStatSelect.vue"
+  import MainStatSelect from '@/components/MainStatSelect.vue'
   import SubStatSelect from '@/components/SubStatSelect.vue'
-  import {useListsStore} from "@/stores/lists.js";
-  import {useCharacterStore} from "@/stores/character.js";
-  import {ref} from "vue";
+  import { useListsStore } from '@/stores/lists.js'
+  import { useCharacterStore } from '@/stores/character.js'
+  import { ref } from 'vue'
 
-  const list = useListsStore().art;
-  const hero = useCharacterStore();
+  const list = useListsStore().art
+  const store = useCharacterStore()
 
-  const viewMain = ref(list[0].stat)
-  const selectArt = ref(list[0].name)
+  store.is_user_art()
+
+  const viewMain = ref([store.user_art.main])
   const hide = ref(null)
 
-
-  function selectedArt(name, stat) {
-    if (selectArt !== stat.name) {
-      selectArt.value = name
-      viewMain.value = stat
+  /**
+   * Выбирает артефакт при условии и очищает ранее выбранный:
+   *
+   * 1. Артефакт не был выбран
+   *
+   * @param {name} name - Название артефакта
+   * @param {Array} stats - Основные характеристики артефакта
+   */
+  function selectedArt (name, stats) {
+    if (store.user_art.art !== stats.name) {
+      store.art_clear()
+      store.user_art.art = name
+      viewMain.value = stats
       hide.value.isHide = false
-      hero.artClear()
     }
   }
 
-
-  function style(art) {
-    let check = selectArt.value
+  function style (art) {
+    let check = store.user_art.art
 
     return {
-      'active': art === check,
-      'Aleft': 'flower' === art && art === check,
-      'Aright': 'crown' === art && art === check
+      active: art === check,
+      Aleft: 'flower' === art && art === check,
+      Aright: 'crown' === art && art === check,
     }
   }
 </script>
-
 
 <style lang="scss">
   .art-wrapper {
@@ -77,7 +84,7 @@
     }
 
     &__title_white {
-      background: linear-gradient(180deg, #F2E6BB 0%, rgba(82, 81, 81, 0) 100%);
+      background: linear-gradient(180deg, #f2e6bb 0%, rgba(82, 81, 81, 0) 100%);
       border-radius: 38px 38px 0px 0px;
       color: $color_white;
       font-size: $header_3;
