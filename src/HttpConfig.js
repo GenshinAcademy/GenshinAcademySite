@@ -6,7 +6,10 @@ import axios from "axios"
  * @type {axios.AxiosInstance}
  */
 const config = axios.create({
-  baseURL: 'https://api.vrising-academy.info/'
+  baseURL: 'https://api.vrising-academy.info/',
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
 
 

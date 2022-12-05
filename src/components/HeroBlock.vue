@@ -2,7 +2,7 @@
   <div class="hero" v-for="hero in heroes">
 <!--<img :src="`/${hero.icon_url}`" :alt="`${hero.name}`"/>-->
     <img :src="`/geo.png`" :alt="`${hero.name}`"/>
-    <p>{{hero.id}}</p>
+    <p>{{hero.name}}</p>
   </div>
 </template>
 

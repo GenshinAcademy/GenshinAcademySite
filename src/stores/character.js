@@ -40,11 +40,12 @@ export const useCharacterStore = defineStore("character", () => {
    */
   function get_hero() {
     axios
-      .get("/characters/artifacts")
+      .get("/characters/stats")
       .then((res) => {
-        heroes.value = res.data;
+        heroes.value = res.data.data;
       })
       .catch((error) => {
+        alert('Axios Error: Check console, for more details...');
         console.log(error);
       });
   }
@@ -76,21 +77,25 @@ export const useCharacterStore = defineStore("character", () => {
   function ferret(user) {
     sort_default();
     heroes.value.filter((h) => {
+      let score = 0;
+
       //Баллы за Основной стат
-      let score = h.statsProft[user.art][user.main.value];
+      if (h.statsProfit[user.art][user.main.value] !== undefined)
+        score = h.statsProfit[user.art][user.main.value];
 
       //Если выбран арт с элементом
       if (user.main.value === h.element)
-        score = h.statsProft[user.art].ELEM;
+        score = h.statsProfit[user.art].ELEM;
 
       //Баллы за все побочные статы
       user.sub_stats.map((stat) => {
-        score += h.statsProft.substats[stat];
+        score += h.statsProfit.substats[stat];
       });
 
       let i = {
-        id: h.character_id,
-        icon_url: h.icon_url,
+        id: h.id,
+        name: h.name,
+        // icon_url: h.icon_url,
         stats_profit: score,
       };
 
