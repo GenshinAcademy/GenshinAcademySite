@@ -1,121 +1,134 @@
 <template>
   <div class="art-sub-stats">
-    <p class="art-wrapper__title art-wrapper__title_white">
-      Дополнительные <br/>
-      характеристики
-    </p>
+    <p class="art-wrapper__title art-wrapper__title_white">Доп. характеристики</p>
     <ul class="art-sub-stats__stats-list">
       <li
           v-for="stat in list.sub"
           :class="style(stat.value)"
-          class="art-sub-stats__stats-item"
+          class="art-sub-stats__stats-item image_align"
           @click="selectedStat(stat.value)"
       >
+        <span :class='`icon-${stat.value}`'></span>
         {{ stat.name }}
       </li>
     </ul>
-    <p class="art-sub-stats__btn" @click="ferret">Рассчитать</p>
+  </div>
+  <div class="art-button">
+    <p class="art-sub-stats__btn image_align" @click="ferret">
+      Оценить
+      <span class="icon-arrow-right2"></span>
+    </p>
   </div>
 </template>
 
 <script setup>
-  import { useListsStore } from '@/stores/lists.js'
-  import { useCharacterStore } from '@/stores/character.js'
+import {useListsStore} from '@/stores/lists.js'
+import {useCharacterStore} from '@/stores/character.js'
+import {useHintStore} from "@/stores/hint.js";
 
-  const store = useCharacterStore()
-  const hero = useCharacterStore()
-  const list = useListsStore()
+const store = useCharacterStore()
+const hero = useCharacterStore()
+const list = useListsStore()
+const hintStore = useHintStore()
 
-  /**
-   * Выбор sub_stat, при условии:
-   *
-   * 1. Характеристика основного и побочного не повторяется
-   * 2. Характеристика не существует в массиве
-   * 3. Характеристик не более 4 в массиве
-   *
-   * @param {String} stat - Пример: "DEF_P"
-   */
+/**
+ * Выбор sub_stat, при условии:
+ *
+ * 1. Выбран ли артефакт.
+ * 2. Основная и побочная характеристика не повторяется
+ * 3. Характеристика не существует в массиве
+ * 4. Всего характеристик не более 4 в массиве
+ *
+ * @param {String} stat - Пример: "DEF_P"
+ */
 
-  function selectedStat (stat) {
-    if (!store.user_art.main.value.includes(stat)) {
+function selectedStat(stat) {
+  if (store.user_art.main.value) {
+    if (store.user_art.main.value !== stat) {
       if (!store.user_art.sub_stats.includes(stat)) {
         if (store.user_art.sub_stats.length < 4)
           store.user_art.sub_stats.push(stat)
+        else
+          hintStore.setHint('Всего характеристик не более 4')
       } else {
         store.user_art.sub_stats = store.user_art.sub_stats.filter((v) => {
           return v !== stat
         })
       }
+    } else {
+      hintStore.setHint('Основная и побочная характеристика повторяется')
     }
+  } else {
+    hintStore.setHint('Выберите артефакт и его основную характеристику')
   }
+}
 
-  /**
-   * Запускает оценку артефакта при условии:
-   *
-   * 1. Был выбрана основная характеристика
-   * 2. Побочных характеристик не менее 1
-   */
-  function ferret () {
-    if (store.user_art.main.hasOwnProperty('name'))
-      if (store.user_art.sub_stats.length >= 1)
-        hero.ferret(store.user_art)
+/**
+ * Запускает оценку артефакта при условии:
+ *
+ * 1. Был выбрана основная характеристика
+ * 2. Побочных характеристик не менее 1
+ */
+function ferret() {
+  if (store.user_art.main.hasOwnProperty('name'))
+    if (store.user_art.sub_stats.length >= 1)
+      hero.ferret(store.user_art)
+    else hintStore.setHint('Доп. характеристик не менее 1')
+  else hintStore.setHint('Выберите артефакт и его основную характеристику')
+}
+
+function style(stat) {
+  let check = store.user_art.sub_stats
+
+  return {
+    active: check.includes(stat),
   }
-
-  function style (stat) {
-    let check = store.user_art.sub_stats
-
-    return {
-      active: check.includes(stat),
-    }
-  }
+}
 </script>
 
 <style lang="scss">
-  .art-sub-stats {
-    background: $bg_base;
-    box-shadow: 0px 0px 22px rgb(0 0 0 / 71%);
+.art-sub-stats {
+
+  &__stats-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gp_vsmall;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &__stats-item {
+    min-width: 140px;
+    word-break: break-word;
+    flex: 1;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: $br_base;
-    padding-bottom: $pd_base;
 
-    &__stats-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: $gp_vsmall;
-      align-items: center;
-      justify-content: space-around;
-      padding: $pd_base;
-    }
+    &.active {
+      background: $color_active;
+      color: $color_black;
 
-    &__stats-item {
-      width: 190px;
-      padding: $pd_vsmall;
-
-      &.active {
-        background: linear-gradient(
-                93.56deg,
-                rgba(118, 194, 117, 0.71) -5.42%,
-                rgba(118, 194, 117, 0.76) 52.93%
-        );
-        border-width: 0 0 0 3px;
-        border-style: solid;
-        border-color: $bc_active_green;
-        border-radius: 12px;
+      & *, & *:before, & *:after {
+        color: $color_black !important;
       }
-    }
 
-    &__btn {
-      margin: $mg_big 10%;
-      padding: $pd_base;
-      font-weight: $fw_strong;
-      font-size: $header_3;
-      line-height: 29px;
-      user-select: none;
-      background: $bg_base_dark;
-      border-radius: $br_base;
-    }
-
-    &__btn:hover {
-      opacity: 0.8;
     }
   }
+
+  &__btn {
+    max-width: fit-content;
+    padding: $pd_base 30px;
+    font-weight: $fw_strong;
+    line-height: 18px;
+    user-select: none;
+    color: $color_black;
+    background: $bg_white;
+    border-radius: 30px;
+  }
+
+  &__btn:hover {
+    opacity: 0.8;
+  }
+}
 </style>

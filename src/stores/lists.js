@@ -106,7 +106,7 @@ export const useListsStore = defineStore("lists", () => {
       value: "HP_P",
     },
     { name: "Мастерство стихий", value: "EM" },
-    { name: "Восстановление энергии", value: "ER" },
+    { name: "Восст. энергии", value: "ER" },
     {
       name: "Крит. шанс",
       value: "CR",

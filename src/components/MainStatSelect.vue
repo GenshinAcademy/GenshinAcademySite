@@ -1,168 +1,230 @@
 <template>
-  <ul class="art-stats__stats-list">
+  <ul :class="style(getValue(selected_stat))" class="art-stats__stats-list">
+    <li class="art-stats__selected-stat" @click="hide">
+      <p class="image_align">
+        <span :class='`icon-${getKey(selected_stat)}`'></span>
+        {{ getValue(selected_stat) }}
+      </p>
+      <span class="icon-arrow-down2 arrow" ></span>
+    </li>
+    <li :class="style('')" class="divider m_10"></li>
     <li
-        class="art-stats__stats-item"
+        class="art-stats__stats-item image_align"
         v-for="stat in props.view"
         :class="style(stat.name)"
         @click="selectedStat(stat)"
     >
+      <span :class='`icon-${stat.value}`'></span>
       {{ stat.name }}
     </li>
-    <li @click="hide" v-if="!isHide">Скрыть</li>
-    <li @click="hide" v-if="isHide">Показать</li>
   </ul>
 </template>
 
 <script setup>
-  import { useCharacterStore } from '@/stores/character.js'
-  import { ref } from 'vue'
+import {useCharacterStore} from '@/stores/character.js'
+import {onMounted, ref, watch} from 'vue'
+import {clearObj, getKey, getValue} from "@/handler.js";
 
-  const store = useCharacterStore()
-  const props = defineProps(['view'])
+const store = useCharacterStore()
+const props = defineProps(['view'])
 
-  const isHide = ref(true)
+const isHide = ref(true)
 
-  defineExpose({ isHide })
+defineExpose({isHide})
+let selected_stat = ref({def: 'Выберите характеристику...'})
 
-  /**
-   * Выбирает основную характеристику при условии:
-   *
-   * 1. Характеристика не была выбрана
-   *
-   * @param {Object} stat - Характеристики артефакта
-   */
-  function selectedStat (stat) {
-    if (store.user_art.main.name !== stat.name) {
-      store.user_art.main = stat
-      isHide.value = true
-    }
+/**
+ * Выбирает основную характеристику при условии:
+ *
+ * 1. Характеристика не была выбрана
+ *
+ * @param {Object} stat - Характеристики артефакта
+ */
+function selectedStat(stat) {
+  if (store.user_art.main.name !== stat.name) {
+    setSelect(stat.value, stat.name)
+    store.user_art.main = stat
+    isHide.value = true
   }
+}
 
-  /** Скрывает/открывает окно выбора характеристик */
-  function hide () {
-    isHide.value = !isHide.value
+/**
+ * Присваивает новый вывод характеристики, предварительно очистив старые значения
+ * */
+function setSelect(stat, value) {
+  selected_stat.value = clearObj(selected_stat.value)
+  selected_stat.value[stat] = value
+}
+
+/** Если есть артефакт у пользователя, выбирает его, предварительно очистив поле */
+onMounted(() => {
+  if (Object.keys(store.user_art.main).length !== 0) {
+    setSelect(store.user_art.main.name, store.user_art.main.value)
   }
+})
 
-  function style (stat) {
-    let check = store.user_art.main.name
+/** Возвращает стандартное значение, когда props изменяется */
+watch(props, () => {
+  selected_stat.value = {def: 'Выберите характеристику...'}
+}, {deep: true})
 
-    return {
-      active: stat === check,
-      hide: stat !== check && isHide.value,
-      piro: 'Бонус Пиро урона' === stat && stat === check,
-      gidro: 'Бонус Гидро урона' === stat && stat === check,
-      dendro: 'Бонус Дендро урона' === stat && stat === check,
-      electro: 'Бонус Электро урона' === stat && stat === check,
-      anemo: 'Бонус Анемо урона' === stat && stat === check,
-      crio: 'Бонус Крио урона' === stat && stat === check,
-      geo: 'Бонус Гео урона' === stat && stat === check,
-    }
+/** Скрывает/открывает окно выбора характеристик */
+function hide() {
+  isHide.value = !isHide.value
+}
+
+function style(stat) {
+  let check = store.user_art.main.name
+  let def = 'Выберите характеристику...'
+
+  return {
+    active: stat === check,
+    hide: isHide.value,
+    divider_hide: isHide.value,
+    open: !isHide.value,
+    def: def === stat,
+    piro: 'Бонус Пиро урона' === stat && stat === check,
+    gidro: 'Бонус Гидро урона' === stat && stat === check,
+    dendro: 'Бонус Дендро урона' === stat && stat === check,
+    electro: 'Бонус Электро урона' === stat && stat === check,
+    anemo: 'Бонус Анемо урона' === stat && stat === check,
+    crio: 'Бонус Крио урона' === stat && stat === check,
+    geo: 'Бонус Гео урона' === stat && stat === check,
   }
+}
 </script>
 
 <style lang="scss">
-  .art-stats {
+.art-stats {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-bottom: 110px !important;
+
+  &__art-list {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    padding: 0 10px;
+    background: $bg_base_dark;
+    border-radius: $br_base;
+  }
+
+  &__art-item {
+    display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 120px;
+    margin: 0 4px;
 
-    &__art-list {
-      display: flex;
-      background: $bg_base_dark;
-      border-radius: $br_big;
+    width: 55px;
+    height: 65px;
+
+    border-width: 0 0 5px 0;
+    border-style: solid;
+    border-color: #fdfce600;
+
+    & img {
+      width: 45px;
+      height: 45px;
+      object-fit: contain;
     }
 
-    &__art-item {
-      border-width: 0px 5px;
-      border-style: solid;
-      border-color: #fdfce600;
+    &.active {
+      background: $bg_light_1;
+      border-color: $color_active;
+      border-radius: 5px;
+    }
+  }
 
-      &.active {
-        background: rgba(132, 128, 121, 0.18);
-        border-color: #fdfce6;
-        border-radius: 20px 20px 19px 20px;
+  &__stats-list {
+    padding: $pd_small;
+    width: calc(100% - 60px);
+    position: absolute;
+    top: 150px;
+    background: $bg_base_dark;
+    border-radius: $br_base;
+    z-index: 100;
+    text-align: start;
+    border: 1px solid #fff0;
 
-        &.Aleft {
-          border-radius: 59px 20px 19px 59px;
-        }
+    &.def > li p {
+      color: rgba(255, 255, 255, 0.3);;
+    }
 
-        &.Aright {
-          border-radius: 19px 59px 59px 20px;
-        }
+    &.open {
+      border: 1px solid #F6D79D;
+
+      & > li {
+        color: $color_white;
+      }
+
+      & .arrow {
+        transform: rotate(-180deg);
       }
     }
 
-    &__stats-list {
-      padding: $pd_small;
-      width: 370px;
-      position: absolute;
-      top: 240px;
-      background: rgba(31, 34, 41, 0.82);
-      box-shadow: 0px 0px 22px rgb(0 0 0 / 71%);
-      border-radius: 0 0 38px 38px;
-      z-index: 100;
+    &.active li:first-child * {
+      color: $color_active !important;
+    }
+  }
 
-      & li:last-child {
-        font-size: $text_big;
-        text-decoration: underline;
-        text-align: center;
-        color: #ffffffa6;
-        cursor: pointer;
-      }
+  &__selected-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  &__stats-item {
+    padding: 10px;
+    cursor: pointer;
+
+
+    &.hide {
+      display: none;
     }
 
-    &__stats-item {
-      padding: $pd_vsmall;
-      cursor: pointer;
+    &.active {
+      background: $bg_light_1;
+      border-radius: 6px;
 
-      &.hide {
-        display: none;
+
+      &.piro {
+        background: #cf8372;
+        border-color: #963d31;
       }
 
-      &.active {
-        background: rgba(202, 207, 173, 0.57);
-        border-width: 0px 3px;
-        border-style: solid;
-        border-color: #fdfce6;
-        border-radius: 12px;
+      &.gidro {
+        background: #69a6ba;
+        border-color: #186384;
+      }
 
-        &.piro {
-          background: #cf8372;
-          border-color: #963d31;
-        }
+      &.dendro {
+        background: #71c454;
+        border-color: #176d2a;
+      }
 
-        &.gidro {
-          background: #69a6ba;
-          border-color: #186384;
-        }
+      &.electro {
+        background: #ac7cca;
+        border-color: #7137bc;
+      }
 
-        &.dendro {
-          background: #71c454;
-          border-color: #176d2a;
-        }
+      &.anemo {
+        background: #79db8f;
+        border-color: #419253;
+      }
 
-        &.electro {
-          background: #ac7cca;
-          border-color: #7137bc;
-        }
+      &.crio {
+        background: #7eefdb;
+        border-color: #5ba89a;
+      }
 
-        &.anemo {
-          background: #79db8f;
-          border-color: #419253;
-        }
-
-        &.crio {
-          background: #7eefdb;
-          border-color: #5ba89a;
-        }
-
-        &.geo {
-          background: #e3d09e;
-          border-color: #a59771;
-        }
+      &.geo {
+        background: #e3d09e;
+        border-color: #a59771;
       }
     }
   }
+}
 </style>

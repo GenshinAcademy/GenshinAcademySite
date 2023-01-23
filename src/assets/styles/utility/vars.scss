@@ -4,9 +4,10 @@ $width_bonuses: 400px;
 $width_input: 144px;
 
 // background
-$bg_body: #FFEAB4;
-$bg_base_dark: #1F2229;
-$bg_base: #41413F;
+$bg_body: #0C0F1D;
+$bg_base: rgba(255, 255, 255, 0.05);
+$bg_base_dark: #1B1D2A;
+$bg_light_1: rgba(255, 255, 255, 0.1);
 $bg_light: #FCE5CD;
 $bg_white: #ffffff;
 
@@ -16,17 +17,19 @@ $norm: #cb784a8c;
 $bad: #F9B39D;
 
 // color
+$color_active: #F6D79D;
 $color_base: #ffb2b2;
 $color_black: #000000;
 $color_white: #ffffff;
 
 //header font-size
-$header_1: 64px;
-$header_2: 48px;
+$header_1: 40px;
+$header_2: 36px;
 $header_3: 32px;
-$header_5: 24px;
-$text_big: 20px;
-$text_base: 18px;
+$header_4: 24px;
+$header_5: 20px;
+$text_big: 18px;
+$text_base: 16px;
 
 //font-weight
 $fw_base: 400;
@@ -52,10 +55,11 @@ $pd_small: 15px;
 $pd_vsmall: 5px;
 
 // border-radius
-$br_big: 55px;
-$br_base: 40px;
-$br_small: 30px;
-$br_base: 40px;
+$br_big: 50px;
+//$br_base: 40px;
+$br_normal: 20px;
+$br_base: 10px;
+$br_small: 5px;
 
 // border-color
 $bc_active_green: #3E6238;
