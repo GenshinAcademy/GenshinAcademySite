@@ -1,20 +1,17 @@
 <template>
   <div class="menu__close" @click.prevent.self="props.toggle()" :class="{view: props.isOpen}">
     <div :class="{menu__open: props.isOpen}" class="menu" @click.prevent>
-      <!--      <div class="menu__button">-->
-      <!--        <button @click.prevent="props.toggle()" class="button button_outline-white button_svg min_768">-->
-      <!--          <img src="/img/menu.svg" alt="menu">-->
-      <!--        </button>-->
-      <!--      </div>-->
-
-      <div class="menu__link min_768">
+      <div class="menu__link min_768 menu__wrapper">
         <p><a>Главная</a></p>
+        <p class="divider"></p>
         <p><a>Инструменты</a></p>
+        <p class="divider"></p>
         <p><a>Таблицы</a></p>
+        <p class="divider"></p>
         <p><a>Гайды</a></p>
       </div>
-      <div class="menu__button mt_20">
-        <button class="button button_outline-white min_768">Контакты</button>
+      <div class="menu__button mt_20 menu__wrapper">
+        <p><a>Контакты</a></p>
       </div>
     </div>
   </div>
@@ -29,15 +26,23 @@ const props = defineProps(['isOpen', 'toggle'])
 <style lang="scss">
 .menu {
   position: fixed;
-  top: 0px;
-  right: -200px;
+  top: 80px;
+  right: -250px;
   height: 100vh;
-  padding: 30px 20px;
+  padding: 40px;
   background: $bg_base_dark;
   z-index: 1000;
 
   &.menu__open {
+    left: 0;
     right: 0;
+  }
+
+  &__wrapper {
+    background: #272935;
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
   }
 
   &__link {
@@ -51,7 +56,7 @@ const props = defineProps(['isOpen', 'toggle'])
   &__close {
     display: none;
     position: fixed;
-    top: 0;
+    top: 80px;
     left: 0;
     right: 0;
     bottom: 0;

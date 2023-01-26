@@ -17,10 +17,17 @@
 
       <div class="header__button">
         <button class="button button_outline-white max_768">Контакты</button>
-        <button @click.prevent="toggleMenu" class="button button_outline-white button_svg min_768">
+        <button @click.prevent="toggleMenu"
+                class="button button_outline-white button_svg header__btn min_768"
+                v-if="!isOpen">
           <img src="/img/menu.svg" alt="menu">
           <span class="max_375">Меню</span>
         </button>
+        <img
+            v-if="isOpen"
+            @click.prevent="toggleMenu"
+            src="/img/close_ring_light.svg"
+            alt="close">
       </div>
     </div>
 
@@ -28,6 +35,28 @@
 
   </header>
 </template>
+
+<script setup>
+import HeaderMenu from "@/components/HeaderMenu.vue";
+import {ref, watch} from "vue";
+
+const isOpen = ref(false);
+
+function toggleMenu() {
+  isOpen.value = !isOpen.value
+}
+
+/** Прокручивает экран в 0, и блокирует прокрутку страниы*/
+watch(isOpen, () => {
+  if (isOpen.value) {
+    window.scrollTo(0, 0)
+    document.documentElement.style.overflow = 'hidden'
+  } else {
+    document.documentElement.style.overflow = 'unset'
+  }
+})
+
+</script>
 
 <style lang="scss">
 
@@ -47,18 +76,13 @@
       padding: 10px 15px;
     }
   }
+
+  @include max-desktop_375 {
+    &__btn {
+      border-radius: 50% !important;
+      padding: 18px 14.5px !important;
+    }
+  }
 }
 
 </style>
-<script setup>
-import HeaderMenu from "@/components/HeaderMenu.vue";
-import {ref} from "vue";
-
-const isOpen = ref(false);
-
-function toggleMenu() {
-
-  isOpen.value = !isOpen.value
-}
-
-</script>

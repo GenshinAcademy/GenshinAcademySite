@@ -1,6 +1,6 @@
 <template>
   <div class="art-wrapper">
-    <p class="title">Вводные</p>
+    <p class="title" id="titleInput">Вводные</p>
     <div class="art-stats">
       <p class="art-wrapper__title">Выберите артефакт</p>
       <ul class="art-stats__art-list">

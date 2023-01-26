@@ -12,6 +12,7 @@
   </div>
   <Footer/>
   <UserHints/>
+  <ScrollBtn/>
 </template>
 
 <script setup>
@@ -20,7 +21,8 @@ import ArtTab from '@/components/ArtTab.vue'
 import HeroTier from '@/components/HeroTier.vue'
 import Footer from '@/components/Footer.vue'
 import UserHints from "@/components/UserHints.vue";
-import FerretBlock from "@/components/FerretBlock.vue";</script>
+import FerretBlock from "@/components/FerretBlock.vue";
+import ScrollBtn from "@/components/ScrollBtn.vue";</script>
 
 <style lang="scss">
 

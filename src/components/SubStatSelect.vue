@@ -88,7 +88,7 @@ function style(stat) {
 
 /** Скролл к заголовку "Рузельтаты"*/
 async function scroll() {
-  let title = document.getElementById('titleScroll')
+  let title = document.getElementById('titleResult')
   title.scrollIntoView({behavior: 'smooth'})
 }
 

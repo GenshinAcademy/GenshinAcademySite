@@ -1,6 +1,6 @@
 <template>
   <div class="tier-wrapper">
-    <p class="title" id="titleScroll">Результаты</p>
+    <p class="title" id="titleResult">Результаты</p>
     <div v-for="value in categories" :id="getKey(value)">
       <div class="tier__hero-wrapper" v-if="!!heroes.sort[getKey(value)].length">
         <p class="tier__title">{{ getKey(value) }}</p>
