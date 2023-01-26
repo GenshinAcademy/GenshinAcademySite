@@ -5,7 +5,7 @@
         <span :class='`icon-${getKey(selected_stat)}`'></span>
         {{ getValue(selected_stat) }}
       </p>
-      <span class="icon-arrow-down2 arrow" ></span>
+      <span class="icon-arrow-down2 arrow"></span>
     </li>
     <li :class="style('')" class="divider m_10"></li>
     <li
@@ -31,6 +31,7 @@ const props = defineProps(['view'])
 const isHide = ref(true)
 
 defineExpose({isHide})
+
 let selected_stat = ref({def: 'Выберите характеристику...'})
 
 /**
@@ -101,7 +102,7 @@ function style(stat) {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding-bottom: 110px !important;
+  padding-bottom: 90px !important;
 
   &__art-list {
     width: 100%;
@@ -141,7 +142,7 @@ function style(stat) {
     padding: $pd_small;
     width: calc(100% - 60px);
     position: absolute;
-    top: 150px;
+    top: 140px;
     background: $bg_base_dark;
     border-radius: $br_base;
     z-index: 100;
@@ -165,7 +166,9 @@ function style(stat) {
     }
 
     &.active li:first-child * {
-      color: $color_active !important;
+      &, &:after, {
+        color: $color_active !important;
+      }
     }
   }
 
@@ -224,6 +227,17 @@ function style(stat) {
         background: #e3d09e;
         border-color: #a59771;
       }
+    }
+  }
+
+
+  @include max-desktop_480 {
+    .art-stats__stats-list {
+      width: calc(100% - 30px);
+    }
+    .art-stats__art-item img {
+      width: 39px;
+      height: 39px;
     }
   }
 }

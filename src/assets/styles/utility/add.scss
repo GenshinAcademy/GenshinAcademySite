@@ -1,0 +1,86 @@
+/**
+ * Собираю шаблон, чтобы потом не плодить 1001 строку стилей в каждом файле
+ */
+
+
+/* Button */
+.button {
+  font-family: "Manrope";
+  font-weight: 800;
+  padding: 15px 30px;
+  border: 1px solid $color_black;
+  color: $color_black;
+  background: $bg_white;
+  text-align: center;
+  border-radius: 50px;
+
+  &.button_outline-white {
+    border-color: $color_white;
+    color: $color_white;
+    background: transparent;
+  }
+
+  &.button_svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+
+.divider {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid $bg_light_1;
+
+  &.divider_hide {
+    display: none;
+  }
+
+  &.m_10 {
+    margin: 10px 0;
+  }
+}
+
+/* image */
+
+.image_align {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Typography */
+
+.title {
+  font-size: $header_3;
+  text-align: start;
+  margin-bottom: 30px;
+}
+
+.text_note {
+  font-family: 'Manrope';
+  font-weight: 500;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+h2 {
+  font-family: 'HYWenHei';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.mt_10 {
+  margin-top: 10px;
+}
+
+.mt_15 {
+  margin-top: 15px;
+}
+
+.mt_20 {
+  margin-top: 20px;
+}

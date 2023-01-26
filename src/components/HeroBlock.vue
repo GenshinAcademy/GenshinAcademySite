@@ -1,12 +1,11 @@
 <template>
   <div class="hero" v-for="hero in heroes">
     <img :src="checkSRC(hero.name)"
-         @error="e => e.target.src = '/geo.png'"
+         @error="e => e.target.src = '/img/geo.png'"
          :alt="`${hero.name}`"
-         @click="() => console.log(heroes)"
     />
     <!--    <img :src="`/geo.png`" :alt="`${hero.name}`"/>-->
-<!--    <p>{{ hero.name }}</p>-->
+    <!--    <p>{{ hero.name }}</p>-->
   </div>
 </template>
 

@@ -104,13 +104,13 @@
 
 .icon-ER {
   &:before {
-    content: "\e90f";
-    color: #434343;
+    content: "\e90e";
+    color: #b9b9b9;
     opacity: 0.24;
   }
   &:after {
-    content: "\e90e";
-    color: #393b46;
+    content: "\e90f";
+    color: #ffffff;
     margin-left: -1em;
   }
 }
@@ -260,14 +260,14 @@
 }
 
 .icon-HP {
-  &:before {
+  &:after {
     content: $icon-HP-path1;
     color: #fff;
   }
 
-  &:after {
-    content: $icon-HP-path2;
-    margin-left: -1em;
+  &:before {
+    //content: $icon-HP-path2;
+    //margin-left: -1em;
     color: #fff;
     opacity: 0.497;
   }

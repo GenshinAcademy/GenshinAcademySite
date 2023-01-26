@@ -10,7 +10,7 @@
             v-for="art in list"
             @click="selectedArt(art.name, art.stat)"
         >
-          <img :src="`/${art.name}.svg`" :alt="art.name"/>
+          <img :src="`/img/${art.name}.svg`" :alt="art.name"/>
         </li>
       </ul>
       <MainStatSelect :view="viewMain" ref="hide"/>
@@ -69,9 +69,7 @@ function style(art) {
 <style lang="scss">
 .art-wrapper {
   max-width: 395px;
-  //background: rgba(106, 106, 106, 0.22);
   border-radius: $br_base;
-  //padding: $pd_big;
   text-align: center;
 
   & > div {
@@ -91,6 +89,18 @@ function style(art) {
     font-size: $text_base;
     text-shadow: 0px -12px 23px rgb(0 0 0 / 44%);
     margin-bottom: $mg_big;
+  }
+}
+
+@include max-desktop_992 {
+  .art-wrapper {
+    max-width: 100%;
+  }
+}
+
+@include max-desktop_480 {
+  .art-wrapper > div {
+    padding: 30px 15px;
   }
 }
 </style>

@@ -71,9 +71,10 @@ function selectedStat(stat) {
  */
 function ferret() {
   if (store.user_art.main.hasOwnProperty('name'))
-    if (store.user_art.sub_stats.length >= 1)
+    if (store.user_art.sub_stats.length >= 1) {
       hero.ferret(store.user_art)
-    else hintStore.setHint('Доп. характеристик не менее 1')
+      scroll()
+    } else hintStore.setHint('Доп. характеристик не менее 1')
   else hintStore.setHint('Выберите артефакт и его основную характеристику')
 }
 
@@ -84,6 +85,13 @@ function style(stat) {
     active: check.includes(stat),
   }
 }
+
+/** Скролл к заголовку "Рузельтаты"*/
+async function scroll() {
+  let title = document.getElementById('titleScroll')
+  title.scrollIntoView({behavior: 'smooth'})
+}
+
 </script>
 
 <style lang="scss">
@@ -98,10 +106,11 @@ function style(stat) {
   }
 
   &__stats-item {
-    min-width: 140px;
+    min-width: 145px;
+    min-height: 45px;
     word-break: break-word;
     flex: 1;
-    padding: 8px;
+    padding: 8px 8px 8px 12px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: $br_base;
 
@@ -129,6 +138,19 @@ function style(stat) {
 
   &__btn:hover {
     opacity: 0.8;
+  }
+}
+
+@include max-desktop_992 {
+  .art-sub-stats__stats-item {
+    flex: unset;
+    width: 48%;
+  }
+}
+
+@include max-desktop_576 {
+  .art-sub-stats__stats-item {
+    flex: 1;
   }
 }
 </style>

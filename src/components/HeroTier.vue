@@ -1,6 +1,6 @@
 <template>
   <div class="tier-wrapper">
-    <p class="title">Результаты</p>
+    <p class="title" id="titleScroll">Результаты</p>
     <div v-for="value in categories" :id="getKey(value)">
       <div class="tier__hero-wrapper" v-if="!!heroes.sort[getKey(value)].length">
         <p class="tier__title">{{ getKey(value) }}</p>
@@ -9,7 +9,7 @@
     </div>
     <div class="tier__hero-preview" v-if="!heroes.appraiser_start">
       <div class="preview-wrapper">
-        <img src="ferret_logo.svg" alt="ferret">
+        <img src="/img/ferret_logo.svg" alt="ferret">
         <p>Выберите артефакт и нажмите «Оценить».</p>
       </div>
     </div>
@@ -36,13 +36,14 @@ onMounted(() => {
 .tier-wrapper {
   position: relative;
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 
   .tier__hero-wrapper {
     width: 100%;
     min-height: 150px;
-    border-radius: $br_base;
+    border-radius: $br_normal;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -77,7 +78,7 @@ onMounted(() => {
       width: 340px;
       height: fit-content;
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 0 40px 40px 40px;
+      border-radius: 0 30px 30px 30px;
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -93,15 +94,29 @@ onMounted(() => {
 
   & .tier__title {
     width: 100%;
+    margin-bottom: 20px;
   }
 
   .hero {
     & img {
       width: 76px;
-      height: 88px;
-      border-radius: 0px;
+      height: 75px;
+      border-radius: 20px;
       background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
+      object-fit: contain;
     }
+  }
+}
+
+@include max-desktop_992 {
+  .tier-wrapper, .tier__hero-preview {
+    min-height: 450px;
+  }
+}
+
+@include max-desktop_480 {
+  .tier-wrapper .tier__hero-preview .preview-wrapper {
+    width: 240px;
   }
 }
 </style>
