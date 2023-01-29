@@ -129,9 +129,6 @@ export const useCharacterStore = defineStore("character", () => {
             if (h.element === user_art.value.main.value)
                 score = h.statsProfit[user_art.value.art]['ELEM'] + sumWeightSub
 
-            console.log(h.name)
-            console.log(score)
-
             let i = {
                 id: h.id,
                 name: h.name,
