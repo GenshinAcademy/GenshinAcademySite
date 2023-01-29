@@ -51,18 +51,12 @@
     }
   }
 
-  /**
-   * Возвращение поля основного стата, к начальному виду
-   */
+  /** Возвращение поля основного стата, к начальному виду */
 
   function style(art) {
     let check = store.user_art.art
 
-    return {
-      active: art === check,
-      Aleft: 'flower' === art && art === check,
-      Aright: 'crown' === art && art === check,
-    }
+    return {active: art === check}
   }
 </script>
 

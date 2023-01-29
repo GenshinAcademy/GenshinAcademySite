@@ -29,7 +29,6 @@
   onMounted(() => {
     heroes.get_hero()
   })
-
 </script>
 
 <style lang="scss">

@@ -10,6 +10,7 @@
         <p class="divider"></p>
         <p><a>Гайды</a></p>
       </div>
+      
       <div class="menu__button mt_20 menu__wrapper">
         <p><a>Контакты</a></p>
       </div>
@@ -18,9 +19,7 @@
 </template>
 
 <script setup>
-
   const props = defineProps(['isOpen', 'toggle'])
-
 </script>
 
 <style lang="scss">
@@ -67,5 +66,4 @@
       }
     }
   }
-
 </style>

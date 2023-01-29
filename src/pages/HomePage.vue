@@ -77,8 +77,6 @@
     position: relative;
   }
 
-
-
   img {
     user-select: none;
     -webkit-user-drag: none;
@@ -94,7 +92,6 @@
       justify-content: flex-start;
     }
   }
-
 
   @include max-desktop_576 {
     .wrapper {
@@ -137,6 +134,4 @@
       padding: 0 30px;
     }
   }
-
-
 </style>

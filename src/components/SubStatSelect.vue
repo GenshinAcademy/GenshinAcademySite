@@ -4,8 +4,8 @@
     <ul class="art-sub-stats__stats-list">
       <li
           v-for="stat in list.sub"
-          :class="style(stat.value)"
           class="art-sub-stats__stats-item image_align"
+          :class="style(stat.value)"
           @click="selectedStat(stat.value)"
       >
         <span :class='`icon-${stat.value}`'></span>
@@ -14,7 +14,7 @@
     </ul>
   </div>
   <div class="art-button">
-    <p class="art-sub-stats__btn image_align" @click="ferret">
+    <p class="art-sub-stats__btn image_align" :class="styleBtn()" @click="ferret">
       Оценить
       <span class="icon-arrow-right2"></span>
     </p>
@@ -24,12 +24,10 @@
 <script setup>
   import {useListsStore} from '@/stores/lists.js'
   import {useCharacterStore} from '@/stores/character.js'
-  import {useHintStore} from "@/stores/hint.js";
 
   const store = useCharacterStore()
   const hero = useCharacterStore()
   const list = useListsStore()
-  const hintStore = useHintStore()
 
   /**
    * Выбор sub_stat, при условии:
@@ -43,24 +41,16 @@
    */
 
   function selectedStat(stat) {
-    if (store.user_art.main.value) {
-      if (store.user_art.main.value !== stat) {
+    if (store.user_art.main.value)
+      if (store.user_art.main.value !== stat)
         if (!store.user_art.sub_stats.includes(stat)) {
           if (store.user_art.sub_stats.length < 4)
             store.user_art.sub_stats.push(stat)
-          else
-            hintStore.setHint('Всего характеристик не более 4')
         } else {
           store.user_art.sub_stats = store.user_art.sub_stats.filter((v) => {
             return v !== stat
           })
         }
-      } else {
-        hintStore.setHint('Основная и побочная характеристика повторяется')
-      }
-    } else {
-      hintStore.setHint('Выберите артефакт и его основную характеристику')
-    }
   }
 
   /**
@@ -74,8 +64,13 @@
       if (store.user_art.sub_stats.length >= 1) {
         hero.ferret(store.user_art)
         scroll()
-      } else hintStore.setHint('Доп. характеристик не менее 1')
-    else hintStore.setHint('Выберите артефакт и его основную характеристику')
+      }
+  }
+
+  /** Скролл к заголовку "Рузельтаты"*/
+  async function scroll() {
+    let title = document.getElementById('titleResult')
+    title.scrollIntoView({behavior: 'smooth'})
   }
 
   function style(stat) {
@@ -83,13 +78,14 @@
 
     return {
       active: check.includes(stat),
+      disable_text: !store.user_art.main.value || store.user_art.main.value === stat,
     }
   }
 
-  /** Скролл к заголовку "Рузельтаты"*/
-  async function scroll() {
-    let title = document.getElementById('titleResult')
-    title.scrollIntoView({behavior: 'smooth'})
+  function styleBtn() {
+    return {
+      disable_bg_2: store.user_art.sub_stats.length < 1 || !store.user_art.main.value,
+    }
   }
 
 </script>

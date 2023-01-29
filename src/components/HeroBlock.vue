@@ -1,21 +1,14 @@
 <template>
   <div class="hero" v-for="hero in heroes">
-    <img :src="checkSRC(hero.name)"
+    <img :src="hero.icon_url"
          @error="e => e.target.src = '/img/uchar.webp'"
          :alt="`${hero.name}`"
     />
-    <!--    <p>{{ hero.name }}</p>-->
   </div>
 </template>
 
 <script setup>
   defineProps({heroes: 'heroes'})
-
-  /* Поменять на обычную ссылку */
-  function checkSRC(name) {
-    return `https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_${name}.png`;
-  }
-
 </script>
 
 <style scoped>

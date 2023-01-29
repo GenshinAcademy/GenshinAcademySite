@@ -76,13 +76,12 @@
         padding: 10px 15px;
       }
     }
-
-    @include max-desktop_375 {
-      &__btn {
-        border-radius: 50% !important;
-        padding: 18px 14.5px !important;
-      }
-    }
   }
 
+  @include max-desktop_375 {
+    .header__btn {
+      border-radius: 50% !important;
+      padding: 18px 14.5px !important;
+    }
+  }
 </style>

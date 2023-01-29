@@ -1,4 +1,5 @@
 <template>
+  <ul class="btn__wrapper" @click.self="hide" v-if="!isHide"></ul>
   <ul :class="style(getValue(selected_stat))" class="art-stats__stats-list">
     <!-- Выбранная характеристика -->
     <li class="art-stats__selected-stat" @click="hide">
@@ -31,17 +32,34 @@
   const store = useCharacterStore()
   const props = defineProps(['view'])
 
+  const selected_stat = ref({def: 'Выберите характеристику...'})
   const isHide = ref(true)
 
   defineExpose({isHide})
 
-  let selected_stat = ref({def: 'Выберите характеристику...'})
+  /** Если есть артефакт у пользователя, выбирает его, предварительно очистив поле */
+  onMounted(() => {
+    if (Object.keys(store.user_art.main).length !== 0) {
+      setSelect(store.user_art.main.name, store.user_art.main.value)
+    }
+  })
 
-  watchEffect(() => {
+  /** Возвращает стандартное значение, когда props изменяется */
+  watch(props, () => {
     if (props.view.length === 1) {
       selectedStat(props.view[0])
     }
-  })
+    else {
+      selected_stat.value = {def: 'Выберите характеристику...'}
+    }
+  }, {deep: true})
+
+  // /** Выбирает характеристики, если она одна */
+  // watchEffect(() => {
+  //   if (props.view.length === 1) {
+  //     selectedStat(props.view[0])
+  //   }
+  // })
 
   /**
    * Выбирает основную характеристику при условии:
@@ -69,20 +87,9 @@
     selected_stat.value[stat] = value
   }
 
-  /** Если есть артефакт у пользователя, выбирает его, предварительно очистив поле */
-  onMounted(() => {
-    if (Object.keys(store.user_art.main).length !== 0) {
-      setSelect(store.user_art.main.name, store.user_art.main.value)
-    }
-  })
-
-  /** Возвращает стандартное значение, когда props изменяется */
-  watch(props, () => {
-    selected_stat.value = {def: 'Выберите характеристику...'}
-  }, {deep: true})
-
   /** Скрывает/открывает окно выбора характеристик */
   function hide() {
+    console.log(isHide)
     isHide.value = !isHide.value
   }
 
@@ -117,6 +124,8 @@
     padding-bottom: 90px !important;
 
     &__art-list {
+      position: relative;
+      z-index: 100;
       width: 100%;
       display: flex;
       padding: 0 10px;
@@ -151,7 +160,6 @@
     }
 
     &__stats-list {
-      //padding: 0 15px;
       width: calc(100% - 60px);
       position: absolute;
       top: 140px;
@@ -199,7 +207,6 @@
       padding: 10px;
       cursor: pointer;
 
-
       &.hide {
         display: none;
       }
@@ -207,42 +214,6 @@
       &.active {
         background: $bg_light_1;
         border-radius: 6px;
-
-
-        &.piro {
-          background: #cf8372;
-          border-color: #963d31;
-        }
-
-        &.gidro {
-          background: #69a6ba;
-          border-color: #186384;
-        }
-
-        &.dendro {
-          background: #71c454;
-          border-color: #176d2a;
-        }
-
-        &.electro {
-          background: #ac7cca;
-          border-color: #7137bc;
-        }
-
-        &.anemo {
-          background: #79db8f;
-          border-color: #419253;
-        }
-
-        &.crio {
-          background: #7eefdb;
-          border-color: #5ba89a;
-        }
-
-        &.geo {
-          background: #e3d09e;
-          border-color: #a59771;
-        }
       }
     }
 
@@ -261,5 +232,14 @@
         height: 39px;
       }
     }
+  }
+
+  .btn__wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
   }
 </style>
