@@ -78,7 +78,7 @@
 
     return {
       active: check.includes(stat),
-      disable_text: !store.user_art.main.value || store.user_art.main.value === stat,
+      disable_text: !store.user_art.main.value || store.user_art.main.value === stat || store.user_art.sub_stats.length >= 4,
     }
   }
 

@@ -62,7 +62,7 @@
 
 <style lang="scss">
   .art-wrapper {
-    max-width: 395px;
+    max-width: 400px;
     border-radius: $br_base;
     text-align: center;
 

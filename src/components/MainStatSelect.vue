@@ -26,7 +26,7 @@
 
 <script setup>
   import {useCharacterStore} from '@/stores/character.js'
-  import {onMounted, ref, watch, watchEffect} from 'vue'
+  import {onMounted, ref, watch} from 'vue'
   import {clearObj, getKey, getValue} from "@/handler.js";
 
   const store = useCharacterStore()
@@ -48,18 +48,10 @@
   watch(props, () => {
     if (props.view.length === 1) {
       selectedStat(props.view[0])
-    }
-    else {
+    } else {
       selected_stat.value = {def: 'Выберите характеристику...'}
     }
   }, {deep: true})
-
-  // /** Выбирает характеристики, если она одна */
-  // watchEffect(() => {
-  //   if (props.view.length === 1) {
-  //     selectedStat(props.view[0])
-  //   }
-  // })
 
   /**
    * Выбирает основную характеристику при условии:
@@ -89,7 +81,6 @@
 
   /** Скрывает/открывает окно выбора характеристик */
   function hide() {
-    console.log(isHide)
     isHide.value = !isHide.value
   }
 
@@ -103,13 +94,6 @@
       divider_hide: isHide.value,
       open: !isHide.value,
       def: def === stat,
-      piro: 'Бонус Пиро урона' === stat && stat === check,
-      gidro: 'Бонус Гидро урона' === stat && stat === check,
-      dendro: 'Бонус Дендро урона' === stat && stat === check,
-      electro: 'Бонус Электро урона' === stat && stat === check,
-      anemo: 'Бонус Анемо урона' === stat && stat === check,
-      crio: 'Бонус Крио урона' === stat && stat === check,
-      geo: 'Бонус Гео урона' === stat && stat === check,
     }
   }
 </script>
@@ -241,5 +225,11 @@
     right: 0;
     left: 0;
     z-index: 0;
+  }
+
+  @include max-desktop_375 {
+    .art-wrapper li {
+      font-size: 14px;
+    }
   }
 </style>

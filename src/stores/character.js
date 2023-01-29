@@ -104,14 +104,14 @@ export const useCharacterStore = defineStore("character", () => {
                 weight.push(h.statsProfit[user_art.value.art][n])
             }
 
-            weight = weight.sort((a, b) => a - b).slice(-1)
+            weight = weight.sort((a, b) => a - b).slice(-1)[0]
 
             /** Находим взешенный сабстаты */
             let weightSub = {}
             for (let i in h.statsProfit.substats) {
                 weightSub = {
                     ...weightSub,
-                    [i]: (((400 - weight[0]) / A) * h.statsProfit.substats[i])
+                    [i]: (((400 - weight) / A) * h.statsProfit.substats[i])
                 }
             }
 
@@ -124,6 +124,13 @@ export const useCharacterStore = defineStore("character", () => {
 
             /** Сумма */
             let score = h.statsProfit[user_art.value.art][user_art.value.main.value] + sumWeightSub
+
+            /** Проверка на элемент */
+            if (h.element === user_art.value.main.value)
+                score = h.statsProfit[user_art.value.art]['ELEM'] + sumWeightSub
+
+            console.log(h.name)
+            console.log(score)
 
             let i = {
                 id: h.id,
