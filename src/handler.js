@@ -4,7 +4,6 @@ export function getKey(value) {
 }
 
 export function getValue(value) {
-    // console.log(value)
     if (value) return Object.values(value).toString()
     else return ''
 }

@@ -37,52 +37,52 @@
 </template>
 
 <script setup>
-import HeaderMenu from "@/components/HeaderMenu.vue";
-import {ref, watch} from "vue";
+  import HeaderMenu from "@/components/HeaderMenu.vue";
+  import {ref, watch} from "vue";
 
-const isOpen = ref(false);
+  const isOpen = ref(false);
 
-function toggleMenu() {
-  isOpen.value = !isOpen.value
-}
-
-/** Прокручивает экран в 0, и блокирует прокрутку страниы*/
-watch(isOpen, () => {
-  if (isOpen.value) {
-    window.scrollTo(0, 0)
-    document.documentElement.style.overflow = 'hidden'
-  } else {
-    document.documentElement.style.overflow = 'unset'
+  function toggleMenu() {
+    isOpen.value = !isOpen.value
   }
-})
+
+  /** Прокручивает экран в 0, и блокирует прокрутку страниы*/
+  watch(isOpen, () => {
+    if (isOpen.value) {
+      window.scrollTo(0, 0)
+      document.documentElement.style.overflow = 'hidden'
+    } else {
+      document.documentElement.style.overflow = 'unset'
+    }
+  })
 
 </script>
 
 <style lang="scss">
 
-.header {
-  position: relative;
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-
-  &__link {
+  .header {
+    position: relative;
+    width: 100%;
+    height: 80px;
     display: flex;
-    align-items: center;
-    gap: 5px;
+    justify-content: center;
 
-    & p {
-      padding: 10px 15px;
+    &__link {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      & p {
+        padding: 10px 15px;
+      }
+    }
+
+    @include max-desktop_375 {
+      &__btn {
+        border-radius: 50% !important;
+        padding: 18px 14.5px !important;
+      }
     }
   }
-
-  @include max-desktop_375 {
-    &__btn {
-      border-radius: 50% !important;
-      padding: 18px 14.5px !important;
-    }
-  }
-}
 
 </style>

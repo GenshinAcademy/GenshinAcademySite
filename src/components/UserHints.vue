@@ -8,41 +8,41 @@
 
 <script setup>
 
-import {watch} from "vue";
-import {useHintStore} from "@/stores/hint.js";
+  import {watch} from "vue";
+  import {useHintStore} from "@/stores/hint.js";
 
-const store = useHintStore()
+  const store = useHintStore()
 
-watch(store, () => {
+  watch(store, () => {
 
-  setTimeout(() => {
-    store.clearHint()
-  }, 4000)
+    setTimeout(() => {
+      store.clearHint()
+    }, 4000)
 
-}, {deep: true})
+  }, {deep: true})
 
 </script>
 
 <style lang="scss">
-.hint {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  .hint {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: #3E6238;
-  padding: 10px;
-  border-radius: 10px;
-
-  &__close {
-    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #3E6238;
     padding: 10px;
+    border-radius: 10px;
 
-    &:hover {
-      background: $bg_light_1;
+    &__close {
+      cursor: pointer;
+      padding: 10px;
+
+      &:hover {
+        background: $bg_light_1;
+      }
     }
   }
-}
 </style>

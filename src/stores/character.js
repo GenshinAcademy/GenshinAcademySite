@@ -90,18 +90,23 @@ export const useCharacterStore = defineStore("character", () => {
         sort_default();
         heroes.value.filter((h) => {
             let score = 0;
-
+            // console.log(h.name)
             //Баллы за Основной стат
-            if (h.statsProfit[user.art][user.main.value] !== undefined)
+            if (h.statsProfit[user.art][user.main.value] !== undefined) {
                 score = h.statsProfit[user.art][user.main.value];
+                // console.log('main_stat: ', score)
+            }
 
             //Если выбран арт с элементом
-            if (user.main.value === h.element)
+            if (user.main.value === h.element) {
                 score = h.statsProfit[user.art].ELEM;
+                // console.log('+ element_cup: ', h.statsProfit[user.art].ELEM)
+            }
 
             //Баллы за все побочные статы
             user.sub_stats.map((stat) => {
                 score += h.statsProfit.substats[stat];
+                // console.log(stat + ': ' + h.statsProfit.substats[stat])
             });
 
             let i = {
@@ -110,6 +115,9 @@ export const useCharacterStore = defineStore("character", () => {
                 // icon_url: h.icon_url,
                 stats_profit: score,
             };
+
+            // console.log('Profit: ', i.stats_profit)
+            // console.log('\n\n\n')
 
             sorted(i);
         });

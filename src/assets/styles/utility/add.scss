@@ -38,9 +38,18 @@
     display: none;
   }
 
-  &.m_10 {
-    margin: 10px 0;
+  &.mg_15 {
+    margin: 0 15px 15px 15px !important;
+    width: auto;
   }
+}
+
+.p0 {
+  padding: 0 !important;
+}
+
+.disabled {
+  color: #92929285;
 }
 
 /* image */
@@ -67,7 +76,7 @@
 }
 
 h2 {
-  font-family: 'HYWenHei';
+  font-family: $font_main;
   font-style: normal;
   font-weight: 400;
   font-size: 40px;

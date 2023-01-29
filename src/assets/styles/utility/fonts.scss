@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'HYWenHei';
-  src: url('@/assets/fonts/HYWenHei-85W.ttf') format('truetype');
+  font-family: $font_main;
+  src: url('@/assets/fonts/shii-webfont.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }

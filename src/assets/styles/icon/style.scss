@@ -2,9 +2,9 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src: url('@/assets/fonts/Iconmoon/icomoon.ttf') format('truetype'),
+  src: url('@/assets/fonts/Iconmoon/icomoon.svg') format('svg'),
   url('@/assets/fonts/Iconmoon/icomoon.woff') format('woff'),
-  url('@/assets/fonts/Iconmoon/icomoon.svg') format('svg');
+  url('@/assets/fonts/Iconmoon/icomoon.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -22,6 +22,17 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-def {
+  position: absolute;
+}
+
+.icon-HEAL {
+  &:after {
+    content: $icon-HEAL;
+    color: #ffffff;
+  }
 }
 
 .icon-Anemo {
@@ -44,15 +55,15 @@
 }
 
 .icon-CD {
-  &:before {
+  &:after {
     content: $icon-CD-path1;
     color: rgb(255, 255, 255);
+    margin-left: -1em;
+
   }
 
-  &:after {
+  &:before {
     content: $icon-CD-path2;
-    margin-left: -1em;
-    color: rgb(255, 255, 255);
     opacity: 0.5;
   }
 }
@@ -108,6 +119,7 @@
     color: #b9b9b9;
     opacity: 0.24;
   }
+
   &:after {
     content: "\e90f";
     color: #ffffff;
