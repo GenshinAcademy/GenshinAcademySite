@@ -6,7 +6,7 @@
 
 </template>
 
-<script setup>
+<script lang="ts" setup>
 
   import {watch} from "vue";
   import {useHintStore} from "@/stores/hint.js";

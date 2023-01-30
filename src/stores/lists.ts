@@ -1,8 +1,9 @@
-import {defineStore} from "pinia";
-import {ref} from "vue";
+import { Artifact, Stat } from '@/scripts/models/ferretAppraiser';
+import { defineStore } from "pinia";
+import { ref } from "vue";
 
 export const useListsStore = defineStore("lists", () => {
-    const sand = ref([
+    const sandStats = ref<Stat[]>([
         {
             name: "Сила атака %",
             value: "ATK_P",
@@ -25,7 +26,7 @@ export const useListsStore = defineStore("lists", () => {
         },
     ]);
 
-    const goblet = ref([
+    const gobletStats = ref<Stat[]>([
         {
             name: "Сила атака %",
             value: "ATK_P",
@@ -76,48 +77,33 @@ export const useListsStore = defineStore("lists", () => {
         },
     ]);
 
-    const crown = ref([
-        {name: "Сила атака %", value: "ATK_P"},
-        {name: "Защита %", value: "DEF_P"},
-        {
-            name: "HP %",
-            value: "HP_P",
-        },
-        {name: "Мастерство стихий", value: "EM"},
-        {name: "Крит. шанс", value: "CR"},
-        {
-            name: "Крит. урон",
-            value: "CD",
-        },
-        {name: "Бонус лечения", value: "HEAL"},
+    const crownStats = ref<Stat[]>([
+        { name: "Сила атака %", value: "ATK_P" },
+        { name: "Защита %", value: "DEF_P" },
+        { name: "HP %", value: "HP_P", },
+        { name: "Мастерство стихий", value: "EM" },
+        { name: "Крит. шанс", value: "CR" },
+        { name: "Крит. урон", value: "CD", },
+        { name: "Бонус лечения", value: "HEAL" },
     ]);
 
-    const sub = ref([
-        {name: "Сила атака", value: "ATK"},
-        {name: "Сила атака %", value: "ATK_P"},
-        {
-            name: "Защита",
-            value: "DEF",
-        },
-        {name: "Защита %", value: "DEF_P"},
-        {name: "HP", value: "HP"},
-        {
-            name: "HP %",
-            value: "HP_P",
-        },
-        {name: "Мастерство стихий", value: "EM"},
-        {name: "Восст. энергии", value: "ER"},
-        {
-            name: "Крит. шанс",
-            value: "CR",
-        },
-        {name: "Крит. урон", value: "CD"},
+    const subStats = ref<Stat[]>([
+        { name: "Сила атака", value: "ATK" },
+        { name: "Сила атака %", value: "ATK_P" },
+        { name: "Защита", value: "DEF", },
+        { name: "Защита %", value: "DEF_P" },
+        { name: "HP", value: "HP" },
+        { name: "HP %", value: "HP_P", },
+        { name: "Мастерство стихий", value: "EM" },
+        { name: "Восст. энергии", value: "ER" },
+        { name: "Крит. шанс", value: "CR", },
+        { name: "Крит. урон", value: "CD" },
     ]);
 
-    const art = ref([
+    const artifacts = ref<Artifact[]>([
         {
             name: "flower",
-            stat: [
+            stats: [
                 {
                     name: "HP",
                     value: "HP",
@@ -126,7 +112,7 @@ export const useListsStore = defineStore("lists", () => {
         },
         {
             name: "feather",
-            stat: [
+            stats: [
                 {
                     name: "Сила Атаки",
                     value: "ATK",
@@ -135,19 +121,19 @@ export const useListsStore = defineStore("lists", () => {
         },
         {
             name: "sands",
-            stat: sand,
+            stats: sandStats.value,
         },
         {
             name: "goblet",
-            stat: goblet,
+            stats: gobletStats.value,
         },
         {
             name: "circlet",
-            stat: crown,
+            stats: crownStats.value,
         },
     ]);
 
-    const tier = [{best: 'Идеально'}, {good: 'Отлично'}, {normal: 'Хорошо'}, {bad: 'Сойдёт'}]
+    const tiers = [['Идеально', 'S'], ['Отлично', 'A'], ['Хорошо', 'B'], ['Сойдёт', 'C']];
 
-    return {art, sub, tier};
+    return { artifacts, subStats, tiers };
 });

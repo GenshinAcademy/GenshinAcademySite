@@ -18,7 +18,7 @@
   </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
   const props = defineProps(['isOpen', 'toggle'])
 </script>
 

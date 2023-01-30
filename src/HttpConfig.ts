@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios from "axios";
 
 /**
  * Заготовка под api
@@ -13,4 +13,4 @@ const config = axios.create({
 });
 
 
-export default config
+export default config;

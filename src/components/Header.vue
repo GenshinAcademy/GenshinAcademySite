@@ -36,7 +36,7 @@
   </header>
 </template>
 
-<script setup>
+<script lang="ts" setup>
   import HeaderMenu from "@/components/HeaderMenu.vue";
   import {ref, watch} from "vue";
 
