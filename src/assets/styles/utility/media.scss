@@ -101,13 +101,13 @@
 
 
 /* 960 */
-.min_960 {
+.min_992 {
   @include min-desktop_992 {
     display: none !important;
   }
 }
 
-.max_960 {
+.max_992 {
   @include max-desktop_992 {
     display: none !important;
   }

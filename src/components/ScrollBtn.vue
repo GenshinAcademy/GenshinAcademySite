@@ -1,5 +1,5 @@
 <template>
-  <div class="scroll" :class="{down: !scroll}">
+  <div class="scroll min_992" v-if="scrollView">
     <img
         @click="scrollBtn"
         src="/img/up_button.svg"
@@ -8,49 +8,45 @@
 </template>
 
 <script setup>
-import {onBeforeUnmount, onMounted, ref} from "vue";
+  import {onBeforeUnmount, onMounted, ref} from "vue";
 
-const scroll = ref(false)
+  const scroll = ref(false)
+  const scrollView = ref(false)
 
-
-function scrollBtn() {
   let result = document.getElementById('titleResult')
   let input = document.getElementById('titleInput')
 
-  if (scroll.value)
+
+  function scrollBtn() {
     input.scrollIntoView()
-  else
-    result.scrollIntoView()
+  }
 
+  /** Следит за скроллом.
+   * Когда заголовок "Результаты", достигает верхнего края экрана, отображает кнопку */
 
-}
+  function scrollCheck() {
+    scrollView.value = result.getBoundingClientRect().y < 10;
+  }
 
-/** Следит за скроллом.
- * Когда заголовок "Результаты", пропадает, включает скролл к блоку "Ввод" */
+  onMounted(() => {
+    window.addEventListener('scroll', scrollCheck)
+  })
 
-function scrollCheck() {
-  scroll.value = window.scrollY > 1400;
-}
-
-onMounted(() => {
-  window.addEventListener('scroll', scrollCheck)
-})
-
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', scrollCheck)
-})
+  onBeforeUnmount(() => {
+    window.removeEventListener('scroll', scrollCheck)
+  })
 
 </script>
 
 <style>
-.scroll {
-  position: fixed;
-  right: -10px;
-  bottom: -10px;
-  z-index: 200;
-}
+  .scroll {
+    position: fixed;
+    right: -10px;
+    bottom: -10px;
+    z-index: 200;
+  }
 
-.scroll.down {
-  transform: rotate(180deg);
-}
+  .scroll.down {
+    transform: rotate(180deg);
+  }
 </style>

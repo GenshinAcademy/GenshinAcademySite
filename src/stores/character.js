@@ -3,17 +3,12 @@ import {ref} from "vue";
 import axios from "@/HttpConfig.js";
 
 export const useCharacterStore = defineStore("character", () => {
+
     const user_art = ref({
         art: "",
         main: {},
         sub_stats: [],
     });
-
-    // art: "flower",
-    //     main: {
-    //   name: "HP",
-    //   value: "HP",
-    // },
 
     const default_art = ref({
         art: "flower",
@@ -34,7 +29,7 @@ export const useCharacterStore = defineStore("character", () => {
 
     const heroes = ref([]);
 
-    /** Костыль.. Помогает убрать превью, после нажатия "Оценки" */
+    /** Помогает убрать превью, после нажатия "Оценки" */
     const appraiser_start = ref(false);
 
     /** Проверяет есть ли сохраненные артефакты пользователя */
@@ -44,22 +39,20 @@ export const useCharacterStore = defineStore("character", () => {
         }
     }
 
-    //Todo: Сделать вывод ошибки для пользователя
-    /**
-     * Получает персонажей с сервера
-     */
+    /** Получает персонажей с сервера */
     function get_hero() {
+
         axios
             .get("/characters/stats")
             .then((res) => {
                 heroes.value = res.data.data;
             })
             .catch((error) => {
-                alert('Axios Error: Check console, for more details...');
+                alert(error.message);
                 console.log(error);
             });
 
-        // heroes.value =  test_data.data
+        // heroes.value = test_data.data
     }
 
     /** Очищает все характеристики артефакта пользователя */
@@ -89,25 +82,57 @@ export const useCharacterStore = defineStore("character", () => {
     function ferret(user) {
         sort_default();
         heroes.value.filter((h) => {
-            let score = 0;
 
-            //Баллы за Основной стат
-            if (h.statsProfit[user.art][user.main.value] !== undefined)
-                score = h.statsProfit[user.art][user.main.value];
+            /** Обнуляю main stat */
+            const newTableSub = {...h.statsProfit.substats};
+            newTableSub[user.main.value] = 0
 
-            //Если выбран арт с элементом
-            if (user.main.value === h.element)
-                score = h.statsProfit[user.art].ELEM;
+            /** Пересобираю substats в массив, для удобной сортировки */
+            let subList = []
+            for (let n in h.statsProfit.substats) {
+                subList.push(h.statsProfit.substats[n])
+            }
 
-            //Баллы за все побочные статы
-            user.sub_stats.map((stat) => {
-                score += h.statsProfit.substats[stat];
-            });
+            /** Выбираю 4 наибольших substats */
+            subList = subList.sort((a, b) => a - b).slice(-4)
+            let A = subList.reduce((sum, number) => sum + number);
+            A = A * 0.75
+
+            /** Нахожу вес лучшей основы */
+            let weight = []
+            for (let n in h.statsProfit[user_art.value.art]) {
+                weight.push(h.statsProfit[user_art.value.art][n])
+            }
+
+            weight = weight.sort((a, b) => a - b).slice(-1)[0]
+
+            /** Находим взешенный сабстаты */
+            let weightSub = {}
+            for (let i in h.statsProfit.substats) {
+                weightSub = {
+                    ...weightSub,
+                    [i]: (((400 - weight) / A) * h.statsProfit.substats[i])
+                }
+            }
+
+
+            /** Оценка артефакто по выбранным сабстатам */
+            let sumWeightSub = 0
+            user_art.value.sub_stats.map((value, index) => {
+                sumWeightSub += weightSub[value]
+            })
+
+            /** Сумма */
+            let score = h.statsProfit[user_art.value.art][user_art.value.main.value] + sumWeightSub
+
+            /** Проверка на элемент */
+            if (h.element === user_art.value.main.value)
+                score = h.statsProfit[user_art.value.art]['ELEM'] + sumWeightSub
 
             let i = {
                 id: h.id,
                 name: h.name,
-                // icon_url: h.icon_url,
+                icon_url: h.icon_url,
                 stats_profit: score,
             };
 
@@ -134,6 +159,7 @@ export const useCharacterStore = defineStore("character", () => {
                 break;
             }
         }
+
         /** Убирает превью */
         appraiser_start.value = true
     }
