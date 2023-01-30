@@ -49,10 +49,7 @@ export const useCharacterStore = defineStore("character", () => {
             })
             .catch((error) => {
                 alert(error.message);
-                console.log(error);
             });
-
-        // heroes.value = test_data.data
     }
 
     /** Очищает все характеристики артефакта пользователя */
@@ -93,16 +90,19 @@ export const useCharacterStore = defineStore("character", () => {
                 subList.push(h.statsProfit.substats[n])
             }
 
+
             /** Выбираю 4 наибольших substats */
             subList = subList.sort((a, b) => a - b).slice(-4)
             let A = subList.reduce((sum, number) => sum + number);
             A = A * 0.75
+
 
             /** Нахожу вес лучшей основы */
             let weight = []
             for (let n in h.statsProfit[user_art.value.art]) {
                 weight.push(h.statsProfit[user_art.value.art][n])
             }
+
 
             weight = weight.sort((a, b) => a - b).slice(-1)[0]
 
@@ -114,7 +114,6 @@ export const useCharacterStore = defineStore("character", () => {
                     [i]: (((400 - weight) / A) * h.statsProfit.substats[i])
                 }
             }
-
 
             /** Оценка артефакто по выбранным сабстатам */
             let sumWeightSub = 0
@@ -146,6 +145,7 @@ export const useCharacterStore = defineStore("character", () => {
      * @param {Object} hero - Один персонаж
      */
     function sorted(hero) {
+
         const categories = ["best", "good", "normal", "bad"];
         const a = [400, 370, 340, 300];
 

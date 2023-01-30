@@ -1,8 +1,8 @@
 <template>
   <div class="tier-wrapper">
     <p class="title" id="titleResult">Результаты</p>
-    <div v-for="value in tier" :id="getKey(value)">
-      <div class="tier__hero-wrapper" v-if="!!heroes.sort[getKey(value)].length">
+    <div v-for="value in tier">
+      <div class="tier__hero-wrapper" :id="getKey(value)" v-if="heroes.appraiser_start">
         <p class="tier__title">{{ getValue(value) }}</p>
         <HeroBlock :heroes="heroes.sort[getKey(value)]"/>
       </div>
@@ -39,7 +39,15 @@
     display: flex;
     flex-direction: column;
 
+    & > div {
+      margin-bottom: 20px;
+      background: linear-gradient(180deg, #30B4DD 0%, #60C83B 100%) !important;
+      border-radius: 20px;
+    }
+
     .tier__hero-wrapper {
+      margin-left: 1px;
+
       width: 100%;
       min-height: 150px;
       border-radius: $br_normal;
@@ -47,11 +55,10 @@
       flex-wrap: wrap;
       justify-content: flex-start;
       gap: $gp_vsmall;
-      margin-bottom: $mg_big;
       padding: 30px 30px 0 30px;
-      overflow: hidden;
       border: 1px solid $bg_light_1;
-      border-left: 3px solid $color_active;
+      background: $bg_base_dark;
+      //border-left: 3px solid $color_active;
 
       & > div {
         display: flex;
@@ -66,6 +73,7 @@
       border: 1px solid $bg_light_1;
       width: 100%;
       height: 100%;
+      background: unset !important;
 
       display: flex;
       align-items: center;
@@ -89,6 +97,41 @@
         position: absolute;
       }
 
+    }
+
+    #best {
+      margin-left: 2px;
+      //position: relative;
+      //border-radius: 30px;
+      //background: #1B1D2A;
+      //border: 1px solid rgba(255, 255, 255, 0.1);
+      //border-left-color: $best;
+
+      &:before {
+        //border-image-source: linear-gradient(180deg, #30B4DD 0%, #60C83B 100%) !important;
+        //border-image-slice: 0 0 0 1 !important;
+        //content: "";
+        //position: absolute;
+        //top: 0;
+        //bottom: 0;
+        //left: -2px;
+        //right: 0;
+        //background: linear-gradient(180deg, #30B4DD 0%, #60C83B 100%), #F6D79D;
+        //border-radius: 34px;
+        //z-index: -1;
+      }
+    }
+
+    #good {
+      border-left-color: $good;
+    }
+
+    #normal {
+      border-left-color: $norm;
+    }
+
+    #bad {
+      border-left-color: $bad;
     }
 
     & .tier__title {

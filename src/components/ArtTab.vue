@@ -43,16 +43,17 @@
    * @param {Array} stats - Основные характеристики артефакта
    */
   function selectedArt(name, stats) {
-    if (store.user_art.art !== stats.name) {
+    if (store.user_art.art !== name) {
       store.art_clear()
       store.user_art.art = name
       viewMain.value = stats
       hide.value.isHide = false
+    } else {
+      hide.value.isHide = true
     }
   }
 
   /** Возвращение поля основного стата, к начальному виду */
-
   function style(art) {
     let check = store.user_art.art
 

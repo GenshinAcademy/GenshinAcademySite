@@ -74,6 +74,7 @@
   }
 
   function style(stat) {
+    
     let check = store.user_art.sub_stats
 
     return {
