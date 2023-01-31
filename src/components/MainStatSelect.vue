@@ -64,7 +64,8 @@
   function selectedStat(stat) {
     if (store.user_art.main.name !== stat.name) {
       if (store.user_art.sub_stats.includes(stat.value))
-        store.user_art.sub_stats.splice(stat.value, 1)
+        store.user_art.sub_stats = store.user_art.sub_stats.filter((n) => {return n !== stat.value})
+
       setSelect(stat.value, stat.name)
       store.user_art.main = stat
       isHide.value = true
