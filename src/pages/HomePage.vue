@@ -22,7 +22,7 @@
   import Footer from '@/components/Footer.vue'
   import UserHints from "@/components/UserHints.vue";
   import FerretBlock from "@/components/FerretBlock.vue";
-  import ScrollBtn from "@/components/ScrollBtn.vue";</script>
+  import ScrollBtn from "@/components/ScrollBtn.vue"</script>
 
 <style lang="scss">
 

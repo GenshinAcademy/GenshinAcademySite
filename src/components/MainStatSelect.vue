@@ -57,18 +57,19 @@
    * Выбирает основную характеристику при условии:
    *
    * 1. Характеристика не была выбрана
-   * 2. Характеристика не совпадает с побочной
+   * 2. Характеристика не совпадает с побочной, иначе заменяет побочную на основную
    *
    * @param {Object} stat - Характеристики артефакта
    */
   function selectedStat(stat) {
     if (store.user_art.main.name !== stat.name) {
-      if (!store.user_art.sub_stats.includes(stat.value)) {
-        setSelect(stat.value, stat.name)
-        store.user_art.main = stat
-        isHide.value = true
-      }
-    }
+      if (store.user_art.sub_stats.includes(stat.value))
+        store.user_art.sub_stats.splice(stat.value, 1)
+      setSelect(stat.value, stat.name)
+      store.user_art.main = stat
+      isHide.value = true
+    } else
+      hide()
   }
 
   /**
@@ -224,7 +225,7 @@
     bottom: 0;
     right: 0;
     left: 0;
-    z-index: 0;
+    z-index: 5;
   }
 
   @include max-desktop_375 {

@@ -4,7 +4,7 @@ import {ref} from "vue";
 export const useListsStore = defineStore("lists", () => {
     const sand = ref([
         {
-            name: "Сила атака %",
+            name: "Сила атаки %",
             value: "ATK_P",
         },
         {
@@ -27,7 +27,7 @@ export const useListsStore = defineStore("lists", () => {
 
     const goblet = ref([
         {
-            name: "Сила атака %",
+            name: "Сила атаки %",
             value: "ATK_P",
         },
         {
@@ -77,7 +77,7 @@ export const useListsStore = defineStore("lists", () => {
     ]);
 
     const crown = ref([
-        {name: "Сила атака %", value: "ATK_P"},
+        {name: "Сила атаки %", value: "ATK_P"},
         {name: "Защита %", value: "DEF_P"},
         {
             name: "HP %",
@@ -93,8 +93,8 @@ export const useListsStore = defineStore("lists", () => {
     ]);
 
     const sub = ref([
-        {name: "Сила атака", value: "ATK"},
-        {name: "Сила атака %", value: "ATK_P"},
+        {name: "Сила атаки", value: "ATK"},
+        {name: "Сила атаки %", value: "ATK_P"},
         {
             name: "Защита",
             value: "DEF",
@@ -128,7 +128,7 @@ export const useListsStore = defineStore("lists", () => {
             name: "feather",
             stat: [
                 {
-                    name: "Сила Атаки",
+                    name: "Сила атаки",
                     value: "ATK",
                 },
             ],
