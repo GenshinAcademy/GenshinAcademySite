@@ -91,8 +91,8 @@ export const useCharacterStore = defineStore("character", () => {
 
             /** Пересобираю substats в массив, для удобной сортировки */
             let subList = [];
-            for (let n in h.statsProfit.substats) {
-                subList.push(h.statsProfit.substats[n]);
+            for (let n in newTableSub) {
+                subList.push(newTableSub[n]);
             }
 
             /** Выбираю 4 наибольших substats */
