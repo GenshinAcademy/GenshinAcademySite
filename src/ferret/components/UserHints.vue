@@ -1,7 +1,7 @@
 <template>
-  <div class="hint" v-if="store.hint !== ''">
+  <div class="hint p10" v-if="store.hint !== ''">
     <p>{{ store.hint }}</p>
-    <p class="hint__close" @click="store.clearHint">х</p>
+    <a class="hint__close p10" @click="store.clearHint">х</a>
   </div>
 
 </template>
@@ -23,26 +23,14 @@
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .hint {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
+    @extend .block_row;
+    
     position: fixed;
     bottom: 20px;
     left: 20px;
-    background: #3E6238;
-    padding: 10px;
+    background: $success_0;
     border-radius: 10px;
-
-    &__close {
-      cursor: pointer;
-      padding: 10px;
-
-      &:hover {
-        background: $bg_light_1;
-      }
-    }
   }
 </style>

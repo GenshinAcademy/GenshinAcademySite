@@ -1,0 +1,116 @@
+body {
+  background: $bg_body;
+}
+
+.container_wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  width: -webkit-fill-available;
+  max-width: $container_maxw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: $container_margin;
+
+  @include max-desktop_375 {
+    &.container_m0 {
+      margin: 0 !important;
+    }
+  }
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  & img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &.top_95 {
+    top: 95px;
+  }
+}
+
+.card {
+  padding: $card_padding;
+  border-radius: $card_radius;
+  gap: $card_gap;
+  background: $card_bg;
+}
+
+.card_outline {
+  background: transparent;
+  border: $card_outline;
+}
+
+.card__image {
+  overflow: hidden;
+  position: relative;
+  padding: 50px 0 50px 50px;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(23.5px);
+}
+
+.bg_700 {
+  background: $gray_700;
+}
+
+.bg_600 {
+  background: $gray_600;
+}
+
+.bg_500 {
+  background: $gray_500;
+}
+
+.bg_400 {
+  background: $gray_400;
+}
+
+.bg_300 {
+  background: $gray_300;
+}
+
+.bg_200 {
+  background: $gray_200;
+}
+
+.bg_100 {
+  background: $gray_100;
+}
+
+.bg_0 {
+  background: $gray_0;
+}
+
+.bg_transparent {
+  background: transparent;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+li {
+  user-select: none;
+}
