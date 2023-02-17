@@ -1,8 +1,3 @@
-// width
-$width_select: 300px;
-$width_bonuses: 400px;
-$width_input: 144px;
-
 // background
 $bg_body: #0C0F1D;
 $bg_base: rgba(255, 255, 255, 0.05);
@@ -11,63 +6,160 @@ $bg_light_1: rgba(255, 255, 255, 0.1);
 $bg_light: #FCE5CD;
 $bg_white: #ffffff;
 
-$best: #43bc9c;
+$best: linear-gradient(180deg, #30B4DD 0%, #60C83B 100%);
 $good: #60C83B;
 $norm: #FFE600;
 $bad: #FF7D1F;
 
-// color
-$color_active: #F6D79D;
-$color_base: #ffb2b2;
-$color_black: #000000;
-$color_white: #ffffff;
-
-//header font-size
-$header_1: 40px;
-$header_2: 36px;
-$header_3: 32px;
-$header_4: 24px;
-$header_5: 20px;
-$text_big: 18px;
-$text_base: 16px;
-
-//font-weight
-$fw_base: 400;
-$fw_strong: 700;
-
 //Font
 $font_main: 'shii-webfont';
-
-// Width
-$container_base: 1110px;
-
-// margin
-$mg_vbig: 30px;
-$mg_big: 20px;
-$mg_base: 15px;
-$mg_small: 10px;
-$mg_vsmall: 5px;
-$mg_title_top: 60px;
-$mg_bonus_top: 165px;
-
-// padding
-$pd_vbig: 50px;
-$pd_big: 40px;
-$pd_base: 20px;
-$pd_small: 15px;
-$pd_vsmall: 5px;
-
-// border-radius
-$br_big: 30px;
-//$br_base: 40px;
-$br_normal: 20px;
-$br_base: 10px;
-$br_small: 5px;
+$font_sub: 'Manrope';
 
 // border-color
 $bc_active_green: #3E6238;
 
-// gap
-$gp_big: 100px;
-$gp_small: 30px;
-$gp_vsmall: 10px;
+/* Gray */
+$gray_0: #000;
+$gray_100: #1B1D2A;
+$gray_200: rgba(255, 255, 255, 0.05);
+$gray_300: rgba(255, 255, 255, 0.1);
+$gray_400: rgba(255, 255, 255, 0.3);
+$gray_500: rgba(255, 255, 255, 0.4);
+$gray_600: rgba(255, 255, 255, 0.8);
+$gray_700: #FFFFFF;
+
+/* Primary */
+$primary_0: #000;
+$primary_100: #000;
+$primary_200: #000;
+$primary_300: #000;
+
+/* Secondary color */
+$secondary_0: #2C2536;
+$secondary_100: #522CC6;
+$secondary_200: #5936C4;
+
+/* color */
+$color_active: #F6D79D;
+$color_base: #ffb2b2;
+$color_disable: #3C3E49;
+
+/* Other-color */
+$error_0: #d32f2f;
+$error_100: #f44336;
+$error_200: #e57373;
+
+$success_0: #388e3c;
+$success_100: #66bb6a;
+$success_200: #81c784;
+
+$info_0: #0288d1;
+$info_100: #29b6f6;
+$info_200: #4fc3f7;
+
+$warning_0: #f57c00;
+$warning_100: #ffa726;
+$warning_200: #ffb74d;
+
+/* Shadow */
+$shadow_default: 0px 4px 15px rgba(0, 0, 0, 0.1);
+$shadow_button: 0 6px 15px rgba(79, 115, 177, 0.5);
+$shadow_button_hover: 0 10px 20px rgba(79, 115, 177, 0.2);
+
+/* Container */
+$container_maxw: 1110px;
+$container_margin: 0 30px;
+
+/* Headers */
+$h1_margin: 0;
+$h_margin: 0;
+$h_color: $gray_700;
+
+$h1_fs: 64px;
+$h2_fs: 40px;
+$h3_fs: 30px;
+$h4_fs: 30px;
+$h5_fs: 30px;
+$h6_fs: 30px;
+
+$h1_fw: 400;
+$h2_fw: 400;
+$h3_fw: 700;
+$h4_fw: 700;
+$h5_fw: 700;
+$h6_fw: 700;
+
+$h_lh: unset;
+
+/* Text */
+$text_color: $gray_700;
+$text_lh: unset;
+$text_fs: 16px;
+$text_fw: 400;
+
+$text_title_fw: 400;
+$text_title_fs: 32px;
+
+$text_title2_fw: 400;
+$text_title2_fs: 24px;
+
+$text_body_fw: 400;
+$text_body_fs: 16px;
+
+$text_body2_fw: 500;
+$text_body2_fs: 16px;
+$text_body2_color: $gray_500;
+
+$text_note_fw: 400;
+$text_note_fs: 15px;
+
+$text_small_fw: 400;
+$text_small_fs: 12px;
+
+/* Link */
+$link_color: $gray_700;
+$link_hover-color: $gray_300;
+
+
+/* Button */
+$button_color-font-family: $font_sub;
+$button_color-font-weight: 800;
+
+$button_color-text: $gray_0;
+$button_color-bg: $gray_700;
+$button_color-border: transparent;
+
+$button_padding: 15px 30px;
+$button_margin: 40px 0 0 0;
+$button_radius: 50px;
+$button_height: 54px;
+
+
+/* Input */
+$input_color-focus: #000;
+$input_color-text: #000;
+$input_color-border: #000;
+
+$input_padding: 16px 0 16px 14px;
+$input_margin: 15px 0 0 0;
+$input_radius: 8px;
+$input_height: 52px;
+
+
+/* Card */
+$card_padding: 30px;
+$card_radius: 30px;
+$card_gap: 30px;
+$card_bg: $bg_base_dark;
+$card_outline: 1px solid #3D404B;
+
+
+/* Divider */
+$divider: $gray_300;
+$divider_25p: #fff;
+$divider_50p: #fff;
+$divider_75p: #fff;
+
+/* Scroll */
+$scroll_color: $gray_500;
+$scroll_bg: $gray_300;

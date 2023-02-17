@@ -24,6 +24,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon_gray_700 {
+  &:before, &:after {
+    color: #FFFFFF !important;
+  }
+}
+
+.icon_gray_0 {
+  &:before, &:after {
+    color: #000000 !important;
+  }
+}
+
 .icon-def {
   position: absolute;
 }
@@ -31,7 +43,7 @@
 .icon-HEAL {
   &:after {
     content: $icon-HEAL;
-    color: #ffffff;
+    color: #FFFFFF;
   }
 }
 
@@ -330,3 +342,210 @@
   }
 }
 
+/* NewIcons */
+
+
+.icon-boosty {
+  &:before {
+    content: $icon-boosty;
+    color: #fff;
+  }
+}
+
+.icon-clock {
+  &:before {
+    content: $icon-clock;
+    color: #5f616a;
+    font-size: 18px;
+  }
+}
+
+.icon-energy .path1 {
+  &:before {
+    content: $icon-energy-path1;
+    color: rgb(255, 255, 255);
+  }
+}
+
+.icon-energy .path2 {
+  &:before {
+    content: $icon-energy-path2;
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+    opacity: 0.51;
+  }
+}
+
+.icon-hoyolab .path1 {
+  &:before {
+    content: $icon-hoyolab-path1;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+  }
+}
+
+.icon-hoyolab .path2 {
+  &:before {
+    content: $icon-hoyolab-path2;
+    margin-left: -0.966796875em;
+    color: rgb(39, 39, 39);
+    font-size: 30px;
+  }
+}
+
+.icon-hoyolab .path3 {
+  &:before {
+    content: $icon-hoyolab-path3;
+    margin-left: -0.966796875em;
+    color: rgb(253, 253, 254);
+    font-size: 30px;
+  }
+}
+
+.icon-hoyolab .path4 {
+  &:before {
+    content: $icon-hoyolab-path4;
+    margin-left: -0.966796875em;
+    color: rgb(39, 39, 39);
+    font-size: 30px;
+  }
+}
+
+.icon-phys .path1 {
+  &:before {
+    content: $icon-phys-path1;
+    color: rgb(255, 255, 255);
+    opacity: 0.51;
+  }
+}
+
+.icon-phys .path2 {
+  &:before {
+    content: $icon-phys-path2;
+    margin-left: -1.111328125em;
+    color: rgb(255, 255, 255);
+  }
+}
+
+.icon-phys .path3 {
+  &:before {
+    content: $icon-phys-path3;
+    margin-left: -1.111328125em;
+    color: rgb(255, 255, 255);
+    opacity: 0.51;
+  }
+}
+
+.icon-piro-electro {
+  &:before {
+    content: $icon-piro-electro;
+    color: #fff;
+  }
+}
+
+.icon-Q .path1 {
+  &:before {
+    content: $icon-Q-path1;
+    color: rgb(255, 255, 255);
+    opacity: 0.51;
+  }
+}
+
+.icon-Q .path2 {
+  &:before {
+    content: $icon-Q-path2;
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+  }
+}
+
+.icon-shild {
+  &:before {
+    content: $icon-shild;
+    color: #fff;
+  }
+}
+
+.icon-snapshot .path1 {
+  &:before {
+    content: $icon-snapshot-path1;
+    color: rgb(255, 255, 255);
+  }
+}
+
+.icon-snapshot .path2 {
+  &:before {
+    content: $icon-snapshot-path2;
+    margin-left: -1.142578125em;
+    color: rgb(255, 255, 255);
+  }
+}
+
+.icon-snapshot .path3 {
+  &:before {
+    content: $icon-snapshot-path3;
+    margin-left: -1.142578125em;
+    color: rgb(255, 255, 255);
+    opacity: 0.51;
+  }
+}
+
+.icon-snapshot .path4 {
+  &:before {
+    content: $icon-snapshot-path4;
+    margin-left: -1.142578125em;
+    color: rgb(255, 255, 255);
+    opacity: 0.51;
+  }
+}
+
+.icon-telegram .path1 {
+  &:before {
+    content: $icon-telegram-path1;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+  }
+}
+
+.icon-telegram .path2 {
+  &:before {
+    content: $icon-telegram-path2;
+    margin-left: -0.966796875em;
+    color: rgb(12, 15, 29);
+    font-size: 30px;
+  }
+}
+
+.icon-vk .path1 {
+  &:before {
+    content: $icon-vk-path1;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+  }
+}
+
+.icon-vk .path2 {
+  &:before {
+    content: $icon-vk-path2;
+    margin-left: -0.966796875em;
+    color: rgb(12, 15, 29);
+    font-size: 30px;
+  }
+}
+
+.icon-youtube .path1 {
+  &:before {
+    content: $icon-youtube-path1;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+  }
+}
+
+.icon-youtube .path2 {
+  &:before {
+    content: $icon-youtube-path2;
+    margin-left: -0.966796875em;
+    color: rgb(12, 15, 29);
+    font-size: 30px;
+  }
+}
