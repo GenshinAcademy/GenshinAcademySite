@@ -12,11 +12,12 @@
   <Footer/>
 </template>
 
-<script setup>
+<script lang="ts" setup>
   import Header from "@/ferret/components/Header.vue";
   import Footer from "@/ferret/components/Footer.vue";
   import LizaBlock from "@/main/components/LizaBlock.vue";
   import ToolBlock from "@/main/components/ToolBlock.vue";
   import PostList from "@/main/components/PostList.vue";
-  import BoostyBlock from "@/main/components/BoostyBlock.vue";</script>
+  import BoostyBlock from "@/main/components/BoostyBlock.vue";
+</script>
 

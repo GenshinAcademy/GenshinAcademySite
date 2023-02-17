@@ -51,7 +51,9 @@
       
       hide.value.isHide = false;
     } else {
-      hide.value.isHide = !hide.value.isHide;
+      if (hide.value) {
+        hide.value.isHide = !hide.value.isHide;
+      }
     }
   }
   

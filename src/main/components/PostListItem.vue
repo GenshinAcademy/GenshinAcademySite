@@ -12,7 +12,7 @@
   </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
   
   const {img, title, date} = defineProps(['img', 'title', 'date'])
 

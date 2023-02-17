@@ -18,7 +18,7 @@
   </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
   import PostListItem from "@/main/components/PostListItem.vue";
   
   const postList = [
