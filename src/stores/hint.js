@@ -4,7 +4,7 @@ import {ref} from "vue";
 export const useHintStore = defineStore("hint", () => {
     const hint = ref('')
 
-    function setHint(text: string) {
+    function setHint(text) {
         hint.value = text
     }
 

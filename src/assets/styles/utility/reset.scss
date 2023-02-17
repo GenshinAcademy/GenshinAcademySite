@@ -5,26 +5,13 @@
   list-style: none;
   text-decoration: none;
   border: none;
-  color: $gray_700;
+  color: $color_white;
   transition: 0.3s;
   font-family: $font_main;
   font-display: fallback;
-  font-size: $text_fs;
-  font-weight: $text_fw;
+  font-size: $text_base;
+  font-weight: $fw_base;
 }
-*::-webkit-scrollbar {
-  height: 6px;
-  width: 6px;
-  background: $scroll_bg;
-}
-
-*::-webkit-scrollbar-thumb {
-  background: $scroll_color;
-  border-radius: 50px;
-  height: 20px;
-}
-
-
 *,*:before,*:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;

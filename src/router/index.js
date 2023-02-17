@@ -1,17 +1,11 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import FerretPage from '@/ferret/pages/FerretPage.vue'
-import MainPage from "@/main/pages/MainPage.vue";
+import HomePage from '@/pages/HomePage.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'Main',
-    component: MainPage
-  },
-  {
-    path: '/ferret',
     name: 'Home',
-    component: FerretPage
+    component: HomePage
   }
 ]
 

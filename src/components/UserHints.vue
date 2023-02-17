@@ -1,12 +1,12 @@
 <template>
-  <div class="hint p10" v-if="store.hint !== ''">
+  <div class="hint" v-if="store.hint !== ''">
     <p>{{ store.hint }}</p>
-    <a class="hint__close p10" @click="store.clearHint">х</a>
+    <p class="hint__close" @click="store.clearHint">х</p>
   </div>
 
 </template>
 
-<script lang="ts" setup>
+<script setup>
 
   import {watch} from "vue";
   import {useHintStore} from "@/stores/hint.js";
@@ -23,14 +23,26 @@
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .hint {
-    @extend .block_row;
-    
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
     position: fixed;
     bottom: 20px;
     left: 20px;
-    background: $success_0;
+    background: #3E6238;
+    padding: 10px;
     border-radius: 10px;
+
+    &__close {
+      cursor: pointer;
+      padding: 10px;
+
+      &:hover {
+        background: $bg_light_1;
+      }
+    }
   }
 </style>
