@@ -1,6 +1,5 @@
 import {defineConfig} from 'vite';
 import vue from '@vitejs/plugin-vue';
-import typescript from 'vite-plugin-typescript';
 import path from "path";
 
 
@@ -9,7 +8,7 @@ export default defineConfig({
   server: {
     port: 8080,
   },
-  plugins: [vue(), typescript()],
+  plugins: [vue()],
   resolve: {
     alias: {
       // '@': fileURLToPath(new URL('./src', import.meta.url)),
