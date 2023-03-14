@@ -2,11 +2,11 @@
   <div class="container card card_outline mt_80 p50 block_column">
     <div class="block_row justify-between full-width">
       <p class="text_title image_align">
-        Последние новости
+        {{ $t("news.lastNews") }}
         <img src="/img/list.png" alt="lists">
       </p>
       <a class="image_align">
-        <p class="text_font-sub">Смотреть все</p>
+        <p class="text_font-sub">{{ $t("news.seeAll") }}</p>
         <span class="icon icon-arrow-right2 icon_gray_700"></span>
       </a>
     </div>

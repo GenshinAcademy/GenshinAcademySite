@@ -1,6 +1,6 @@
 <template>
   <div class="art-sub-stats card full-width br_20 bg_200">
-    <p class="text_body text_start mb_20">Доп. характеристики</p>
+    <p class="text_body text_start mb_20">{{ $t("ferret.subStats") }}</p>
     
     <ul class="block_wrap gap-10 justify-around">
       <li
@@ -11,14 +11,14 @@
       >
         
         <span :class='`icon-${stat.value}`'></span>
-        {{ stat.name }}
+        {{ $t(stat.value) }}
       </li>
     </ul>
   </div>
   
   <div class="art-button card full-width br_20 bg_200">
     <p class="image_align button fit-content p_y20" :class="styleBtn()" @click="ferret">
-      Оценить
+      {{ $t("ferret.appraise") }}
       <span class="icon-arrow-right2"></span>
     </p>
   </div>

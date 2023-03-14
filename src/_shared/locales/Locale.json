@@ -1,0 +1,156 @@
+{
+  "ru": {
+    "language": "Язык",
+    "currentLanguage": "Русский",
+    "header": {
+      "main": "Главная",
+      "tools": "Инструменты",
+      "tables": "Таблицы",
+      "guides": "Гайды",
+      "contacts": "Контакты"
+    },
+    "footer": {
+      "right": "Все права защищены",
+      "object": "Другие объекты принадлежат их соответствующим владельцам",
+      "ads": "По вопросам рекламы"
+    },
+    "ferret": {
+      "breadCrumbs": "Инструменты / Хорёк-оценщик",
+      "ferretTitle": "Хорёк-оценщик",
+      "ferretBody": "Он оценивает артефакты и говорит, каким персонажам они могут подойти. Не можешь решить, оставить артефакт или отправить на «корм»? Хорёк-оценщик поможет!",
+      "request": "Вводные",
+      "response": "Результаты",
+      "ferretHint": "Выберите артефакт и нажмите «Оценить».",
+      "selectArt": "Выберите артефакт",
+      "subStats": "Доп. характеристики",
+      "appraise": "Оценить"
+    },
+    "table": {
+      "tableTitle": "Таблицы",
+      "tableBody": "Силы наложения статусов GU, откаты наложения статусов ICD, снапшоты и прочие сложные штучки — ссылки на все таблицы от Genshin Academy можно найти здесь."
+    },
+    "guide": {
+      "guideTitle": "Сборник гайдов",
+      "guideBody": "Мини-гайды на всех персонажей: сборки артефактов, оружия, созвездия. Плюс мини-гайды на оружия. Постепенно обновляются."
+    },
+    "dungeon": {
+      "dungeonTitle": "Компас подземелий",
+      "dungeonBody": "Подскажет наиболее выгодные подземелья для фарма исходя из выбранных вами персонажей."
+    },
+    "weapon": {
+      "weaponTitle": "Эксперт по оружию",
+      "weaponBody": "Знает всё об оружии и каким персонажам они подходят. Автоматически анализирует оружейные баннеры!"
+    },
+    "news": {
+      "lastNews": "Последние новости",
+      "seeAll": "Смотреть все"
+    },
+    "main": {
+      "mainTitle": "Полезные инструменты и гайды",
+      "mainPaimonText": "Мы занимаемся гайдами по Genshin Impact уже два года, но вот теперь решили сделать шаг вперёд, выйти за пределы соцсетей и создавать полезные инструменты по игре, которые вы нигде больше не найдёте!",
+      "news": "Новости",
+      "openPage": "Открыть страницу",
+      "onDev": "В разработке",
+      "support": "Поддержать",
+      "supportText": "Силы наложения статусов GU, откаты наложения статусов ICD, снапшоты и прочие сложные штучки — ссылки на все таблицы от Genshin Academy можно найти здесь.",
+      "supportButton": "Перейти на Boosty"
+    },
+    "HP": "HP",
+    "HP_P": "HP %",
+    "ATK": "Сила атаки",
+    "ATK_P": "Сила атаки %",
+    "DEF": "Защита",
+    "DEF_P": "Защита %",
+    "EM": "Мастерство стихий",
+    "ER": "Восст. энергии",
+    "CR": "Крит. шанс",
+    "CD": "Крит. урон",
+    "HEAL": "Бонус лечения",
+    "defaultValue": "Выберите характеристику...",
+    "Phys": "Бонус физ. урона",
+    "Pyro": "Бонус Пиро урона",
+    "Hydro": "Бонус Гидро урона",
+    "Dendro": "Бонус Дендро урона",
+    "Electro": "Бонус Электро урона",
+    "Anemo": "Бонус Анемо урона",
+    "Cryo": "Бонус Крио урона",
+    "Geo": "Бонус Гео урона"
+  },
+  "en": {
+    "language": "Language",
+    "currentLanguage": "English",
+    "header": {
+      "main": "Home",
+      "tools": "Tools",
+      "tables": "Tables",
+      "guides": "Guides",
+      "contacts": "Contacts"
+    },
+    "footer": {
+      "right": "All rights reserved",
+      "object": "Other items belong to their respective owners",
+      "ads": "Contact us for advertising"
+    },
+    "ferret": {
+      "breadCrumbs": "Tools / Ferret Appraiser",
+      "ferretTitle": "Ferret Appraiser",
+      "ferretBody": "He evaluates the artifacts and says which characters they might suit. Can't decide whether to keep the artifact or send it to 'feed'? A ferret appraiser will help!",
+      "request": "Introductory",
+      "response": "Results",
+      "ferretHint": "Select an artifact and click «Appraise».",
+      "selectArt": "Select Artifact",
+      "subStats": "Sub characteristics",
+      "appraise": "Appraise"
+    },
+    "table": {
+      "tableTitle": "Tables",
+      "tableBody": "GU status overlay powers, ICD status overlay rollbacks, snapshots and other complex stuff - links to all tables from Genshin Academy can be found here."
+    },
+    "guide": {
+      "guideTitle": "Collection of guides",
+      "guideBody": "Mini-guides for all characters: assembling artifacts, weapons, constellations. Plus mini weapon guides. Gradually updated."
+    },
+    "dungeon": {
+      "dungeonTitle": "Dungeon compass",
+      "dungeonBody": "It will suggest the most profitable dungeons for farming based on the characters you have chosen."
+    },
+    "weapon": {
+      "weaponTitle": "Weapons expert",
+      "weaponBody": "Knows everything about weapons and what characters they suit. Automatically analyzes weapon banners!"
+    },
+    "news": {
+      "lastNews": "Last news",
+      "seeAll": "See all"
+    },
+    "main": {
+      "mainTitle": "Useful tools and guides",
+      "mainPaimonText": "We've been making guides for Genshin Impact for two years now, but now we've decided to take it a step further, go beyond social media and create useful game tools that you won't find anywhere else!",
+      "news": "News",
+      "openPage": "Open page",
+      "onDev": "In development",
+      "support": "Support",
+      "supportText": "GU status overlay powers, ICD status overlay rollbacks, snapshots and other complex stuff - links to all tables from Genshin Academy can be found here.",
+      "supportButton": "Go to Boosty"
+    },
+    "HP": "HP",
+    "HP_P": "HP %",
+    "ATK": "ATK",
+    "ATK_P": "ATK_P",
+    "DEF": "DEF",
+    "DEF_P": "DEF_P",
+    "EM": "EM",
+    "ER": "ER",
+    "CR": "CR",
+    "CD": "CD",
+    "HEAL": "HEAL",
+    "defaultValue": "Select feature...",
+    "Phys": "PHYS",
+    "Pyro": "PYRO",
+    "Hydro": "HYDRO",
+    "Dendro": "DENDRO",
+    "Electro": "ELECTRO",
+    "Anemo": "ANEMO",
+    "Cryo": "CRYO",
+    "Geo": "GEO"
+  }
+}

@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts" setup>
-  import Header from '@/ferret/components/Header.vue';
+  import Header from '@/_shared/components/Header/Header.vue';
   import ArtTab from '@/ferret/components/ArtTab.vue';
   import HeroTier from '@/ferret/components/HeroTier.vue';
   import FerretBlock from "@/ferret/components/FerretBlock.vue";

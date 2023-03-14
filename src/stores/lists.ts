@@ -1,8 +1,9 @@
-import { Artifact, Stat } from '@/scripts/models/ferretAppraiser';
+import { Artifact, Elements, Stat } from '@/scripts/models/ferretAppraiser';
 import { defineStore } from "pinia";
 import { ref } from "vue";
 
 export const useListsStore = defineStore("lists", () => {
+  
   const sandStats = ref<Stat[]>([
     {
       name: "Сила атаки %",
@@ -111,7 +112,7 @@ export const useListsStore = defineStore("lists", () => {
       ],
     },
     {
-      name: "feather",
+      name: "plume",
       stats: [
         {
           name: "Сила атаки",
@@ -135,5 +136,8 @@ export const useListsStore = defineStore("lists", () => {
   
   const tiers = [['Идеально', 'S'], ['Отлично', 'A'], ['Хорошо', 'B'], ['Сойдёт', 'C']];
   
-  return { artifacts, subStats, tiers };
+  const elements = ref<Elements[]>(['UndefinedElement', 'Pyro', 'Hydro', 'Geo', 'Anemo', 'Electro', 'Cryo', 'Dendro',])
+  
+  
+  return { artifacts, subStats, tiers, elements };
 });

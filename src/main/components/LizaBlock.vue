@@ -4,15 +4,15 @@
       <div class="block_column gap-30">
         <p class="text_bold text_big">Genshin Impact</p>
 
-        <h1>Полезные инструменты и гайды</h1>
+        <h1>{{ $t("main.mainTitle") }}</h1>
 
         <div class="block_row justify-start">
           <button class="button button_svg">
-            Инструменты
+            {{ $t("main.mainTitle") }}
             <span class="icon-arrow-right2"></span>
           </button>
 
-          <button class="button button_outline-white">Новости</button>
+          <button class="button button_outline-white">{{ $t("main.news") }}</button>
         </div>
       </div>
 
@@ -25,10 +25,7 @@
 
       <div class="paimon_chat card bg_200 p_x60">
         <p class="text_active">Genshin Academy</p>
-        <p class="text_bold mt_10 lineh_140p">Мы занимаемся гайдами по Genshin Impact уже два года, но вот теперь решили
-          сделать шаг
-          вперёд, выйти за
-          пределы соцсетей и создавать полезные инструменты по игре, которые вы нигде больше не найдёте!</p>
+        <p class="text_bold mt_10 lineh_140p">{{ $t("main.mainPaimonText") }}</p>
       </div>
     </div>
   </div>
