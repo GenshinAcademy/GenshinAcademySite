@@ -1,9 +1,9 @@
 <template>
   <div class="art-wrapper maxw_400 br_10 block_column gap-10 justify-start">
-    <p class="text_title text_start mb_20" id="titleInput">Вводные</p>
+    <p class="text_title text_start mb_20" id="titleInput">{{$t("ferret.request")}}</p>
     
     <div class="art-stats block_column relative card full-width br_20 bg_200 gap-0">
-      <p class="text_body text_start mb_20">Выберите артефакт</p>
+      <p class="text_body text_start mb_20">{{$t("ferret.selectArt")}}</p>
       
       <ul class="art-list card block_row full-width relative p0 p_x10 br_10 gap-10 z_5">
         <li
@@ -27,13 +27,16 @@
   import { useListsStore } from '@/stores/lists.js';
   import { useCharacterStore } from '@/stores/character.js';
   import { ref } from 'vue';
-  import { Artifact, Stat, StatsProfit } from '@/scripts/models/ferretAppraiser';
+  import { Artifact, Stat } from '@/scripts/models/ferretAppraiser';
   
   const list: Artifact[] = useListsStore().artifacts;
   const store = useCharacterStore();
   
   const viewMain = ref<Stat[]>([store.chosen_art.main_stat]);
   const hide = ref<IMainStatSelect | null>(null);
+
+
+  
   
   /**
    * Выбирает артефакт при условии и очищает ранее выбранный:
@@ -46,7 +49,7 @@
     if (store.chosen_art.slot !== artifact.name && hide.value) {
       store.art_clear();
       
-      store.chosen_art.slot = artifact.name as keyof StatsProfit;
+      store.chosen_art.slot = artifact.name;
       viewMain.value = artifact.stats;
       
       hide.value.isHide = false;

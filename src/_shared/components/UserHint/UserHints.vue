@@ -9,7 +9,7 @@
 <script lang="ts" setup>
 
   import {watch} from "vue";
-  import {useHintStore} from "@/stores/hint.js";
+  import {useHintStore} from "@/stores/hint";
 
   const store = useHintStore()
 

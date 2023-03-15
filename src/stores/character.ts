@@ -1,4 +1,4 @@
-import { characterStats, Stat, StatsProfit, Substats } from '@/scripts/models/ferretAppraiser';
+import { ArtStat, characterStats, Elements, Stat, Substats } from '@/scripts/models/ferretAppraiser';
 import { defineStore } from "pinia";
 import { ref } from "vue";
 import axios from "@/HttpConfig.js";
@@ -7,8 +7,11 @@ import { Logger } from "tslog";
 export const useCharacterStore = defineStore("character", () => {
   const logger = new Logger({ name: "characterLogger" });
   
+  const elements = ref<Elements[]>(['UndefinedElement', 'Pyro', 'Hydro', 'Geo', 'Anemo', 'Electro', 'Cryo', 'Dendro',])
+  
+  
   interface ChosenArtifact {
-    slot: keyof StatsProfit,
+    slot: string,
     main_stat: Stat,
     sub_stats: string[];
   }
@@ -42,10 +45,10 @@ export const useCharacterStore = defineStore("character", () => {
   /** Получает персонажей с сервера */
   function get_hero() {
     axios
-      .get("/characters/stats")
+      .get("/api/characters/stats")
       .then((res) => {
         logger.trace('Fetching character stats');
-        charactersList.value = res.data.data;
+        charactersList.value = res.data;
       })
       .catch((error) => {
         logger.error(error.message);
@@ -102,15 +105,21 @@ export const useCharacterStore = defineStore("character", () => {
     sort_default();
     
     charactersList.value.filter((char) => {
+      
+      /** substats всегда последний */
+      const substats = char.stats_profit.length - 1;
+      let selectSlot: ArtStat = { slot: '' };
+      
       /** Обнуляю main stat */
-      const newTableSub = { ...char.statsProfit.substats };
+      const newTableSub = { ...char.stats_profit[substats] };
+      
       newTableSub[chosenArtifact.main_stat.value as keyof Substats] = 0;
       
       /** Пересобираю substats в массив, для удобной сортировки */
       let subList: number[] = [];
       
       for (let n in newTableSub) {
-        subList.push(newTableSub[n as keyof Substats]);
+        subList.push(<number>newTableSub[n as keyof Substats]);
       }
       
       /** Выбираю 4 наибольших substats */
@@ -120,51 +129,80 @@ export const useCharacterStore = defineStore("character", () => {
       
       
       /** Нахожу вес лучшей основы */
-      let weight: number;
-      let stats = char.statsProfit[chosen_art.value.slot];
+      let weight: number = 0;
+      let stats: ArtStat = selectSlot;
+      
+      
+      char.stats_profit.forEach((artSlot, index) => {
+        if (artSlot.slot === chosen_art.value.slot) {
+          selectSlot = artSlot;
+          stats = artSlot
+        }
+      })
       
       weight = Object.entries(stats).reduce((prev, curr) => prev[1] > curr[1] ? prev : curr)[1]
       
-      
       /** Находим взешенный сабстаты */
-      let weightSub: Substats = { ...char.statsProfit.substats }
-      let subName: keyof Substats
       
-      for (subName in char.statsProfit.substats) {
-        weightSub[subName] = (((400 - weight) / A) * char.statsProfit.substats[subName])
+      let weightSub: Substats = { ...char.stats_profit[substats] }
+      let subName
+      
+      for (subName in char.stats_profit[substats]) {
+        
+        if (subName !== 'slot') { // @ts-ignore
+          weightSub[subName] = (((400 - weight) / A) * char.stats_profit[substats][subName])
+        }
       }
+      
       
       /** Оценка артефактов по выбранным сабстатам */
       let sumWeightSub = 0;
+      
       chosen_art.value.sub_stats.map((value) => {
-        sumWeightSub += weightSub[value as keyof Substats];
+        if (weightSub[value as keyof Substats])
+          // @ts-ignore
+          sumWeightSub += weightSub[value as keyof Substats];
+        else
+          sumWeightSub += 0
       });
       
+      
       /** Сумма */
-        //@ts-ignore
-      let score = stats[chosen_art.value.main_stat.value] + sumWeightSub;
+      let score: number = 0
+      
+      
+      if (selectSlot[chosen_art.value.main_stat.value as keyof ArtStat])
+        // @ts-ignore
+        score = selectSlot[chosen_art.value.main_stat.value as keyof ArtStat] + sumWeightSub
+      else
+        score = sumWeightSub
+      
+      console.log(chosen_art.value.main_stat.value)
       
       /** Проверка на элемент */
-      if (char.element === chosen_art.value.main_stat.value) {
-        // @ts-ignore
-        score = stats['ELEM'] + sumWeightSub;
-      }
+      elements.value.forEach((value, index) => {
+        /** Проверка pyro === pyro && 1 === 1 */
+        if (value === chosen_art.value.main_stat.value && index === char.element) {
+          if (selectSlot.ELEM)
+            score = selectSlot.ELEM + sumWeightSub;
+        }
+      })
+      
       
       let i = {
-        id: char.id,
+        id: char.character_id,
         name: char.name,
         icon_url: char.icon_url,
         stats_profit: score,
       };
       
       logger.debug({
-        id: char.id,
+        id: char.character_id,
         name: char.name,
         weight: weight,
         weightSub: weightSub,
         stats_profit: score,
       });
-      
       
       putToTier(i);
     });

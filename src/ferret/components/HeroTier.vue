@@ -1,6 +1,6 @@
 <template>
   <div class="tier__wrapper relative block_column full-height justify-start">
-    <p class="text_title text_start mb_30" id="titleResult">Результаты</p>
+    <p class="text_title text_start mb_30" id="titleResult">{{ $t("ferret.response") }}</p>
     
     <div v-for="(value, i) in tiers" :id="value[1]" :class="{'m0': !heroes.appraiser_start}">
       <div class="tier__hero-wrapper" v-if="heroes.appraiser_start">
@@ -11,7 +11,7 @@
     <div class="tier__hero-preview" v-if="!heroes.appraiser_start">
       <div class="preview-wrapper">
         <img src="/img/ferret_logo.svg" alt="ferret">
-        <p>Выберите артефакт и нажмите «Оценить».</p>
+        <p>{{ $t("ferret.ferretHint") }}</p>
       </div>
     </div>
   </div>

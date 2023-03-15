@@ -5,15 +5,14 @@
       
       <div class="container block_row">
         <div class="block_column flex_3 gap-20 relative z_2">
-          <p class="text_title lineh_125p">Поддержать</p>
-          <p class="text_body2 text_font-sub lineh_125p">Силы наложения статусов GU, откаты наложения статусов ICD,
-            снапшоты и прочие сложные штучки — ссылки на все таблицы от Genshin Academy можно найти здесь.</p>
+          <p class="text_title lineh_125p">{{ $t("main.support") }}</p>
+          <p class="text_body2 text_font-sub lineh_125p">{{ $t("main.supportText") }}</p>
           <a
               href="https://boosty.to/genshinacademy"
               class="button button_outline-white fit-content mt_10"
               target="_blank"
           >
-            Перейти на Boosty
+            {{ $t("main.supportButton") }}
           </a>
         </div>
         
@@ -27,8 +26,8 @@
 </template>
 
 <style scoped>
-  .boosty__img {
-    position: absolute;
-    right: -400px;
-  }
+.boosty__img {
+  position: absolute;
+  right: -400px;
+}
 </style>

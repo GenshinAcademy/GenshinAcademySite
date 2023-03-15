@@ -1,10 +1,9 @@
 <template>
   <footer class="block_row container p_y40 justify-between">
-    <p class="text_note lineh_125p text_gray_500">© Все права защищены COGNOSPHERE. <br> Другие объекты принадлежат их
-      соответствующим владельцам.</p>
+    <p class="text_note lineh_125p text_gray_500">© {{ t('footer.right') }} COGNOSPHERE. <br> {{ t('footer.object') }}.</p>
     
     <p class="text_note lineh_125p text_gray_500">
-      По вопросам рекламы. <br>
+      {{ t('footer.ads') }}. <br>
       <a href="mailto:genshin.academy@gmail.com" class="text_note lineh_125p text_gray_600 user-select_unset">genshin.academy@gmail.com</a>
     </p>
     
@@ -24,7 +23,7 @@
         <span class="icon-youtube path2"></span>
       </a>
       
-      <a href="" class="icon icon-hoyolab" target="_blank">
+      <a href="https://www.hoyolab.com/accountCenter/postList?id=37721496" class="icon icon-hoyolab" target="_blank">
         <span class="icon-hoyolab path1"></span>
         <span class="icon-hoyolab path2"></span>
         <span class="icon-hoyolab path3"></span>
@@ -33,3 +32,10 @@
     </div>
   </footer>
 </template>
+
+<script lang="ts" setup>
+
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n()
+</script>

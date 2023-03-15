@@ -5,10 +5,12 @@ import axios from "axios";
  *
  * @type {axios.AxiosInstance}
  */
+const locale = localStorage.getItem('locale')
 const config = axios.create({
-  baseURL: 'https://api.vrising-academy.info/',
+  baseURL: '/',
   headers: {
     'Content-Type': 'application/json',
+    'Accept-Languages': locale,
   },
 });
 
