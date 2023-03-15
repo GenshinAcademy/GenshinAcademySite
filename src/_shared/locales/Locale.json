@@ -92,30 +92,30 @@
       "ads": "Contact us for advertising"
     },
     "ferret": {
-      "breadCrumbs": "Tools / Ferret Appraiser",
-      "ferretTitle": "Ferret Appraiser",
-      "ferretBody": "He evaluates the artifacts and says which characters they might suit. Can't decide whether to keep the artifact or send it to 'feed'? A ferret appraiser will help!",
-      "request": "Introductory",
+      "breadCrumbs": "Tools / Weasel Appraiser",
+      "ferretTitle": "Weasel Appraiser",
+      "ferretBody": "It evaluates the artifacts and tells you which characters are they best suited for. Can't decide whether to keep the artifact or 'feed' it? Weasel appraiser will help!",
+      "request": "Input",
       "response": "Results",
       "ferretHint": "Select an artifact and click «Appraise».",
       "selectArt": "Select Artifact",
-      "subStats": "Sub characteristics",
+      "subStats": "Substats",
       "appraise": "Appraise"
     },
     "table": {
       "tableTitle": "Tables",
-      "tableBody": "GU status overlay powers, ICD status overlay rollbacks, snapshots and other complex stuff - links to all tables from Genshin Academy can be found here."
+      "tableBody": "Gauge Units GU, Internal CoolDowns ICD, snapshots and other complex stuff - links to all tables from Genshin Academy can be found here."
     },
     "guide": {
       "guideTitle": "Collection of guides",
-      "guideBody": "Mini-guides for all characters: assembling artifacts, weapons, constellations. Plus mini weapon guides. Gradually updated."
+      "guideBody": "Mini-guides for all characters: assembling artifacts, weapons, constellations. Plus mini-weapon guides. Periodically updated."
     },
     "dungeon": {
-      "dungeonTitle": "Dungeon compass",
+      "dungeonTitle": "Dungeon compass [WIP]",
       "dungeonBody": "It will suggest the most profitable dungeons for farming based on the characters you have chosen."
     },
     "weapon": {
-      "weaponTitle": "Weapons expert",
+      "weaponTitle": "Weapons expert [WIP]",
       "weaponBody": "Knows everything about weapons and what characters they suit. Automatically analyzes weapon banners!"
     },
     "news": {
@@ -124,33 +124,33 @@
     },
     "main": {
       "mainTitle": "Useful tools and guides",
-      "mainPaimonText": "We've been making guides for Genshin Impact for two years now, but now we've decided to take it a step further, go beyond social media and create useful game tools that you won't find anywhere else!",
+      "mainPaimonText": "We've been making guides for Genshin Impact for two years now, but now we've decided to take a step further, go beyond social media platforns and create useful game tools that you won't find anywhere else!",
       "news": "News",
       "openPage": "Open page",
       "onDev": "In development",
       "support": "Support",
-      "supportText": "GU status overlay powers, ICD status overlay rollbacks, snapshots and other complex stuff - links to all tables from Genshin Academy can be found here.",
+      "supportText": "Gauge Units GU, Internal CoolDowns ICD, snapshots and other complex stuff - links to all tables from Genshin Academy can be found here.",
       "supportButton": "Go to Boosty"
     },
     "HP": "HP",
     "HP_P": "HP %",
     "ATK": "ATK",
-    "ATK_P": "ATK_P",
+    "ATK_P": "ATK %",
     "DEF": "DEF",
-    "DEF_P": "DEF_P",
-    "EM": "EM",
-    "ER": "ER",
-    "CR": "CR",
-    "CD": "CD",
-    "HEAL": "HEAL",
+    "DEF_P": "DEF %",
+    "EM": "Elemental Master",
+    "ER": "Energy Recharge",
+    "CR": "Crit Rate",
+    "CD": "Crit Damage",
+    "HEAL": "Healing Bonus",
     "defaultValue": "Select feature...",
-    "Phys": "PHYS",
-    "Pyro": "PYRO",
-    "Hydro": "HYDRO",
-    "Dendro": "DENDRO",
-    "Electro": "ELECTRO",
-    "Anemo": "ANEMO",
-    "Cryo": "CRYO",
-    "Geo": "GEO"
+    "Phys": "Physical DMG %",
+    "Pyro": "Pyro DMG %",
+    "Hydro": "Hydro DMG %",
+    "Dendro": "Dendro DMG %",
+    "Electro": "Electro DMG %",
+    "Anemo": "Anemo DMG %",
+    "Cryo": "Cryo DMG %",
+    "Geo": "Geo DMG %"
   }
 }
