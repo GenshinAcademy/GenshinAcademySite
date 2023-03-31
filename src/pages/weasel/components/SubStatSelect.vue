@@ -1,6 +1,6 @@
 <template>
   <div class="art-sub-stats card full-width br_20 bg_200">
-    <p class="text_body text_start mb_20">{{ $t("ferret.subStats") }}</p>
+    <p class="text_body text_start mb_20">{{ $t("weasel.subStats") }}</p>
     
     <ul class="block_wrap gap-10 justify-around">
       <li
@@ -17,16 +17,16 @@
   </div>
   
   <div class="art-button card full-width br_20 bg_200">
-    <p class="image_align button fit-content p_y20" :class="styleBtn()" @click="ferret">
-      {{ $t("ferret.appraise") }}
+    <p class="image_align button fit-content p_y20" :class="styleBtn()" @click="weasel">
+      {{ $t("weasel.appraise") }}
       <span class="icon-arrow-right2"></span>
     </p>
   </div>
 </template>
 
 <script lang="ts" setup>
-  import { useListsStore } from '@/stores/lists.js';
-  import { useCharacterStore } from '@/stores/character.js';
+  import { useListsStore } from '@/stores/lists';
+  import { useCharacterStore } from '@/stores/character';
   
   const store = useCharacterStore();
   const hero = useCharacterStore();
@@ -62,10 +62,10 @@
    * 1. Был выбрана основная характеристика
    * 2. Побочных характеристик не менее 1
    */
-  function ferret() {
+  function weasel() {
     if (store.chosen_art.main_stat.hasOwnProperty('name'))
       if (store.chosen_art.sub_stats.length >= 1) {
-        hero.ferret(store.chosen_art);
+        hero.weasel(store.chosen_art);
         scroll();
       }
   }

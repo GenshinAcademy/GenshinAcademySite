@@ -1,4 +1,4 @@
-import { Artifact, Elements, Stat } from '@/scripts/models/ferretAppraiser';
+import { Artifact, Elements, Stat } from '@/scripts/models/weaselAppraiser';
 import { defineStore } from "pinia";
 import { ref } from "vue";
 

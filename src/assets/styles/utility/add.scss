@@ -812,6 +812,14 @@
   cursor: pointer;
 }
 
+.event_unset {
+  pointer-events: unset !important;
+}
+
+.event_none {
+  pointer-events: none !important;
+}
+
 /* Blocks */
 
 .block_row {
@@ -943,3 +951,4 @@ h2 {
   font-weight: 400;
   font-size: 40px;
 }
+

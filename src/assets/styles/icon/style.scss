@@ -139,138 +139,138 @@
   }
 }
 
-.icon-ferret_logo .path1 {
+.icon-weasel_logo .path1 {
   &:before {
-    content: $icon-ferret_logo-path1;
+    content: $icon-weasel_logo-path1;
     color: rgb(0, 0, 0);
   }
 }
 
-.icon-ferret_logo .path2 {
+.icon-weasel_logo .path2 {
   &:before {
-    content: $icon-ferret_logo-path2;
+    content: $icon-weasel_logo-path2;
     margin-left: -1em;
     color: rgb(235, 213, 189);
   }
 }
 
-.icon-ferret_logo .path3 {
+.icon-weasel_logo .path3 {
   &:before {
-    content: $icon-ferret_logo-path3;
+    content: $icon-weasel_logo-path3;
     margin-left: -1em;
     color: rgb(232, 121, 142);
   }
 }
 
-.icon-ferret_logo .path4 {
+.icon-weasel_logo .path4 {
   &:before {
-    content: $icon-ferret_logo-path4;
+    content: $icon-weasel_logo-path4;
     margin-left: -1em;
     color: rgb(232, 121, 142);
   }
 }
 
-.icon-ferret_logo .path5 {
+.icon-weasel_logo .path5 {
   &:before {
-    content: $icon-ferret_logo-path5;
+    content: $icon-weasel_logo-path5;
     margin-left: -1em;
     color: rgb(22, 22, 22);
     opacity: 0.15;
   }
 }
 
-.icon-ferret_logo .path6 {
+.icon-weasel_logo .path6 {
   &:before {
-    content: $icon-ferret_logo-path6;
+    content: $icon-weasel_logo-path6;
     margin-left: -1em;
     color: rgb(22, 22, 22);
     opacity: 0.15;
   }
 }
 
-.icon-ferret_logo .path7 {
+.icon-weasel_logo .path7 {
   &:before {
-    content: $icon-ferret_logo-path7;
+    content: $icon-weasel_logo-path7;
     margin-left: -1em;
     color: rgb(169, 146, 130);
   }
 }
 
-.icon-ferret_logo .path8 {
+.icon-weasel_logo .path8 {
   &:before {
-    content: $icon-ferret_logo-path8;
+    content: $icon-weasel_logo-path8;
     margin-left: -1em;
     color: rgb(170, 147, 131);
   }
 }
 
-.icon-ferret_logo .path9 {
+.icon-weasel_logo .path9 {
   &:before {
-    content: $icon-ferret_logo-path9;
+    content: $icon-weasel_logo-path9;
     margin-left: -1em;
     color: rgb(232, 121, 142);
   }
 }
 
-.icon-ferret_logo .path10 {
+.icon-weasel_logo .path10 {
   &:before {
-    content: $icon-ferret_logo-path10;
+    content: $icon-weasel_logo-path10;
     margin-left: -1em;
     color: rgb(0, 0, 0);
   }
 }
 
-.icon-ferret_logo .path11 {
+.icon-weasel_logo .path11 {
   &:before {
-    content: $icon-ferret_logo-path11;
+    content: $icon-weasel_logo-path11;
     margin-left: -1em;
     color: rgb(0, 0, 0);
   }
 }
 
-.icon-ferret_logo .path12 {
+.icon-weasel_logo .path12 {
   &:before {
-    content: $icon-ferret_logo-path12;
+    content: $icon-weasel_logo-path12;
     margin-left: -1em;
     color: rgb(0, 0, 0);
   }
 }
 
-.icon-ferret_logo .path13 {
+.icon-weasel_logo .path13 {
   &:before {
-    content: $icon-ferret_logo-path13;
+    content: $icon-weasel_logo-path13;
     margin-left: -1em;
     color: rgb(0, 0, 0);
   }
 }
 
-.icon-ferret_logo .path14 {
+.icon-weasel_logo .path14 {
   &:before {
-    content: $icon-ferret_logo-path14;
+    content: $icon-weasel_logo-path14;
     margin-left: -1em;
     color: rgb(0, 0, 0);
   }
 }
 
-.icon-ferret_logo .path15 {
+.icon-weasel_logo .path15 {
   &:before {
-    content: $icon-ferret_logo-path15;
+    content: $icon-weasel_logo-path15;
     margin-left: -1em;
     color: rgb(0, 0, 0);
   }
 }
 
-.icon-ferret_logo .path16 {
+.icon-weasel_logo .path16 {
   &:before {
-    content: $icon-ferret_logo-path16;
+    content: $icon-weasel_logo-path16;
     margin-left: -1em;
     color: rgb(255, 255, 255);
   }
 }
 
-.icon-ferret_logo .path17 {
+.icon-weasel_logo .path17 {
   &:before {
-    content: $icon-ferret_logo-path17;
+    content: $icon-weasel_logo-path17;
     margin-left: -1em;
     color: rgb(255, 255, 255);
   }
@@ -313,6 +313,7 @@
 .icon-Phys {
   &:before {
     content: $icon-Phys;
+    font-size: 50px;
   }
 }
 
@@ -360,19 +361,19 @@
   }
 }
 
-.icon-energy .path1 {
+.icon-energy {
   &:before {
     content: $icon-energy-path1;
     color: rgb(255, 255, 255);
+    font-size: 50px;
   }
-}
 
-.icon-energy .path2 {
-  &:before {
+  &:after {
     content: $icon-energy-path2;
     margin-left: -1em;
     color: rgb(255, 255, 255);
     opacity: 0.51;
+    font-size: 50px;
   }
 }
 
@@ -440,22 +441,23 @@
   &:before {
     content: $icon-piro-electro;
     color: #fff;
+    font-size: 50px;
   }
 }
 
-.icon-Q .path1 {
+.icon-Q {
   &:before {
     content: $icon-Q-path1;
     color: rgb(255, 255, 255);
     opacity: 0.51;
+    font-size: 50px;
   }
-}
 
-.icon-Q .path2 {
-  &:before {
+  &:after {
     content: $icon-Q-path2;
     margin-left: -1em;
     color: rgb(255, 255, 255);
+    font-size: 50px;
   }
 }
 
@@ -463,6 +465,7 @@
   &:before {
     content: $icon-shild;
     color: #fff;
+    font-size: 50px;
   }
 }
 

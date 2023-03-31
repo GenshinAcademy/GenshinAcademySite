@@ -1,6 +1,7 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-import FerretPage from '@/ferret/pages/FerretPage.vue'
-import MainPage from "@/main/pages/MainPage.vue";
+import { createRouter, createWebHistory } from 'vue-router'
+import WeaselPage from '@/pages/weasel/WeaselPage.vue'
+import MainPage from "@/pages/main/MainPage.vue";
+import TablesPage from "@/pages/tables/TablesPage.vue";
 
 const routes = [
   {
@@ -9,15 +10,20 @@ const routes = [
     component: MainPage
   },
   {
-    path: '/ferret',
+    path: '/weasel',
     name: 'Home',
-    component: FerretPage
+    component: WeaselPage
+  },
+  {
+    path: '/tables',
+    name: 'Tables',
+    component: TablesPage
   }
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
-  routes
+  history: createWebHistory(),
+  routes,
 })
 
 export default router

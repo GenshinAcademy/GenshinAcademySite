@@ -1,6 +1,6 @@
 <template>
   <div class="tier__wrapper relative block_column full-height justify-start">
-    <p class="text_title text_start mb_30" id="titleResult">{{ $t("ferret.response") }}</p>
+    <p class="text_title text_start mb_30" id="titleResult">{{ $t("weasel.response") }}</p>
     
     <div v-for="(value, i) in tiers" :id="value[1]" :class="{'m0': !heroes.appraiser_start}">
       <div class="tier__hero-wrapper" v-if="heroes.appraiser_start">
@@ -10,18 +10,18 @@
     </div>
     <div class="tier__hero-preview" v-if="!heroes.appraiser_start">
       <div class="preview-wrapper">
-        <img src="/img/ferret_logo.svg" alt="ferret">
-        <p>{{ $t("ferret.ferretHint") }}</p>
+        <img src="/img/weasel_logo.svg" alt="weasel">
+        <p>{{ $t("weasel.weaselHint") }}</p>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-  import HeroBlock from '@/ferret/components/HeroBlock.vue';
-  import { useCharacterStore } from '@/stores/character.js';
+  import HeroBlock from '@/pages/weasel/components/HeroBlock.vue';
+  import { useCharacterStore } from '@/stores/character';
   import { onMounted } from 'vue';
-  import { useListsStore } from "@/stores/lists.js";
+  import { useListsStore } from "@/stores/lists";
   
   const heroes = useCharacterStore();
   const tiers = useListsStore().tiers;
