@@ -2,14 +2,8 @@ import { ref } from "vue";
 import axios, { httpRoute } from "@/HttpConfig";
 import { Logger } from "tslog";
 import { AxiosResponse } from "axios";
+import { ITablesResponse } from "@/scripts/models/Tables";
 
-export interface ITablesResponse {
-  id?: number,
-  title?: string
-  description?: string
-  icon_url?: string
-  redirect_url?: string
-}
 
 const tableLayout = [
   {

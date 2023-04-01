@@ -16,12 +16,12 @@
 </template>
 
 <script lang="ts" setup>
-  import Header from "@/_shared/components/Header/Header.vue";
-  import Footer from "@/_shared/components/Footer/Footer.vue";
-  import LizaBlock from "@/pages/main/components/LizaBlock.vue";
-  import ToolBlock from "@/pages/main/components/ToolBlock.vue";
-  import PostList from "@/pages/main/components/PostList.vue";
-  import BoostyBlock from "@/pages/main/components/BoostyBlock.vue";
-  import ScrollBtn from "@/pages/weasel/components/ScrollBtn.vue";
+import Header from "@/_shared/components/Header/Header.vue";
+import Footer from "@/_shared/components/Footer/Footer.vue";
+import LizaBlock from "@/pages/main/components/LizaBlock.vue";
+import ToolBlock from "@/pages/main/components/ToolBlock.vue";
+import PostList from "@/pages/main/components/PostList.vue";
+import BoostyBlock from "@/pages/main/components/BoostyBlock.vue";
+import ScrollBtn from "@/pages/weasel/components/ScrollBtn.vue";
 </script>
 

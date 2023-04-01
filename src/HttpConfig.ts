@@ -17,7 +17,7 @@ const config = axios.create({
 export const httpRoute = {
   news: '/api/news',
   characters: '/api/characters/stats',
-  tables: '/tables'
+  tables: '/api/tables'
 }
 
 export default config;

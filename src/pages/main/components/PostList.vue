@@ -28,11 +28,15 @@
 
 <script lang="ts" setup>
 import PostListItem from "@/pages/main/components/PostListItem.vue";
-import { INewsResponse, useGetNews } from '@/use/useGetNews';
-import { ref } from "vue";
+import { useNewsStore } from "@/stores/news";
 
 const limit = 5
 
-const postList = ref<INewsResponse[]>(useGetNews())
+const store = useNewsStore()
+
+store.useGetNews()
+
+const postList = store.news;
+
 
 </script>

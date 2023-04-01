@@ -2,15 +2,8 @@ import axios, { httpRoute } from "@/HttpConfig.js";
 import { AxiosResponse } from "axios";
 import { Logger } from "tslog";
 import { ref } from "vue";
+import { INewsResponse } from "@/scripts/models/News";
 
-export interface INewsResponse {
-  Id?: number,
-  Title?: string,
-  Description?: string,
-  Preview?: string,
-  RedirectUrl?: string,
-  CreatedAt?: string,
-}
 
 const postLayout: INewsResponse[] = [
   {
