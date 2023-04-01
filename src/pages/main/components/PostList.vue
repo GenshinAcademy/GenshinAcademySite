@@ -29,14 +29,20 @@
 <script lang="ts" setup>
 import PostListItem from "@/pages/main/components/PostListItem.vue";
 import { useNewsStore } from "@/stores/news";
+import { ref, watchEffect } from "vue";
+import { INewsResponse } from "@/scripts/models/News";
 
 const limit = 5
 
 const store = useNewsStore()
 
-store.useGetNews()
+store.useGetNews();
 
-const postList = store.news;
+const postList = ref<INewsResponse[]>([]);
+
+watchEffect(() => {
+  postList.value = store.news
+});
 
 
 </script>

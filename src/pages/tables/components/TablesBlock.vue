@@ -29,13 +29,17 @@
 <script setup lang='ts'>
 
 import { useTablesStore } from "@/stores/tables";
+import { ref, watchEffect } from "vue";
+import { ITablesResponse } from "@/scripts/models/Tables";
 
 const store = useTablesStore()
 store.useGetTables()
 
-const config = store.tables
+const config = ref<ITablesResponse[]>([]);
 
-console.log(config)
+watchEffect(() => {
+  config.value = store.tables
+});
 
 </script>
 
