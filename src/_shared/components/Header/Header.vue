@@ -1,5 +1,5 @@
 <template>
-  <header class="relative block_row maxh_100 full-width">
+  <header id="header" class="relative block_row maxh_100 full-width">
     <div class="container block_column">
       <div class="block_row full-width justify-between m_y20">
         
@@ -14,13 +14,13 @@
             <router-link to="/">{{ t("header.main") }}</router-link>
           </p>
           <p>
-            <router-link to="/ferret">{{ t("header.tools") }}</router-link>
+            <router-link to="/" @click="useScroll('tools')">{{ t("header.tools") }}</router-link>
           </p>
           <p>
-            <router-link to="/ferret">{{ t("header.tables") }}</router-link>
+            <router-link to="/tables">{{ t("header.tables") }}</router-link>
           </p>
           <p>
-            <router-link to="/ferret">{{ t("header.guides") }}</router-link>
+            <a href="https://teletype.in/@genshinacademy/mini-guides" target="_blank">{{ t("header.guides") }}</a>
           </p>
         </div>
         
@@ -76,10 +76,11 @@
 <script lang="ts" setup>
 
 import HeaderMenu from "@/_shared/components/Header/HeaderMenu.vue";
-import { watch } from "vue";
+import { onMounted, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { langList, SelectLocales } from "@/localization";
 import { useOpen } from "@/use/useOpen";
+import { useScroll } from "@/use/useScroll";
 
 const props = defineProps(['divider'])
 
@@ -108,7 +109,7 @@ watch(isOpenMenu, () => {
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .header__link p {
   padding: 10px 15px;
 }

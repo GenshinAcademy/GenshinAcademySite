@@ -14,13 +14,13 @@
       "object": "Другие объекты принадлежат их соответствующим владельцам",
       "ads": "По вопросам рекламы"
     },
-    "ferret": {
+    "weasel": {
       "breadCrumbs": "Инструменты / Хорёк-оценщик",
-      "ferretTitle": "Хорёк-оценщик",
-      "ferretBody": "Он оценивает артефакты и говорит, каким персонажам они могут подойти. Не можешь решить, оставить артефакт или отправить на «корм»? Хорёк-оценщик поможет!",
+      "weaselTitle": "Хорёк-оценщик",
+      "weaselBody": "Он оценивает артефакты и говорит, каким персонажам они могут подойти. Не можешь решить, оставить артефакт или отправить на «корм»? Хорёк-оценщик поможет!",
       "request": "Вводные",
       "response": "Результаты",
-      "ferretHint": "Выберите артефакт и нажмите «Оценить».",
+      "weaselHint": "Выберите артефакт и нажмите «Оценить».",
       "selectArt": "Выберите артефакт",
       "subStats": "Доп. характеристики",
       "appraise": "Оценить"
@@ -28,6 +28,16 @@
     "table": {
       "tableTitle": "Таблицы",
       "tableBody": "Силы наложения статусов GU, откаты наложения статусов ICD, снапшоты и прочие сложные штучки — ссылки на все таблицы от Genshin Academy можно найти здесь."
+    },
+    "tables": {
+      "breadCrumbs": "Главная / Инструменты / Таблицы",
+      "Title": "Таблицы",
+      "Body": "Силы наложения статусов GU, откаты наложения статусов ICD, снапшоты и прочие сложные штучки — ссылки на все таблицы от Genshin Academy можно найти здесь.",
+      "dev": {
+        "title": "Каталог бонусов",
+        "body": "Все возможные бонусы в игре, отсортированные по типам.",
+        "message": "В разработке"
+      }
     },
     "guide": {
       "guideTitle": "Сборник гайдов",
@@ -91,13 +101,13 @@
       "object": "Other items belong to their respective owners",
       "ads": "Contact us for advertising"
     },
-    "ferret": {
+    "weasel": {
       "breadCrumbs": "Tools / Weasel Appraiser",
-      "ferretTitle": "Weasel Appraiser",
-      "ferretBody": "It evaluates the artifacts and tells you which characters are they best suited for. Can't decide whether to keep the artifact or 'feed' it? Weasel appraiser will help!",
+      "weaselTitle": "Weasel Appraiser",
+      "weaselBody": "It evaluates the artifacts and tells you which characters are they best suited for. Can't decide whether to keep the artifact or 'feed' it? Weasel appraiser will help!",
       "request": "Input",
       "response": "Results",
-      "ferretHint": "Select an artifact and click «Appraise».",
+      "weaselHint": "Select an artifact and click «Appraise».",
       "selectArt": "Select Artifact",
       "subStats": "Substats",
       "appraise": "Appraise"
@@ -105,6 +115,16 @@
     "table": {
       "tableTitle": "Tables",
       "tableBody": "Gauge Units GU, Internal CoolDowns ICD, snapshots and other complex stuff - links to all tables from Genshin Academy can be found here."
+    },
+    "tables": {
+      "breadCrumbs": "Tools / Tables",
+      "Title": "Tables",
+      "Body": "GU stating powers, ICD stating rollbacks, snapshots and other complex stuff - links to all tables from Genshin Academy can be found here.",
+      "dev": {
+        "title": "Bonus catalog",
+        "body": "All possible bonuses in the game, sorted by type.",
+        "message": "On dev"
+      }
     },
     "guide": {
       "guideTitle": "Collection of guides",

@@ -30,10 +30,10 @@
 </template>
 
 <script lang="ts" setup>
-import { useCharacterStore } from '@/stores/character.js';
+import { useCharacterStore } from '@/stores/character';
 import { onMounted, ref, watch } from 'vue';
-import { clearObj, getKey, getValue } from "@/handler.js";
-import { Stat } from '@/scripts/models/ferretAppraiser';
+import { clearObj, getKey, getValue } from "@/handler";
+import { Stat } from '@/scripts/models/weaselAppraiser';
 
 export interface IMainStatSelect {
   isHide: boolean;

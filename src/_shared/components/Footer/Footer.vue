@@ -1,5 +1,5 @@
 <template>
-  <footer class="block_row container p_y40 justify-between">
+  <footer class="block_row container p_y40 justify-between mt_20">
     <p class="text_note lineh_125p text_gray_500">© {{ t('footer.right') }} COGNOSPHERE. <br> {{ t('footer.object') }}.</p>
     
     <p class="text_note lineh_125p text_gray_500">

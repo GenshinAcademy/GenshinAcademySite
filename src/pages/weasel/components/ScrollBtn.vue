@@ -1,38 +1,35 @@
 <template>
   <div
-      class="scroll min_992"
+      class="scroll"
       v-if="scrollView"
   >
     <img
-        @click="scrollBtn"
+        @click="useScroll(to)"
         src="/img/up_button.svg"
         alt="scroll_btn"
+        class="event_unset"
     >
   </div>
 </template>
 
 <script lang="ts" setup>
   import { onBeforeUnmount, onMounted, ref } from "vue";
+  import { useScroll } from "@/use/useScroll";
   
-  const scroll = ref(false);
   const scrollView = ref(false);
   
-  let result = document.getElementById('titleResult');
-  let input = document.getElementById('titleInput');
+  const {to, line} = defineProps(['line', 'to'])
   
+  let line_ = document.getElementById(line);
   
-  function scrollBtn() {
-    if (input) {
-      input.scrollIntoView();
-    }
-  }
+  // const scroll =
   
   /** Следит за скроллом.
    * Когда заголовок "Результаты", достигает верхнего края экрана, отображает кнопку */
   
   function scrollCheck() {
-    if (result) {
-      scrollView.value = result.getBoundingClientRect().y < 10;
+    if (line_) {
+      scrollView.value = line_.getBoundingClientRect().y < 10;
     }
   }
   

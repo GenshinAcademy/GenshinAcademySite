@@ -2,6 +2,12 @@ body {
   background: $bg_body;
 }
 
+#app, .app {
+  min-height: 100%;
+  height: 100vh;
+}
+
+
 .container_wrapper {
   width: 100%;
   display: flex;
@@ -29,7 +35,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .bg__image {

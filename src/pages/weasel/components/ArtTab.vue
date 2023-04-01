@@ -1,9 +1,9 @@
 <template>
   <div class="art-wrapper maxw_400 br_10 block_column gap-10 justify-start">
-    <p class="text_title text_start mb_20" id="titleInput">{{$t("ferret.request")}}</p>
+    <p class="text_title text_start mb_20" id="titleInput">{{$t("weasel.request")}}</p>
     
     <div class="art-stats block_column relative card full-width br_20 bg_200 gap-0">
-      <p class="text_body text_start mb_20">{{$t("ferret.selectArt")}}</p>
+      <p class="text_body text_start mb_20">{{$t("weasel.selectArt")}}</p>
       
       <ul class="art-list card block_row full-width relative p0 p_x10 br_10 gap-10 z_5">
         <li
@@ -22,12 +22,12 @@
 </template>
 
 <script lang="ts" setup>
-  import MainStatSelect, { IMainStatSelect } from '@/ferret/components/MainStatSelect.vue';
-  import SubStatSelect from '@/ferret/components/SubStatSelect.vue';
-  import { useListsStore } from '@/stores/lists.js';
-  import { useCharacterStore } from '@/stores/character.js';
+  import MainStatSelect, { IMainStatSelect } from '@/pages/weasel/components/MainStatSelect.vue';
+  import SubStatSelect from '@/pages/weasel/components/SubStatSelect.vue';
+  import { useListsStore } from '@/stores/lists';
+  import { useCharacterStore } from '@/stores/character';
   import { ref } from 'vue';
-  import { Artifact, Stat } from '@/scripts/models/ferretAppraiser';
+  import { Artifact, Stat } from '@/scripts/models/weaselAppraiser';
   
   const list: Artifact[] = useListsStore().artifacts;
   const store = useCharacterStore();

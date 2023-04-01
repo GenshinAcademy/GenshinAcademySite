@@ -1,7 +1,7 @@
-import { ArtStat, characterStats, Elements, Stat, Substats } from '@/scripts/models/ferretAppraiser';
+import { ArtStat, characterStats, Elements, Stat, Substats } from '@/scripts/models/weaselAppraiser';
 import { defineStore } from "pinia";
 import { ref } from "vue";
-import axios from "@/HttpConfig.js";
+import axios, { httpRoute } from "@/HttpConfig.js";
 import { Logger } from "tslog";
 
 export const useCharacterStore = defineStore("character", () => {
@@ -45,7 +45,7 @@ export const useCharacterStore = defineStore("character", () => {
   /** Получает персонажей с сервера */
   function get_hero() {
     axios
-      .get("/api/characters/stats")
+      .get(httpRoute.characters)
       .then((res) => {
         logger.trace('Fetching character stats');
         charactersList.value = res.data;
@@ -101,7 +101,7 @@ export const useCharacterStore = defineStore("character", () => {
    *
    * @param {Object} chosenArtifact - Артефакты пользователя
    */
-  function ferret(chosenArtifact: ChosenArtifact) {
+  function weasel(chosenArtifact: ChosenArtifact) {
     sort_default();
     
     charactersList.value.filter((char) => {
@@ -234,5 +234,5 @@ export const useCharacterStore = defineStore("character", () => {
     appraiser_start.value = true;
   }
   
-  return { chosen_art, sortedCharactersStats, appraiser_start, get_hero, art_clear, ferret };
+  return { chosen_art, sortedCharactersStats, appraiser_start, get_hero, art_clear, weasel };
 });

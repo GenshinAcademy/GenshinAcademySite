@@ -6,13 +6,13 @@
           <router-link to="/">{{ t("header.main") }}</router-link>
         </p>
         <p>
-          <router-link to="/ferret">{{ t("header.tools") }}</router-link>
+          <router-link to="/" @click="openTools">{{ t("header.tools") }}</router-link>
         </p>
         <p>
-          <router-link to="/ferret">{{ t("header.tables") }}</router-link>
+          <router-link to="/tables">{{ t("header.tables") }}</router-link>
         </p>
         <p>
-          <router-link to="/ferret">{{ t("header.guides") }}</router-link>
+          <a href="https://teletype.in/@genshinacademy/mini-guides" target="_blank">{{ t("header.guides") }}</a>
         </p>
       </div>
       
@@ -25,12 +25,18 @@
 
 <script lang="ts" setup>
 import { useI18n } from "vue-i18n";
+import { useScroll } from "@/use/useScroll";
 
 const props = defineProps(['isOpen', 'toggle'])
 const { t } = useI18n()
+
+function openTools() {
+  useScroll('tools')
+  props.toggle()
+}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .menu {
   position: fixed;
   top: 80px;

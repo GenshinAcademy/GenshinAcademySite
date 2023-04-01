@@ -1,13 +1,15 @@
 <template>
   <div class="container block_column  gap-30">
-    <h2 class="full-width mt_80">{{ $t("header.tools") }}</h2>
+    <h2 id="tools" class="full-width mt_80">{{ $t("header.tools") }}</h2>
     
     <!-- Table -->
     <div class="block_row card bg_200 p50 overflow full-width">
       <div class="block_column gap-10 flex_5">
         <p class="text_title lineh_125p">{{ $t("table.tableTitle") }}</p>
         <p class="text_body2 text_font-sub lineh_125p">{{ $t("table.tableBody") }}</p>
-        <button class="button button_outline-white fit-content mt_10">{{ $t("main.openPage") }}</button>
+        <router-link to="/tables" class="fit-content">
+          <button class="button button_outline-white fit-content mt_10">{{ $t("main.openPage") }}</button>
+        </router-link>
       </div>
       
       <div class="block_column flex_4 relative">
@@ -18,13 +20,13 @@
     <!-- Ferret -->
     <div class="block_row card bg_200 p50 overflow full-width">
       <div class="block_column flex_3 relative">
-        <img class="ferret__img" src="/img/ferret.png" alt="traveler">
+        <img class="weasel__img" src="/img/weasel.png" alt="traveler">
       </div>
       
       <div class="block_column gap-10 flex_5">
-        <p class="text_title lineh_125p">{{ $t("ferret.ferretTitle") }}</p>
-        <p class="text_body2 text_font-sub lineh_125p">{{ $t("ferret.ferretBody") }}</p>
-        <router-link to="/ferret">
+        <p class="text_title lineh_125p">{{ $t("weasel.weaselTitle") }}</p>
+        <p class="text_body2 text_font-sub lineh_125p">{{ $t("weasel.weaselBody") }}</p>
+        <router-link to="/weasel" class="fit-content">
           <button class="button button_outline-white fit-content mt_10">{{ $t("main.openPage") }}</button>
         </router-link>
       </div>
@@ -35,9 +37,9 @@
       <div class="block_column gap-10 flex_5">
         <p class="text_title lineh_125p">{{ $t("guide.guideTitle") }}</p>
         <p class="text_body2 text_font-sub lineh_125p">{{ $t("guide.guideBody") }}</p>
-        <router-link to="/https://teletype.in/@genshinacademy/mini-guides">
+        <a href="https://teletype.in/@genshinacademy/mini-guides" target="_blank" class="fit-content">
           <button class="button button_outline-white fit-content mt_10">{{ $t("main.openPage") }}</button>
-        </router-link>
+        </a>
       </div>
       
       <div class="block_column flex_4 relative">
@@ -68,7 +70,7 @@
   right: -50px;
 }
 
-.ferret__img {
+.weasel__img {
   position: absolute;
   left: -50px;
   top: -155px;
