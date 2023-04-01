@@ -15,7 +15,7 @@ const tableLayout = [
   },
 ]
 
-export function useGetTables(): ITablesResponse[] {
+export function useGetTables() {
   const logger = new Logger({ name: "tablesLogger" });
   const data = ref<ITablesResponse[]>()
   
@@ -29,12 +29,6 @@ export function useGetTables(): ITablesResponse[] {
     .catch((error) => {
       logger.error(error.message);
     });
-  
-  
-  if (data.value === undefined) {
-    data.value = tableLayout
-  }
-  
   
   return data.value;
 }
