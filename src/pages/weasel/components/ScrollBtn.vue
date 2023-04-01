@@ -1,10 +1,10 @@
 <template>
   <div
-      class="scroll min_992"
+      class="scroll"
       v-if="scrollView"
   >
     <img
-        @click="scroll"
+        @click="useScroll(to)"
         src="/img/up_button.svg"
         alt="scroll_btn"
         class="event_unset"
@@ -22,7 +22,7 @@
   
   let line_ = document.getElementById(line);
   
-  const scroll = useScroll(to)
+  // const scroll =
   
   /** Следит за скроллом.
    * Когда заголовок "Результаты", достигает верхнего края экрана, отображает кнопку */

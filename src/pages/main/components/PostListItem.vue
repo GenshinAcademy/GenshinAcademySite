@@ -1,6 +1,6 @@
 <template>
   <div class="post_item block_column card bg_200 maxw_300 p0 gap-0">
-    <img class="maxh_200" :src="'/img/'+ img" alt="news">
+    <img class="maxh_200" :src="img" alt="news">
     
     <div class="block_column gap-10 p20">
       <p class="lineh_125p">{{ title }}</p>
