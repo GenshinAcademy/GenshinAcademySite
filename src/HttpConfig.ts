@@ -5,9 +5,9 @@ import axios from "axios";
  *
  * @type {axios.AxiosInstance}
  */
-const locale = localStorage.getItem('locale')
+const locale = localStorage.getItem('locale');
 const config = axios.create({
-  baseURL: '/',
+  baseURL: '/api',
   headers: {
     'Content-Type': 'application/json',
     'Accept-Language': locale,
@@ -15,9 +15,9 @@ const config = axios.create({
 });
 
 export const httpRoute = {
-  news: '/api/news',
-  characters: '/api/characters/stats',
-  tables: '/api/tables'
-}
+  news: '/news/',
+  characters: '/characters/stats/',
+  tables: '/tables/'
+};
 
 export default config;
