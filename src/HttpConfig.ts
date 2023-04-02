@@ -10,7 +10,7 @@ const config = axios.create({
   baseURL: '/',
   headers: {
     'Content-Type': 'application/json',
-    'Accept-Languages': locale,
+    'Accept-Language': locale,
   },
 });
 
