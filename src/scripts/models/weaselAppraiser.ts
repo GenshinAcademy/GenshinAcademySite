@@ -13,7 +13,7 @@ export interface Artifact {
 }
 
 export interface characterStats {
-  character_id: number,
+  character_id: string,
   name: string,
   element: number,
   icon_url: string,

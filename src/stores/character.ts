@@ -3,6 +3,7 @@ import { defineStore } from "pinia";
 import { ref } from "vue";
 import axios, { httpRoute } from "@/HttpConfig.js";
 import { Logger } from "tslog";
+import { test_data } from "@/stores/test";
 
 export const useCharacterStore = defineStore("character", () => {
   const logger = new Logger({ name: "characterLogger" });
@@ -29,7 +30,7 @@ export const useCharacterStore = defineStore("character", () => {
   
   
   interface CharacterResult {
-    id: number,
+    id: string,
     name: string,
     icon_url: string,
     stats_profit: number;
@@ -53,6 +54,8 @@ export const useCharacterStore = defineStore("character", () => {
       .catch((error) => {
         logger.error(error.message);
       });
+    
+    charactersList.value = test_data;
   }
   
   /** Очищает все характеристики артефакта пользователя
@@ -96,6 +99,13 @@ export const useCharacterStore = defineStore("character", () => {
     sortedCharactersStats.value = [];
   }
   
+  /** Считает А, проверка типа, если у персонажа меньше 4 сабстатов */
+  function sumA(sum: number | string, number: number | string) {
+    if (typeof sum !== 'string' && typeof number !== 'string')
+      return sum + number;
+    else return 0
+  }
+  
   /**
    * Считает баллы персонажа и отправляет их в сортировку
    *
@@ -124,10 +134,10 @@ export const useCharacterStore = defineStore("character", () => {
       
       /** Выбираю 4 наибольших substats */
       subList = subList.sort((a, b) => a - b).slice(-4);
-      let A = subList.reduce((sum, number) => sum + number);
+      
+      let A = subList.reduce((sum, number) => sumA(sum, number));
       A = A * 0.75;
-      
-      
+
       /** Нахожу вес лучшей основы */
       let weight: number = 0;
       let stats: ArtStat = selectSlot;
