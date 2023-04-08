@@ -7,7 +7,7 @@ import axios from "axios";
  */
 const locale = localStorage.getItem('locale');
 const config = axios.create({
-  baseURL: '/api',
+  baseURL: import.meta.env.VITE_HOST_API,
   headers: {
     'Content-Type': 'application/json',
     'Accept-Language': locale,

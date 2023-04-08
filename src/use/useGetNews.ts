@@ -17,7 +17,7 @@ const postLayout: INewsResponse[] = [
 ]
 
 export function useGetNews(limit: number = 5): INewsResponse[] {
-  const logger = new Logger({ name: "newsLogger" });
+  const logger = new Logger({ name: "newsLogger", minLevel: import.meta.env.VITE_LOG_LEVEL});
   const data = ref<INewsResponse[]>()
   
   axios

@@ -7,12 +7,11 @@ import { AxiosResponse } from "axios";
 
 export const useTablesStore = defineStore("tables", () => {
   
-  const logger = new Logger({ name: "tablesLogger" });
+  const logger = new Logger({ name: "tablesLogger", minLevel: import.meta.env.VITE_LOG_LEVEL });
   
   const tables = ref<INewsResponse[]>([])
   
   function useGetTables() {
-    
     axios
       .get(httpRoute.tables)
       .then((res: AxiosResponse<INewsResponse[]>) => {
@@ -23,12 +22,6 @@ export const useTablesStore = defineStore("tables", () => {
         logger.error(error.message);
       });
   }
-  
-  tables.value = [
-    {
-      Title: '123'
-    }
-  ]
   
   return { tables, useGetTables }
 })

@@ -4,7 +4,7 @@
       <div class="block_row full-width justify-between m_y20">
         
         <div class="logo">
-          <router-link to="/">
+          <router-link to="/" class="block_column">
             <img src="/img/icon/logo/logo.svg" alt="logo">
           </router-link>
         </div>

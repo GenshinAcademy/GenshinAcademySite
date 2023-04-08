@@ -16,7 +16,7 @@ const tableLayout = [
 ]
 
 export function useGetTables() {
-  const logger = new Logger({ name: "tablesLogger" });
+  const logger = new Logger({ name: "tablesLogger", minLevel: import.meta.env.VITE_LOG_LEVEL});
   const data = ref<ITablesResponse[]>()
   
   

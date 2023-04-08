@@ -21,4 +21,7 @@ jobs:
         run: npm ci
 
       - name: Test & Build
+        env:
+          VITE_HOST_API: ${{ vars.VITE_HOST_API }}
+          VITE_LOG_LEVEL: ${{ vars.VITE_LOG_LEVEL }}
         run: npm run build
