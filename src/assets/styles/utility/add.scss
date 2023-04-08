@@ -812,6 +812,10 @@
   cursor: pointer;
 }
 
+.pointer_all {
+  pointer-events: all !important;
+}
+
 .event_unset {
   pointer-events: unset !important;
 }

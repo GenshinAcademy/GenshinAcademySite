@@ -8,6 +8,7 @@
           class="stats-item image_align"
           :class="style(stat.value)"
           @click="selectedStat(stat.value)"
+          @dblclick="clearStats(stat.value)"
       >
         
         <span :class='`icon-${stat.value}`'></span>
@@ -54,6 +55,10 @@
             return v !== stat;
           });
         }
+  }
+  
+  function clearStats(stat: string) {
+    store.chosen_art.sub_stats = [stat]
   }
   
   /**

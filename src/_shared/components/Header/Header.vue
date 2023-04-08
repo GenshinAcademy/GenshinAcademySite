@@ -5,7 +5,7 @@
         
         <div class="logo">
           <router-link to="/">
-            <img src="/img/logo.svg" alt="logo">
+            <img src="/img/icon/logo/logo.svg" alt="logo">
           </router-link>
         </div>
         

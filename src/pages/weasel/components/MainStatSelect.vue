@@ -6,7 +6,7 @@
     <!-- Выбранная характеристика -->
     <li class="selected-stat m0 pointer" @click="hide">
       <p class="image_align">
-        <span :class='`icon-${getKey(selected_stat)}`'></span>
+        <span :class='`icon-${getKey(selected_stat)} icon_16`'></span>
         {{ $t(getValue(selected_stat)) }}
       </p>
       
@@ -23,7 +23,7 @@
         :class="style(stat.name)"
         @click="selectedStat(stat)"
     >
-      <span :class='`icon-${stat.value}`'></span>
+      <span :class='`icon-${stat.value} icon_16`'></span>
       {{ $t(stat.value) }}
     </li>
   </ul>

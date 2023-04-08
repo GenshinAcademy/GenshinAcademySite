@@ -24,6 +24,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon_16:before,
+.icon_16:after {
+  font-size: 16px !important;
+}
+
 .icon_gray_700 {
   &:before, &:after {
     color: #FFFFFF !important;
