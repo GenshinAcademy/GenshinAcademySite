@@ -23,5 +23,8 @@ import ToolBlock from "@/pages/main/components/ToolBlock.vue";
 import PostList from "@/pages/main/components/PostList.vue";
 import BoostyBlock from "@/pages/main/components/BoostyBlock.vue";
 import ScrollBtn from "@/pages/weasel/components/ScrollBtn.vue";
+import { usePageTitle } from "@/use/usePageTitle";
+
+usePageTitle('main')
 </script>
 

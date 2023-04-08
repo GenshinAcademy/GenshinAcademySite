@@ -15,6 +15,7 @@
       "ads": "По вопросам рекламы"
     },
     "weasel": {
+      "PageTitle":"Хорёк-оценщик",
       "breadCrumbs": "Инструменты / Хорёк-оценщик",
       "weaselTitle": "Хорёк-оценщик",
       "weaselBody": "Он оценивает артефакты и говорит, каким персонажам они могут подойти. Не можешь решить, оставить артефакт или отправить на «корм»? Хорёк-оценщик поможет!",
@@ -30,6 +31,7 @@
       "tableBody": "Силы наложения статусов GU, откаты наложения статусов ICD, снапшоты и прочие сложные штучки — ссылки на все таблицы от Genshin Academy можно найти здесь."
     },
     "tables": {
+      "PageTitle": "Таблицы",
       "breadCrumbs": "Главная / Инструменты / Таблицы",
       "Title": "Таблицы",
       "Body": "Силы наложения статусов GU, откаты наложения статусов ICD, снапшоты и прочие сложные штучки — ссылки на все таблицы от Genshin Academy можно найти здесь.",
@@ -37,7 +39,8 @@
         "title": "Каталог бонусов",
         "body": "Все возможные бонусы в игре, отсортированные по типам.",
         "message": "В разработке"
-      }
+      },
+      "go": "Перейти"
     },
     "guide": {
       "guideTitle": "Сборник гайдов",
@@ -52,10 +55,12 @@
       "weaponBody": "Знает всё об оружии и каким персонажам они подходят. Автоматически анализирует оружейные баннеры!"
     },
     "news": {
+      "PageTitle": "Новости",
       "lastNews": "Последние новости",
       "seeAll": "Смотреть все"
     },
     "main": {
+      "PageTitle": "Главная",
       "mainTitle": "Полезные инструменты и гайды",
       "mainPaimonText": "Мы занимаемся гайдами по Genshin Impact уже два года, но вот теперь решили сделать шаг вперёд, выйти за пределы соцсетей и создавать полезные инструменты по игре, которые вы нигде больше не найдёте!",
       "news": "Новости",
@@ -102,6 +107,7 @@
       "ads": "Contact us for advertising"
     },
     "weasel": {
+      "PageTitle":"Weasel Appraiser",
       "breadCrumbs": "Tools / Weasel Appraiser",
       "weaselTitle": "Weasel Appraiser",
       "weaselBody": "It evaluates the artifacts and tells you which characters are they best suited for. Can't decide whether to keep the artifact or 'feed' it? Weasel appraiser will help!",
@@ -117,6 +123,7 @@
       "tableBody": "Gauge Units GU, Internal CoolDowns ICD, snapshots and other complex stuff - links to all tables from Genshin Academy can be found here."
     },
     "tables": {
+      "PageTitle": "Tables",
       "breadCrumbs": "Tools / Tables",
       "Title": "Tables",
       "Body": "GU stating powers, ICD stating rollbacks, snapshots and other complex stuff - links to all tables from Genshin Academy can be found here.",
@@ -124,7 +131,8 @@
         "title": "Bonus catalog",
         "body": "All possible bonuses in the game, sorted by type.",
         "message": "On dev"
-      }
+      },
+      "go": "Go"
     },
     "guide": {
       "guideTitle": "Collection of guides",
@@ -139,10 +147,12 @@
       "weaponBody": "Knows everything about weapons and what characters they suit. Automatically analyzes weapon banners!"
     },
     "news": {
+      "PageTitle": "News",
       "lastNews": "Last news",
       "seeAll": "See all"
     },
     "main": {
+      "PageTitle": "Home",
       "mainTitle": "Useful tools and guides",
       "mainPaimonText": "We've been making guides for Genshin Impact for two years now, but now we've decided to take a step further, go beyond social media platforns and create useful game tools that you won't find anywhere else!",
       "news": "News",

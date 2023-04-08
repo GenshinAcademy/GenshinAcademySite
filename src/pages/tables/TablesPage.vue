@@ -29,6 +29,9 @@ import Footer from "@/_shared/components/Footer/Footer.vue";
 import SubHeader from "@/pages/tables/components/SubHeader.vue";
 import TablesBlock from "@/pages/tables/components/TablesBlock.vue";
 import TablesDevBlock from "@/pages/tables/components/TablesDevBlock.vue";
+import { usePageTitle } from "@/use/usePageTitle";
+
+usePageTitle('tables')
 </script>
 
 

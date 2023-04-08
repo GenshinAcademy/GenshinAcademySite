@@ -16,7 +16,7 @@
           
           <a class="image_align text_vBold text_font-sub p5" :href="conf.RedirectUrl">
             <img src="/img/icon/other/document.svg" alt="document">
-            Перейти
+            {{ $t("tables.go") }}
           </a>
         </div>
       </div>

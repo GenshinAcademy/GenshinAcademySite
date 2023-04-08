@@ -24,5 +24,11 @@ export const useTablesStore = defineStore("tables", () => {
       });
   }
   
+  tables.value = [
+    {
+      Title: '123'
+    }
+  ]
+  
   return { tables, useGetTables }
 })

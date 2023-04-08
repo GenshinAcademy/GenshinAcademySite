@@ -21,6 +21,9 @@ import ArtTab from '@/pages/weasel/components/ArtTab.vue';
 import HeroTier from '@/pages/weasel/components/HeroTier.vue';
 import WeaselBlock from "@/pages/weasel/components/WeaselBlock.vue";
 import ScrollBtn from "@/pages/weasel/components/ScrollBtn.vue";
+import { usePageTitle } from "@/use/usePageTitle";
+
+usePageTitle('weasel')
 </script>
 
 <style lang="scss" scoped>

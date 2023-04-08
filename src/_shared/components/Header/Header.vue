@@ -39,7 +39,7 @@
               <p
                   class="active"
                   v-for="(lang, key) in langList"
-                  @click="setLang(key)" :key="key"
+                  @click="switchLang(key)" :key="key"
               >
                 {{ t(lang) }}
               </p>
@@ -76,7 +76,7 @@
 <script lang="ts" setup>
 
 import HeaderMenu from "@/_shared/components/Header/HeaderMenu.vue";
-import { onMounted, watch } from "vue";
+import { watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { langList, SelectLocales } from "@/localization";
 import { useOpen } from "@/use/useOpen";
@@ -93,6 +93,11 @@ function setLang(lang: string) {
   locale.value = lang
   closeAccordion()
   SelectLocales(lang, locale)
+}
+
+function switchLang(key: string) {
+  setLang(key)
+  location.reload()
 }
 
 
