@@ -7,7 +7,7 @@ import { AxiosResponse } from "axios";
 
 export const useNewsStore = defineStore("news", () => {
   
-  const logger = new Logger({ name: "newsLogger" });
+  const logger = new Logger({ name: "newsLogger", minLevel: import.meta.env.VITE_LOG_LEVEL });
   
   const news = ref<INewsResponse[]>([])
   

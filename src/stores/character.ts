@@ -6,7 +6,7 @@ import { Logger } from "tslog";
 import { test_data } from "@/stores/test";
 
 export const useCharacterStore = defineStore("character", () => {
-  const logger = new Logger({ name: "characterLogger" });
+  const logger = new Logger({ name: "characterLogger", minLevel: import.meta.env.VITE_LOG_LEVEL });
   
   const elements = ref<Elements[]>(['UndefinedElement', 'Pyro', 'Hydro', 'Geo', 'Anemo', 'Electro', 'Cryo', 'Dendro',])
   

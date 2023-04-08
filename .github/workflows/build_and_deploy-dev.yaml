@@ -17,6 +17,9 @@ jobs:
         run: npm ci
 
       - name: Build
+        env:
+          VITE_HOST_API: ${{ vars.VITE_HOST_API }}
+          VITE_LOG_LEVEL: ${{ vars.VITE_LOG_LEVEL }}
         run: npm run build
 
       - name: Upload artifact for deploy job
