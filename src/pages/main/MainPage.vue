@@ -10,7 +10,7 @@
   <PostList/>
   <BoostyBlock/>
   
-  <ScrollBtn :line="'tools'" :to="'header'"/>
+<!--  <ScrollBtn :line="'tools'" :to="'header'"/>-->
   
   <Footer/>
 </template>

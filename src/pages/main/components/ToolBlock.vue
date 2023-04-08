@@ -1,5 +1,5 @@
 <template>
-  <div class="container block_column  gap-30">
+  <div class="container block_column gap-30">
     <h2 id="tools" class="full-width mt_80">{{ $t("header.tools") }}</h2>
     
     <!-- Table -->

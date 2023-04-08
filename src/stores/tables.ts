@@ -12,7 +12,6 @@ export const useTablesStore = defineStore("tables", () => {
   const tables = ref<INewsResponse[]>([])
   
   function useGetTables() {
-    
     axios
       .get(httpRoute.tables)
       .then((res: AxiosResponse<INewsResponse[]>) => {
@@ -23,12 +22,6 @@ export const useTablesStore = defineStore("tables", () => {
         logger.error(error.message);
       });
   }
-  
-  tables.value = [
-    {
-      Title: '123'
-    }
-  ]
   
   return { tables, useGetTables }
 })

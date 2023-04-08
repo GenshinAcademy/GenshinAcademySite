@@ -22,26 +22,39 @@ defineProps(['heroes']);
   justify-content: flex-end;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
   
+  &:hover {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.6) 100%);
+    
+    & img {
+      transition: 0s;
+      position: relative;
+      //opacity: 0.3;
+      z-index: 2;
+    
+      & + p {
+        display: block;
+      }
+    }
+  }
+  
   & p {
     display: none;
     position: absolute;
-    bottom: 5px;
-    width: 100%;
+    bottom: 80px;
     text-align: center;
     user-select: none;
-    word-break: keep-all;
+    background: #ffffff;
+    color: #0c0f1d;
+    padding: 10px 5px;
+    border-radius: 8px;
+    line-height: 20px;
+    z-index: 100;
+    left: 50%;
+    width: fit-content;
+    transform: translate(-50%,0);
   }
   
-  & img:hover {
-    transition: 0s;
-    position: relative;
-    opacity: 0.3;
-    z-index: 2;
-    
-    & + p {
-      display: block;
-    }
-  }
+  
   
   & img {
     width: 76px;
