@@ -14,7 +14,7 @@
             <router-link to="/">{{ t("header.main") }}</router-link>
           </p>
           <p>
-            <router-link to="/" @click="useScroll('tools')">{{ t("header.tools") }}</router-link>
+            <router-link to="/#tools">{{ t("header.tools") }}</router-link>
           </p>
           <p>
             <router-link to="/tables">{{ t("header.tables") }}</router-link>
@@ -114,7 +114,7 @@ watch(isOpenMenu, () => {
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .header__link p {
   padding: 10px 15px;
 }

@@ -4,7 +4,7 @@
     
     <div v-for="(value, i) in tiers" :id="value[1]" :class="{'m0': !heroes.appraiser_start}">
       <div class="tier__hero-wrapper" v-if="heroes.appraiser_start">
-        <p class="full-width">{{ value[0] }}</p>
+        <p class="full-width">{{ $t(`weasel.tier.${value[1]}`) }}</p>
         <HeroBlock :heroes="heroes.sortedCharactersStats[i]"/>
       </div>
     </div>

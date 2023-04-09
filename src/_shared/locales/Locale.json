@@ -1,5 +1,6 @@
 {
   "ru": {
+
     "language": "Язык",
     "currentLanguage": "Русский",
     "header": {
@@ -24,7 +25,13 @@
       "weaselHint": "Выберите артефакт и нажмите «Оценить».",
       "selectArt": "Выберите артефакт",
       "subStats": "Доп. характеристики",
-      "appraise": "Оценить"
+      "appraise": "Оценить",
+      "tier": {
+        "S": "Идеально",
+        "A": "Отлично",
+        "B": "Хорошо",
+        "C": "Сойдёт"
+      }
     },
     "table": {
       "tableTitle": "Таблицы",
@@ -82,7 +89,7 @@
     "CD": "Крит. урон",
     "HEAL": "Бонус лечения",
     "defaultValue": "Выберите характеристику...",
-    "Phys": "Бонус физ. урона",
+    "PHYS": "Бонус физ. урона",
     "Pyro": "Бонус Пиро урона",
     "Hydro": "Бонус Гидро урона",
     "Dendro": "Бонус Дендро урона",
@@ -116,7 +123,13 @@
       "weaselHint": "Select an artifact and click «Appraise».",
       "selectArt": "Select Artifact",
       "subStats": "Substats",
-      "appraise": "Appraise"
+      "appraise": "Appraise",
+      "tier": {
+        "S": "Perfecto",
+        "A": "Great",
+        "B": "Good",
+        "C": "Fit"
+      }
     },
     "table": {
       "tableTitle": "Tables",
@@ -174,7 +187,7 @@
     "CD": "Crit Damage",
     "HEAL": "Healing Bonus",
     "defaultValue": "Select feature...",
-    "Phys": "Physical DMG %",
+    "PHYS": "Physical DMG %",
     "Pyro": "Pyro DMG %",
     "Hydro": "Hydro DMG %",
     "Dendro": "Dendro DMG %",

@@ -46,7 +46,7 @@ export const useListsStore = defineStore("lists", () => {
     },
     {
       name: "Бонус физ. урона",
-      value: "Phys",
+      value: "PHYS",
     },
     {
       name: "Бонус Пиро урона",

@@ -56,9 +56,20 @@
           });
         }
   }
-  
+
+  /**
+   * Сброс всех sub_stats и выбор текущего, при условии:
+   *
+   * 1. Выбран ли артефакт.
+   * 2. Основная и побочная характеристика не повторяется
+   *
+   * @param {String} stat - Пример: "DEF_P"
+   */
   function clearStats(stat: string) {
-    store.chosen_art.sub_stats = [stat]
+    if (store.chosen_art.main_stat.value) {
+      if (store.chosen_art.main_stat.value !== stat)
+        store.chosen_art.sub_stats = [stat]
+    }
   }
   
   /**
@@ -110,6 +121,16 @@
     padding: 8px 8px 8px 12px;
     border: 1px solid $gray_300;
     border-radius: 10px;
+    cursor: pointer;
+  
+    &:hover {
+      background: $gray_300;
+    }
+    
+    &.disable_text:hover {
+      cursor: unset !important;
+      background: transparent !important;
+    }
     
     &.active {
       background: $color_active;
@@ -119,6 +140,17 @@
         color: $gray_0 !important;
       }
       
+    }
+  }
+  
+  .art-button {
+    & .button {
+      cursor: pointer;
+    }
+    
+    & .button.disable_bg_2:hover {
+      cursor: unset !important;
+      opacity: unset !important;
     }
   }
   
