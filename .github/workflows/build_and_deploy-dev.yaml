@@ -38,6 +38,15 @@ jobs:
         with:
           name: server-artifact
 
+      - name: Clean up directory
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            rm -rf ${{ vars.OUTPUT_DIR_DEV }}/*
+
       - name: Deploy
         uses: appleboy/scp-action@master
         with:
