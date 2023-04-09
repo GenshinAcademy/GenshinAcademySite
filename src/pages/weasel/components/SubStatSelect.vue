@@ -135,6 +135,13 @@
     &.active {
       background: $color_active;
       color: $gray_0;
+  
+  
+      &:hover {
+        cursor: pointer !important;
+        background: $color_active !important;
+        color: $gray_0 !important;
+      }
       
       & *, & *:before, & *:after {
         color: $gray_0 !important;

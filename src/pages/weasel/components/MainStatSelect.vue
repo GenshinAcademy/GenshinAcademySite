@@ -106,9 +106,15 @@ function hide() {
 }
 
 function style(stat: string) {
-  let check = store.chosen_art.main_stat.value;
+  let checkValue = store.chosen_art.main_stat.value;
+  let checkName = store.chosen_art.main_stat.name;
+  
+  console.log('stat', stat)
+  console.log('check', checkValue)
+  console.log(stat === checkName)
+  
   return {
-    active: stat === check,
+    active: stat === checkValue || stat === checkName,
     divider_hide: isHide.value,
     open: !isHide.value,
     def: def.value === stat,
@@ -146,9 +152,16 @@ function style(stat: string) {
     background: $gray_300;
   }
   
+  //&.active {
+  //  background: $gray_300;
+  //  border-bottom: 2px solid $color_active;
+  //  border-radius: 6px;
+  //}
+  
   &.active {
-    background: $gray_300;
-    border-radius: 6px;
+    &, & * {
+      color: $color_active !important;
+    }
   }
 }
 
