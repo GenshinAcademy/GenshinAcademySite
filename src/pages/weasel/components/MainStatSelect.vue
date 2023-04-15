@@ -109,10 +109,6 @@ function style(stat: string) {
   let checkValue = store.chosen_art.main_stat.value;
   let checkName = store.chosen_art.main_stat.name;
   
-  console.log('stat', stat)
-  console.log('check', checkValue)
-  console.log(stat === checkName)
-  
   return {
     active: stat === checkValue || stat === checkName,
     divider_hide: isHide.value,

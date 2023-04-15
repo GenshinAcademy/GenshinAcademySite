@@ -7,10 +7,9 @@
           v-for="stat in list.subStats"
           class="stats-item image_align"
           :class="style(stat.value)"
-          @click="selectedStat(stat.value)"
-          @dblclick="clearStats(stat.value)"
+          @click="() => selectedStat(stat.value)"
+          @contextmenu.prevent="() => clearStats(stat.value)"
       >
-        
         <span :class='`icon-${stat.value}`'></span>
         {{ $t(stat.value) }}
       </li>
@@ -127,9 +126,11 @@
       background: $gray_300;
     }
     
-    &.disable_text:hover {
-      cursor: unset !important;
-      background: transparent !important;
+    @include min-desktop_576 {
+      &.disable_text:hover {
+        cursor: unset !important;
+        background: transparent !important;
+      }
     }
     
     &.active {

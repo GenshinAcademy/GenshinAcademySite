@@ -10,7 +10,7 @@ const config = axios.create({
   baseURL: import.meta.env.VITE_HOST_API,
   headers: {
     'Content-Type': 'application/json',
-    'Accept-Language': locale,
+    'Accept-Languages': locale,
   },
 });
 
