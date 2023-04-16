@@ -37,6 +37,19 @@
 }
 
 
+@mixin min-desktop_1024 {
+  @media (min-width: 1024px) {
+    @content ;
+  }
+}
+
+@mixin max-desktop_1024 {
+  @media (max-width: 1024px) {
+    @content ;
+  }
+}
+
+
 @mixin min-desktop_992 {
   @media (min-width: 992px) {
     @content ;

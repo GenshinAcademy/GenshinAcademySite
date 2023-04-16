@@ -16,9 +16,9 @@
         </p>
       </div>
       
-      <div class="menu__button mt_20 card bg_200 br_20">
-        <p><a>Контакты</a></p>
-      </div>
+<!--      <div class="menu__button mt_20 card bg_200 br_20">-->
+<!--        <p><a>Контакты</a></p>-->
+<!--      </div>-->
     </div>
   </div>
 </template>

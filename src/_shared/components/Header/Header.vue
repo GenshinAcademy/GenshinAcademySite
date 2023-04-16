@@ -47,7 +47,7 @@
           </div>
           
           
-          <button class="button button_outline-white max_768">{{ t("header.contacts") }}</button>
+<!--          <button class="button button_outline-white max_768">{{ t("header.contacts") }}</button>-->
           
           <!-- Menu button -->
           <button @click.prevent="toggleMenu"
@@ -62,6 +62,7 @@
               v-if="isOpenMenu"
               @click.prevent="toggleMenu"
               src="/img/close_ring_light.svg"
+              class="event_unset pointer"
               alt="close">
         </div>
       

@@ -20,9 +20,9 @@ export function SelectLocales(lang: string, locales: WritableComputedRef<string>
 }
 
 
-function checkLocale() {
+export function checkLocale() {
   if (localStorage.getItem('locale')) {
-    locales.value = <string>localStorage.getItem('locale')
+    return locales.value = <string>localStorage.getItem('locale')
   } else {
     
     /** В зависимости от первого вхождения выбирает язык*/
@@ -33,10 +33,9 @@ function checkLocale() {
         locales.value = lang;
         
         localStorage.setItem('locale', lang)
-        break
+        return locales.value
       }
     }
-    
   }
 }
 

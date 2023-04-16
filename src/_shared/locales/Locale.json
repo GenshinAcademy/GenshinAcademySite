@@ -1,6 +1,5 @@
 {
   "ru": {
-
     "language": "Язык",
     "currentLanguage": "Русский",
     "header": {
@@ -64,7 +63,9 @@
     "news": {
       "PageTitle": "Новости",
       "lastNews": "Последние новости",
-      "seeAll": "Смотреть все"
+      "seeAll": "Смотреть все",
+      "see": "Смотреть",
+      "allNews": "Все новости"
     },
     "main": {
       "PageTitle": "Главная",
@@ -76,6 +77,12 @@
       "support": "Поддержать",
       "supportText": "Силы наложения статусов GU, откаты наложения статусов ICD, снапшоты и прочие сложные штучки — ссылки на все таблицы от Genshin Academy можно найти здесь.",
       "supportButton": "Перейти на Boosty"
+    },
+    "notFound": {
+      "pageTitle": "Страницы не существует",
+      "jokeStart": "Заходит как-то пользователь на страницу, а...",
+      "jokeEnd": "Такой страницы не существует",
+      "button": "На главную"
     },
     "HP": "HP",
     "HP_P": "HP %",
@@ -162,7 +169,9 @@
     "news": {
       "PageTitle": "News",
       "lastNews": "Last news",
-      "seeAll": "See all"
+      "seeAll": "See all",
+      "see": "See",
+      "allNews": "All news"
     },
     "main": {
       "PageTitle": "Home",
@@ -174,6 +183,12 @@
       "support": "Support",
       "supportText": "Gauge Units GU, Internal CoolDowns ICD, snapshots and other complex stuff - links to all tables from Genshin Academy can be found here.",
       "supportButton": "Go to Boosty"
+    },
+    "notFound": {
+      "pageTitle": "Page does not exist",
+      "jokeStart": "Somehow the user comes to the page, and ...",
+      "jokeEnd": "This page does not exist",
+      "button": "To main"
     },
     "HP": "HP",
     "HP_P": "HP %",
