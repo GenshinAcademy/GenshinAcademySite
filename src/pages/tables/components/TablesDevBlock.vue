@@ -24,7 +24,7 @@
 
 const configDev = [
   {
-    icon: 'icon-Phys',
+    icon: 'icon-PHYS',
     title: 'Каталог бонусов',
     body: 'Все возможные бонусы в игре, отсортированные по типам.'
   },

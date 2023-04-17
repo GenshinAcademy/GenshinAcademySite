@@ -187,8 +187,6 @@ export const useCharacterStore = defineStore("character", () => {
       else
         score = sumWeightSub
       
-      console.log(chosen_art.value.main_stat.value)
-      
       /** Проверка на элемент */
       elements.value.forEach((value, index) => {
         /** Проверка pyro === pyro && 1 === 1 */

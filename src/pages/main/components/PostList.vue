@@ -6,7 +6,7 @@
         <img src="/img/list.png" alt="lists">
       </p>
       <a class="image_align">
-        <p class="text_font-sub">{{ $t("news.seeAll") }}</p>
+        <a href="/news" class="text_font-sub">{{ $t("news.seeAll") }}</a>
         <span class="icon icon-arrow-right2 icon_gray_700"></span>
       </a>
     </div>
@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts" setup>
-import PostListItem from "@/pages/main/components/PostListItem.vue";
+import PostListItem from "@/_shared/components/Post/PostListItem.vue";
 import { useNewsStore } from "@/stores/news";
 import { ref, watchEffect } from "vue";
 import { INewsResponse } from "@/scripts/models/News";

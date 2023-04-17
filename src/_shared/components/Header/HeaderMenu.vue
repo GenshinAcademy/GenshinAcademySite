@@ -3,40 +3,35 @@
     <div :class="{menu__open: props.isOpen}" class="menu" @click.prevent>
       <div class="card bg_200 br_20 block_column gap-20 min_768 card_gray">
         <p>
-          <router-link to="/">{{ t("header.main") }}</router-link>
+          <router-link to="/" @click="props.toggle()">{{ t("header.main") }}</router-link>
         </p>
         <p>
-          <router-link to="/" @click="openTools">{{ t("header.tools") }}</router-link>
+          <router-link to="/#tools" @click="props.toggle()">{{ t("header.tools") }}</router-link>
         </p>
         <p>
-          <router-link to="/tables">{{ t("header.tables") }}</router-link>
+          <router-link to="/tables" @click="props.toggle()">{{ t("header.tables") }}</router-link>
         </p>
         <p>
-          <a href="https://teletype.in/@genshinacademy/mini-guides" target="_blank">{{ t("header.guides") }}</a>
+          <a href="https://teletype.in/@genshinacademy/mini-guides" target="_blank" @click="props.toggle()">{{ t("header.guides") }}</a>
         </p>
       </div>
       
-      <div class="menu__button mt_20 card bg_200 br_20">
-        <p><a>Контакты</a></p>
-      </div>
+<!--      <div class="menu__button mt_20 card bg_200 br_20">-->
+<!--        <p><a>Контакты</a></p>-->
+<!--      </div>-->
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { useI18n } from "vue-i18n";
-import { useScroll } from "@/use/useScroll";
 
 const props = defineProps(['isOpen', 'toggle'])
 const { t } = useI18n()
 
-function openTools() {
-  useScroll('tools')
-  props.toggle()
-}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .menu {
   position: fixed;
   top: 80px;

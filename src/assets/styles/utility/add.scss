@@ -330,6 +330,10 @@
   padding: 50px !important;
 }
 
+.pb_20 {
+  padding-bottom: 20px !important;
+}
+
 /* Padding-y */
 .p_y5 {
   padding-top: 5px !important;
@@ -445,6 +449,10 @@
   border-radius: 50px !important;
 }
 
+.br-top_30 {
+  border-radius: 30px 30px 0 0 !important;
+}
+
 /* width */
 
 .full-width {
@@ -461,6 +469,11 @@
 }
 
 /* max-width */
+
+.maxw_container {
+  max-width: $container_maxw;
+  width: 100%;
+}
 
 .maxw_100 {
   max-width: 100px;
@@ -489,6 +502,11 @@
 
 .maxw_300 {
   max-width: 300px;
+  width: 100%;
+}
+
+.maxw_350 {
+  max-width: 350px;
   width: 100%;
 }
 
@@ -796,8 +814,16 @@
   position: relative;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .overflow {
   overflow: hidden;
+}
+
+.bottom_40 {
+  bottom: 40px;
 }
 
 .overflow-x_scroll {
@@ -926,6 +952,14 @@
 /* image */
 .img_object-unset {
   object-fit: unset !important;
+}
+
+.img_object-cover {
+  object-fit: cover !important;
+}
+
+.obj_top {
+  object-position: top;
 }
 
 .image_align {

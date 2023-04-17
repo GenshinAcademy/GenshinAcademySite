@@ -14,7 +14,7 @@
             <router-link to="/">{{ t("header.main") }}</router-link>
           </p>
           <p>
-            <router-link to="/" @click="useScroll('tools')">{{ t("header.tools") }}</router-link>
+            <router-link to="/#tools">{{ t("header.tools") }}</router-link>
           </p>
           <p>
             <router-link to="/tables">{{ t("header.tables") }}</router-link>
@@ -47,7 +47,7 @@
           </div>
           
           
-          <button class="button button_outline-white max_768">{{ t("header.contacts") }}</button>
+<!--          <button class="button button_outline-white max_768">{{ t("header.contacts") }}</button>-->
           
           <!-- Menu button -->
           <button @click.prevent="toggleMenu"
@@ -62,6 +62,7 @@
               v-if="isOpenMenu"
               @click.prevent="toggleMenu"
               src="/img/close_ring_light.svg"
+              class="event_unset pointer"
               alt="close">
         </div>
       
@@ -114,7 +115,7 @@ watch(isOpenMenu, () => {
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .header__link p {
   padding: 10px 15px;
 }

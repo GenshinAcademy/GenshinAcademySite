@@ -79,6 +79,13 @@
     border-style: solid;
     border-color: transparent;
     
+    cursor: pointer;
+    
+    &:hover {
+      background: $gray_300;
+      border-radius: 5px;
+    }
+    
     & img {
       width: 45px;
       height: 45px;

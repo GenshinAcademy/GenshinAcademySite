@@ -52,6 +52,7 @@ defineProps(['heroes']);
     left: 50%;
     width: fit-content;
     transform: translate(-50%,0);
+    min-width: 110px;
   }
   
   

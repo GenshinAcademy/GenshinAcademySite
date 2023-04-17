@@ -1,7 +1,7 @@
 <template>
   <ul class="btn__wrapper" @click.self="hide" v-if="!isHide"></ul>
   
-  <ul :class="style(getValue(selected_stat))" class="stats-list br_10 z_4">
+  <ul :class="style(getKey(selected_stat))" class="stats-list br_10 z_4">
     
     <!-- Выбранная характеристика -->
     <li class="selected-stat m0 pointer" @click="hide">
@@ -22,6 +22,7 @@
         v-for="stat in props.view"
         :class="style(stat.name)"
         @click="selectedStat(stat)"
+        v-if="!isHide"
     >
       <span :class='`icon-${stat.value} icon_16`'></span>
       {{ $t(stat.value) }}
@@ -105,11 +106,11 @@ function hide() {
 }
 
 function style(stat: string) {
-  let check = store.chosen_art.main_stat.name;
+  let checkValue = store.chosen_art.main_stat.value;
+  let checkName = store.chosen_art.main_stat.name;
   
   return {
-    active: stat === check,
-    hide: isHide.value,
+    active: stat === checkValue || stat === checkName,
     divider_hide: isHide.value,
     open: !isHide.value,
     def: def.value === stat,
@@ -128,18 +129,35 @@ function style(stat: string) {
   justify-content: space-between;
   
   padding: 15px 18px !important;
+  border-radius: 10px;
+  
+  &:hover {
+    background: $gray_300;
+  }
 }
 
 .stats-item {
   padding: 10px;
+  border-radius: 4px;
   
   &.hide {
     display: none;
   }
   
-  &.active {
+  &:hover {
     background: $gray_300;
-    border-radius: 6px;
+  }
+  
+  //&.active {
+  //  background: $gray_300;
+  //  border-bottom: 2px solid $color_active;
+  //  border-radius: 6px;
+  //}
+  
+  &.active {
+    &, & * {
+      color: $color_active !important;
+    }
   }
 }
 

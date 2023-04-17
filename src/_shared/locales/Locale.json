@@ -24,7 +24,13 @@
       "weaselHint": "Выберите артефакт и нажмите «Оценить».",
       "selectArt": "Выберите артефакт",
       "subStats": "Доп. характеристики",
-      "appraise": "Оценить"
+      "appraise": "Оценить",
+      "tier": {
+        "S": "Идеально",
+        "A": "Отлично",
+        "B": "Хорошо",
+        "C": "Сойдёт"
+      }
     },
     "table": {
       "tableTitle": "Таблицы",
@@ -57,7 +63,9 @@
     "news": {
       "PageTitle": "Новости",
       "lastNews": "Последние новости",
-      "seeAll": "Смотреть все"
+      "seeAll": "Смотреть все",
+      "see": "Смотреть",
+      "allNews": "Все новости"
     },
     "main": {
       "PageTitle": "Главная",
@@ -69,6 +77,12 @@
       "support": "Поддержать",
       "supportText": "Силы наложения статусов GU, откаты наложения статусов ICD, снапшоты и прочие сложные штучки — ссылки на все таблицы от Genshin Academy можно найти здесь.",
       "supportButton": "Перейти на Boosty"
+    },
+    "notFound": {
+      "pageTitle": "Страницы не существует",
+      "jokeStart": "Заходит как-то пользователь на страницу, а...",
+      "jokeEnd": "Такой страницы не существует",
+      "button": "На главную"
     },
     "HP": "HP",
     "HP_P": "HP %",
@@ -82,7 +96,7 @@
     "CD": "Крит. урон",
     "HEAL": "Бонус лечения",
     "defaultValue": "Выберите характеристику...",
-    "Phys": "Бонус физ. урона",
+    "PHYS": "Бонус физ. урона",
     "Pyro": "Бонус Пиро урона",
     "Hydro": "Бонус Гидро урона",
     "Dendro": "Бонус Дендро урона",
@@ -116,7 +130,13 @@
       "weaselHint": "Select an artifact and click «Appraise».",
       "selectArt": "Select Artifact",
       "subStats": "Substats",
-      "appraise": "Appraise"
+      "appraise": "Appraise",
+      "tier": {
+        "S": "Perfecto",
+        "A": "Great",
+        "B": "Good",
+        "C": "Fit"
+      }
     },
     "table": {
       "tableTitle": "Tables",
@@ -149,7 +169,9 @@
     "news": {
       "PageTitle": "News",
       "lastNews": "Last news",
-      "seeAll": "See all"
+      "seeAll": "See all",
+      "see": "See",
+      "allNews": "All news"
     },
     "main": {
       "PageTitle": "Home",
@@ -161,6 +183,12 @@
       "support": "Support",
       "supportText": "Gauge Units GU, Internal CoolDowns ICD, snapshots and other complex stuff - links to all tables from Genshin Academy can be found here.",
       "supportButton": "Go to Boosty"
+    },
+    "notFound": {
+      "pageTitle": "Page does not exist",
+      "jokeStart": "Somehow the user comes to the page, and ...",
+      "jokeEnd": "This page does not exist",
+      "button": "To main"
     },
     "HP": "HP",
     "HP_P": "HP %",
@@ -174,7 +202,7 @@
     "CD": "Crit Damage",
     "HEAL": "Healing Bonus",
     "defaultValue": "Select feature...",
-    "Phys": "Physical DMG %",
+    "PHYS": "Physical DMG %",
     "Pyro": "Pyro DMG %",
     "Hydro": "Hydro DMG %",
     "Dendro": "Dendro DMG %",
