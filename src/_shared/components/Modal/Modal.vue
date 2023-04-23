@@ -11,8 +11,3 @@
 <script setup lang='ts'>
 const { isOpen, close } = defineProps(['isOpen', 'close']);
 </script>
-
-
-<style lang='scss'>
-
-</style>

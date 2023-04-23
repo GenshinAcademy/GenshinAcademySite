@@ -70,6 +70,7 @@
     "main": {
       "PageTitle": "Главная",
       "mainTitle": "Полезные инструменты и гайды",
+      "mainTool": "Инструменты",
       "mainPaimonText": "Мы занимаемся гайдами по Genshin Impact уже два года, но вот теперь решили сделать шаг вперёд, выйти за пределы соцсетей и создавать полезные инструменты по игре, которые вы нигде больше не найдёте!",
       "news": "Новости",
       "openPage": "Открыть страницу",
@@ -176,6 +177,7 @@
     "main": {
       "PageTitle": "Home",
       "mainTitle": "Useful tools and guides",
+      "mainTool": "Tools",
       "mainPaimonText": "We've been making guides for Genshin Impact for two years now, but now we've decided to take a step further, go beyond social media platforns and create useful game tools that you won't find anywhere else!",
       "news": "News",
       "openPage": "Open page",

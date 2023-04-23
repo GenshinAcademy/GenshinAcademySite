@@ -52,6 +52,13 @@
     cursor: pointer;
     pointer-events: all;
   }
+
+  @include max-desktop_576 {
+    &__close {
+      top: -80px;
+      right: 40px;
+    }
+  }
 }
 
 //

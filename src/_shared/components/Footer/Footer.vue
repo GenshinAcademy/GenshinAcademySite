@@ -1,6 +1,7 @@
 <template>
   <footer class="block_row container p_y40 justify-between mt_20">
-    <p class="text_note lineh_125p text_gray_500">© {{ t('footer.right') }} COGNOSPHERE. <br> {{ t('footer.object') }}.</p>
+    <p class="text_note lineh_125p text_gray_500">© {{ t('footer.right') }} COGNOSPHERE. <br> {{ t('footer.object') }}.
+    </p>
     
     <p class="text_note lineh_125p text_gray_500">
       {{ t('footer.ads') }}. <br>
@@ -39,3 +40,15 @@ import { useI18n } from "vue-i18n";
 
 const { t } = useI18n()
 </script>
+
+
+<style lang="scss" scoped>
+
+@include max-desktop_768 {
+  footer {
+    flex-wrap: wrap;
+    row-gap: 15px !important;
+  }
+}
+
+</style>

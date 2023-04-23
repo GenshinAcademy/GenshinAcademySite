@@ -9,7 +9,7 @@
           </router-link>
         </div>
         
-        <div class="header__link block_row gap-5 max_768">
+        <div class="header__link block_row gap-5 max_992">
           <p>
             <router-link to="/">{{ t("header.main") }}</router-link>
           </p>
@@ -47,11 +47,11 @@
           </div>
           
           
-<!--          <button class="button button_outline-white max_768">{{ t("header.contacts") }}</button>-->
+          <!--          <button class="button button_outline-white max_768">{{ t("header.contacts") }}</button>-->
           
           <!-- Menu button -->
           <button @click.prevent="toggleMenu"
-                  class="button button_outline-white button_svg header__btn min_768"
+                  class="button button_outline-white button_svg header__btn min_992"
                   v-if="!isOpenMenu">
             <img src="/img/menu.svg" alt="menu">
             <span class="max_375">Меню</span>
@@ -81,7 +81,6 @@ import { watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { langList, SelectLocales } from "@/localization";
 import { useOpen } from "@/use/useOpen";
-import { useScroll } from "@/use/useScroll";
 
 const props = defineProps(['divider'])
 

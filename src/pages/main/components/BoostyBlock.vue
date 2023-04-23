@@ -16,8 +16,9 @@
           </a>
         </div>
         
-        <div class="block_column flex_5 relative">
-          <img class="boosty__img z_1" src="/img/boosty.png" alt="boosty">
+        <div class="boosty__img block_column flex_5 relative">
+          <img class="z_1 max_576" src="/img/boosty.png" alt="boosty">
+          <img class="z_1 min_576" src="/img/boosty_576.png" alt="boosty">
         </div>
       </div>
     </div>
@@ -25,9 +26,28 @@
 
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .boosty__img {
-  position: absolute;
-  right: -400px;
+  img {
+    position: absolute;
+    right: -400px;
+  }
+  
+  @include max-desktop_768 {
+    flex: 2 !important;
+    img {
+      right: -690px;
+    }
+  }
+  
+  @include max-desktop_576 {
+    flex: unset !important;
+    img {
+      right: -340px;
+      bottom: -390px;
+    }
+  }
 }
+
+
 </style>

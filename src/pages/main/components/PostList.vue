@@ -1,11 +1,13 @@
 <template>
-  <div class="container card card_outline mt_80 p50 block_column">
+  <div class="post__block container card card_outline mt_80 p40 block_column">
     <div class="block_row justify-between full-width">
-      <p id="news" class="text_title image_align">
+      <p id="news" class="text_title">
         {{ $t("news.lastNews") }}
-        <img src="/img/list.png" alt="lists">
+        <span class="relative">
+          <img class="absolute bottom-5" src="/img/list.png" alt="lists">
+        </span>
       </p>
-      <a class="image_align">
+      <a class="image_align max_576">
         <a href="/news" class="text_font-sub">{{ $t("news.seeAll") }}</a>
         <span class="icon icon-arrow-right2 icon_gray_700"></span>
       </a>
@@ -23,6 +25,11 @@
       />
     
     </div>
+    
+    <a class="image_align min_576 full-width text_start">
+      <a href="/news" class="text_font-sub">{{ $t("news.seeAll") }}</a>
+      <span class="icon icon-arrow-right2 icon_gray_700"></span>
+    </a>
   </div>
 </template>
 
@@ -46,3 +53,18 @@ watchEffect(() => {
 
 
 </script>
+
+
+<style lang="scss" scoped>
+.post__block {
+  @include max-desktop_480 {
+    margin: 0 !important;
+    margin-top: 80px !important;
+    padding: 40px 30px !important;
+  }
+}
+
+.bottom-5 {
+  bottom: -5px;
+}
+</style>
