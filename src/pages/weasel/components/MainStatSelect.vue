@@ -33,7 +33,7 @@
 </template>
 
 <script lang="ts" setup>
-import ArrowDown from '/public/img/icon/arrow/chevron-down.svg'
+import ArrowDown from '/public/img/icon/arrow/chevron-down.svg?component'
 import { useCharacterStore } from '@/stores/character';
 import { onMounted, ref, watch } from 'vue';
 import { clearObj, getKey, getValue } from "@/handler";
