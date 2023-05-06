@@ -10,7 +10,7 @@
         {{ $t(getValue(selected_stat)) }}
       </p>
       
-      <ArrowDown :class="isHide ? 'arrow_top' : ''"/>
+      <ArrowDown :class="isHide ? '' : 'arrow_top'"/>
     </li>
     
     <!-- Divider -->
@@ -184,7 +184,7 @@ function style(stat: string) {
     }
   }
   
-  &.active li:first-child * {
+  &.active > li:first-child * {
     &, &:after, {
       color: $color_active !important;
     }

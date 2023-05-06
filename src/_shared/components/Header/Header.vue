@@ -28,7 +28,7 @@
           
           <!-- Todo: Accordion вынести в отдельный компонент -->
           <div class="relative block_row gap-20">
-            <button class="button header__btn button_outline-white max_768 block_row gap-15" @click="toggleAccordion">
+            <button class="button header__btn button_outline-white max_768_op block_row gap-15 relative z_15" @click="toggleAccordion">
               {{ t('language') }}:
               <span>{{ t('currentLanguage') }}</span>
               <ArrowDown :class="isOpenAccordion ? 'arrow_top' : ''" />
@@ -126,7 +126,7 @@ watch(isOpenMenu, () => {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 100;
+  z-index: 10;
 }
 
 .accordion__panel {
@@ -145,6 +145,13 @@ watch(isOpenMenu, () => {
   
   p:hover {
     color: $gray_700;
+  }
+}
+
+.max_768_op {
+  @include max-desktop_768 {
+    opacity: 0;
+    max-width: 10px;
   }
 }
 

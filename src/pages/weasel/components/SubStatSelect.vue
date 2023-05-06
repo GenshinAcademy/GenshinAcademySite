@@ -17,10 +17,10 @@
   </div>
   
   <div class="art-button card full-width br_20 bg_200">
-    <p class="image_align button fit-content p_y20" :class="styleBtn()" @click="weasel">
+    <a href="#titleResult" class="image_align button fit-content p_y20" :class="styleBtn()" @click="weasel">
       {{ $t("weasel.appraise") }}
       <span class="icon-arrow-right2"></span>
-    </p>
+    </a>
   </div>
 </template>
 
@@ -81,7 +81,7 @@
     if (store.chosen_art.main_stat.hasOwnProperty('name'))
       if (store.chosen_art.sub_stats.length >= 1) {
         hero.weasel(store.chosen_art);
-        scroll();
+        // scroll();
       }
   }
   

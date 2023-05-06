@@ -774,6 +774,10 @@
   z-index: 5;
 }
 
+.z_15 {
+  z-index: 15;
+}
+
 /* Others */
 
 
@@ -928,9 +932,19 @@
   user-select: none;
 
   &.button_outline-white {
-    border-color: $gray_700;
     color: $gray_700;
+    border-color: $gray_700;
     background: transparent;
+
+    &:hover {
+      color: $gray_0 !important;
+      border-color: $gray_700;
+      background: $gray_700;
+
+      &:hover * {
+        color: $gray_0 !important;
+      }
+    }
   }
 
   &.button_svg {
@@ -941,9 +955,9 @@
   }
 
   &:hover {
+    color: $gray_0;
     background: $color_active;
     border-color: transparent;
-    color: $gray_0;
   }
 }
 

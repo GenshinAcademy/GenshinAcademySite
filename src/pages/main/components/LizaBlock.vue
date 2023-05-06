@@ -26,7 +26,7 @@
       
       <div class="paimon__text relative br_30 card bg_200 p_x60">
         <p class="text_active">Genshin Academy</p>
-        <p class="mt_10 lineh_140p text_font-sub">{{ $t("main.mainPaimonText") }}</p>
+        <h5 class="mt_10 lineh_140p text_font-sub">{{ $t("main.mainPaimonText") }}</h5>
       </div>
     </div>
   </div>
