@@ -5,7 +5,6 @@
 
   position: fixed;
   min-width: 300px;
-  padding: 40px;
   z-index: 100;
 
   display: flex;
@@ -29,7 +28,7 @@
   }
 
   &__wrapper {
-    display: none;
+    display: block;
     z-index: 100;
   }
 
@@ -47,16 +46,16 @@
 
   &__close {
     position: absolute;
-    top: 40px;
-    right: -40px;
+    top: 0;
+    right: -80px;
     cursor: pointer;
     pointer-events: all;
   }
 
   @include max-desktop_576 {
     &__close {
-      top: -80px;
-      right: 40px;
+      top: -120px;
+      right: 0;
     }
   }
 }

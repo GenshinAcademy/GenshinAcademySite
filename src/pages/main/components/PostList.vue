@@ -12,7 +12,7 @@
         <span class="icon icon-arrow-right2 icon_gray_700"></span>
       </a>
     </div>
-    <div class="post_list block_row relative overflow-x_scroll full-width pb_20 justify-start">
+    <div class="post_list block_row relative overflow-x_scroll full-width justify-start minh_400 p_x20">
       
       <PostListItem
           :img="post.Preview"
@@ -50,8 +50,6 @@ const postList = ref<INewsResponse[]>([]);
 watchEffect(() => {
   postList.value = store.news
 });
-
-
 </script>
 
 

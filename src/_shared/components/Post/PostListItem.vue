@@ -1,5 +1,5 @@
 <template>
-  <div class="post__item block_column card bg_100 minw_300 p0 gap-0 flex_1 overflow" @click="open">
+  <div class="post__item post__item_animate block_column card bg_100 minw_300 p0 gap-0 flex_1 overflow" @click="open">
     <img class="maxh_200 img_object-cover obj_top" :src="img" alt="news">
     
     <div class="block_column gap-10 p20">
@@ -16,7 +16,7 @@
   <!-- Todo: Вынести в отдельный компонент -->
   <Modal :isOpen="isOpen" :close="close">
     <div class="post__item block_column card bg_100 maxw_500 p0 gap-0 p_x30">
-      <div class="modal__img maxh_200 full-width relative bottom_40 br-top_30 overflow">
+      <div class="modal__img maxh_400 full-width relative bottom_40 br_30 overflow">
         <img class="full-width full-height img_object-cover obj_top" :src="img" alt="news">
       </div>
       
@@ -80,6 +80,12 @@ const { isOpen, open, close } = useOpen()
     .modal__img {
       min-width: 300px;
     }
+  }
+}
+@include min-desktop_768 {
+  .post__item_animate:hover {
+    scale: 1.1;
+    cursor: pointer;
   }
 }
 

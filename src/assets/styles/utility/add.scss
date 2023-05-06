@@ -475,6 +475,11 @@
   width: 100%;
 }
 
+.maxw_20 {
+  max-width: 20px;
+  width: 100%;
+}
+
 .maxw_100 {
   max-width: 100px;
   width: 100%;
@@ -936,7 +941,9 @@
   }
 
   &:hover {
-    opacity: 0.8;
+    background: $color_active;
+    border-color: transparent;
+    color: $gray_0;
   }
 }
 

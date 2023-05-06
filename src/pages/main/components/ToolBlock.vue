@@ -169,4 +169,16 @@
   }
 }
 
+.tool__block:hover {
+  & .traveler__img, & .guide__img {
+    scale: 1.1;
+    transform: translate(-20px, -10px);
+  }
+  & .weasel__img {
+    scale: 1.1;
+    transform: translate(20px, -10px);
+  }
+}
+
+
 </style>

@@ -28,10 +28,10 @@
           
           <!-- Todo: Accordion вынести в отдельный компонент -->
           <div class="relative block_row gap-20">
-            <button class="button button_outline-white max_768 block_row gap-15" @click="toggleAccordion">
+            <button class="button header__btn button_outline-white max_768 block_row gap-15" @click="toggleAccordion">
               {{ t('language') }}:
               <span>{{ t('currentLanguage') }}</span>
-              <span class="icon- icon-arrow-down2"></span>
+              <ArrowDown :class="isOpenAccordion ? 'arrow_top' : ''" />
             </button>
             
             <div class="accordion__overlay" @click="closeAccordion" v-show="isOpenAccordion"></div>
@@ -46,8 +46,7 @@
             </div>
           </div>
           
-          
-          <!--          <button class="button button_outline-white max_768">{{ t("header.contacts") }}</button>-->
+          <!-- <button class="button button_outline-white max_768">{{ t("header.contacts") }}</button>-->
           
           <!-- Menu button -->
           <button @click.prevent="toggleMenu"
@@ -75,7 +74,7 @@
 </template>
 
 <script lang="ts" setup>
-
+import ArrowDown from '/public/img/icon/arrow/chevron-down.svg'
 import HeaderMenu from "@/_shared/components/Header/HeaderMenu.vue";
 import { watch } from "vue";
 import { useI18n } from "vue-i18n";
@@ -147,6 +146,12 @@ watch(isOpenMenu, () => {
   p:hover {
     color: $gray_700;
   }
+}
+
+.header__btn:hover {
+  border-color: $gray_700;
+  color: $gray_700;
+  background: transparent;
 }
 
 @include max-desktop_375 {
