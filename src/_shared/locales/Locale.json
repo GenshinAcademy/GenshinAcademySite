@@ -75,7 +75,7 @@
       "openPage": "Открыть страницу",
       "onDev": "В разработке",
       "support": "Поддержать",
-      "supportText": "Силы наложения статусов GU, откаты наложения статусов ICD, снапшоты и прочие сложные штучки — ссылки на все таблицы от Genshin Academy можно найти здесь.",
+      "supportText": "Если вы хотите поддержать Академию монетой, то присоединяйтесь к нам на Boosty! Там в формате блога мы рассказываем о наших будущих планах и показываем наработки.",
       "supportButton": "Перейти на Boosty"
     },
     "notFound": {
@@ -132,7 +132,7 @@
       "subStats": "Substats",
       "appraise": "Appraise",
       "tier": {
-        "S": "Perfecto",
+        "S": "Perfect",
         "A": "Great",
         "B": "Good",
         "C": "Fit"
@@ -146,7 +146,7 @@
       "PageTitle": "Tables",
       "breadCrumbs": "Tools / Tables",
       "Title": "Tables",
-      "Body": "GU stating powers, ICD stating rollbacks, snapshots and other complex stuff - links to all tables from Genshin Academy can be found here.",
+      "Body": "Gauge Units GU, Internal CoolDowns ICD, snapshots and other complex stuff - links to all tables from Genshin Academy can be found here.",
       "dev": {
         "title": "Bonus catalog",
         "body": "All possible bonuses in the game, sorted by type.",
@@ -156,7 +156,7 @@
     },
     "guide": {
       "guideTitle": "Collection of guides",
-      "guideBody": "Mini-guides for all characters: assembling artifacts, weapons, constellations. Plus mini-weapon guides. Periodically updated."
+      "guideBody": "Mini-guides for all characters. So far we've been doing guides in Russian so this link may not be a big use for you. Instead we recommend KQM guides."
     },
     "dungeon": {
       "dungeonTitle": "Dungeon compass [WIP]",
@@ -181,7 +181,7 @@
       "openPage": "Open page",
       "onDev": "In development",
       "support": "Support",
-      "supportText": "Gauge Units GU, Internal CoolDowns ICD, snapshots and other complex stuff - links to all tables from Genshin Academy can be found here.",
+      "supportText": "If you want to support us monetarily, you can do so here. Thank you.",
       "supportButton": "Go to Boosty"
     },
     "notFound": {
