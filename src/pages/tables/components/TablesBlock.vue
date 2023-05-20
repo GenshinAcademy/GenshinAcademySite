@@ -1,7 +1,7 @@
 <template>
   <div id="tableHeader" class="card container align-stretch p50">
     <div class="block_column full-width gap-20">
-      <div class="block_column full-width gap-20" v-for="(conf, index ) in config">
+      <div class="block_column full-width gap-20" v-for="(conf, index ) in config" v-show="conf.Title">
         <p class="divider" v-if="index !== 0"></p>
         
         <div class="block_row justify-between table__title gap-30 align-center full-width">
@@ -14,7 +14,7 @@
             </div>
           </div>
           
-          <a class="image_align text_vBold text_font-sub p5" :href="conf.RedirectUrl">
+          <a class="image_align text_vBold text_font-sub p5" target="_blank" :href="conf.RedirectUrl">
             <img src="/img/icon/other/document.svg" alt="document">
             {{ $t("tables.go") }}
           </a>
