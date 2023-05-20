@@ -1,5 +1,5 @@
 <template>
-  <div class="post_item block_column card bg_100 minw_300 p0 gap-0 flex_1 overflow" @click="open">
+  <div class="post__item post__item_animate block_column card bg_100 minw_300 p0 gap-0 flex_1 overflow" @click="open">
     <img class="maxh_200 img_object-cover obj_top" :src="img" alt="news">
     
     <div class="block_column gap-10 p20">
@@ -15,10 +15,12 @@
   
   <!-- Todo: Вынести в отдельный компонент -->
   <Modal :isOpen="isOpen" :close="close">
-    <div class="post_item block_column card bg_100 maxw_500 p0 gap-0 p_x30">
-      <img class="maxh_200 img_object-cover obj_top br-top_30 relative bottom_40" :src="img" alt="news">
+    <div class="post__item block_column card bg_100 maxw_500 p0 gap-0 p_x30">
+      <div class="modal__img maxh_400 full-width relative bottom_40 br_30 overflow">
+        <img class="full-width full-height img_object-cover obj_top" :src="img" alt="news">
+      </div>
       
-      <div class="block_column gap-20 pb_20">
+      <div class="post__data block_column gap-20 pb_20">
         <div class="image_align">
           <span class="icon icon-clock"></span>
           <p class="text_body2 text_font-sub">{{ date_ }}</p>
@@ -53,14 +55,38 @@ const { isOpen, open, close } = useOpen()
 </script>
 
 <style lang="scss" scoped>
-.post_item {
+.modal__img {
+  min-width: 440px;
+}
+
+.post__item {
   
-  @include min-desktop_1024 {
-    max-width: 450px;
+  @include max-desktop_768 {
+    .modal__img {
+      min-width: 350px;
+    }
   }
   
   @include max-desktop_576 {
     max-width: unset;
+    padding: 0 !important;
+    
+    .post__data {
+      padding: 0 20px;
+    }
+  }
+  
+  @include max-desktop_375 {
+    .modal__img {
+      min-width: 300px;
+    }
   }
 }
+@include min-desktop_768 {
+  .post__item_animate:hover {
+    scale: 1.1;
+    cursor: pointer;
+  }
+}
+
 </style>

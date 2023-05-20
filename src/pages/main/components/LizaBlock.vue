@@ -1,14 +1,14 @@
 <template>
-  <div class="container block_column">
-    <div class="block_row">
-      <div class="block_column gap-30">
+  <div class="relative container block_column">
+    <div class="block_row gap-20">
+      <div class="main__header relative block_column gap-30 z_2">
         <p class="text_bold text_big">Genshin Impact</p>
         
         <h1>{{ $t("main.mainTitle") }}</h1>
         
-        <div class="block_row justify-start">
+        <div class="main__button block_row justify-start">
           <button class="button button_svg" @click="useScroll('tools')">
-            {{ $t("main.mainTitle") }}
+            {{ $t("main.mainTool") }}
             <span class="icon-arrow-right2"></span>
           </button>
           
@@ -16,28 +16,100 @@
         </div>
       </div>
       
-      <div class="block_column liza__image">
-        <img src="/img//liza.png" alt="liza">
+      <div class="relative block_column liza__image maxw_500">
+        <img src="/img/liza.png" alt="liza">
       </div>
     </div>
-    <div class="card block_row p_x50 p_y40">
+    
+    <div class="relative paimon__chat card block_row p_x50 p_y40">
       <img src="/img/paimon.png" alt="paimon">
       
-      <div class="paimon_chat card bg_200 p_x60">
+      <div class="paimon__text relative br_30 card bg_200 p_x60">
         <p class="text_active">Genshin Academy</p>
-        <p class="text_bold mt_10 lineh_140p">{{ $t("main.mainPaimonText") }}</p>
+        <h5 class="mt_10 lineh_140p text_font-sub">{{ $t("main.mainPaimonText") }}</h5>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { useScroll } from "@/use/useScroll";
-</script>
+import { useScroll } from "@/use/useScroll";</script>
 
-<style scoped>
-.paimon_chat {
-  position: relative;
-  border-radius: 30px 30px 30px 30px;
+<style lang="scss" scoped>
+
+.paimon__chat {
+  @include max-desktop_1024 {
+    flex-direction: column;
+    padding: 50px 40px !important;
+    
+    & img {
+      position: absolute;
+      top: -30px;
+      left: 30px;
+      scale: 0.5;
+    }
+    
+    & .paimon__text {
+      padding: 30px !important;
+      padding-top: 60px !important;
+      border-radius: 0 30px 30px 30px !important;
+    }
+  }
 }
+
+
+.liza__image {
+  @include max-desktop_1024 {
+    min-height: 500px;
+    
+    & img {
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      opacity: 0.85;
+      scale: 0.9;
+      //transform: ;
+      transform: translate(0, 28px);
+    }
+  }
+  
+  @include max-desktop_768 {
+    & img {
+      left: -350px;
+      right: unset;
+      scale: 1;
+      transform: translate(0, 0);
+      filter: blur(2px);
+    }
+  }
+  
+  @include max-desktop_480 {
+    & img {
+      display: none;
+    }
+  }
+}
+
+@include max-desktop_480 {
+  .container {
+    margin: 0 !important;
+  }
+  h1 {
+    font-size: 35px !important;
+  }
+  .main__header {
+    padding: 0 30px;
+  }
+  
+  .main__button {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px !important;
+  }
+  
+  .liza__image {
+    min-height: 400px;
+  }
+}
+
 </style>

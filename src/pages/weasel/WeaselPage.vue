@@ -12,7 +12,7 @@
     </div>
   </div>
   
-  <ScrollBtn :line="'titleResult'" :to="'titleInput'"/>
+  <ScrollBtn :line="'titleResult'" :to="'header'"/>
 </template>
 
 <script lang="ts" setup>
@@ -46,9 +46,9 @@ import ScrollBtn from "@/pages/weasel/components/ScrollBtn.vue";
     justify-content: center;
     align-items: stretch;
     
-    position: absolute;
+    //position: absolute;
     width: calc(100% + 80px);
-    top: 80px;
+    //top: 80px;
     left: -40px;
   }
 }

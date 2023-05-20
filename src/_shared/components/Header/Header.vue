@@ -9,7 +9,7 @@
           </router-link>
         </div>
         
-        <div class="header__link block_row gap-5 max_768">
+        <div class="header__link block_row gap-5 max_992">
           <p>
             <router-link to="/">{{ t("header.main") }}</router-link>
           </p>
@@ -28,10 +28,10 @@
           
           <!-- Todo: Accordion вынести в отдельный компонент -->
           <div class="relative block_row gap-20">
-            <button class="button button_outline-white max_768 block_row gap-15" @click="toggleAccordion">
+            <button class="button header__btn button_outline-white max_768_op block_row gap-15 relative z_15" @click="toggleAccordion">
               {{ t('language') }}:
               <span>{{ t('currentLanguage') }}</span>
-              <span class="icon- icon-arrow-down2"></span>
+              <ArrowDown :class="isOpenAccordion ? 'arrow_top' : ''" />
             </button>
             
             <div class="accordion__overlay" @click="closeAccordion" v-show="isOpenAccordion"></div>
@@ -46,12 +46,11 @@
             </div>
           </div>
           
-          
-<!--          <button class="button button_outline-white max_768">{{ t("header.contacts") }}</button>-->
+          <!-- <button class="button button_outline-white max_768">{{ t("header.contacts") }}</button>-->
           
           <!-- Menu button -->
           <button @click.prevent="toggleMenu"
-                  class="button button_outline-white button_svg header__btn min_768"
+                  class="button button_outline-white button_svg header__btn min_992"
                   v-if="!isOpenMenu">
             <img src="/img/menu.svg" alt="menu">
             <span class="max_375">Меню</span>
@@ -75,13 +74,12 @@
 </template>
 
 <script lang="ts" setup>
-
+import ArrowDown from '/public/img/icon/arrow/chevron-down.svg?component'
 import HeaderMenu from "@/_shared/components/Header/HeaderMenu.vue";
 import { watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { langList, SelectLocales } from "@/localization";
 import { useOpen } from "@/use/useOpen";
-import { useScroll } from "@/use/useScroll";
 
 const props = defineProps(['divider'])
 
@@ -128,7 +126,7 @@ watch(isOpenMenu, () => {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 100;
+  z-index: 10;
 }
 
 .accordion__panel {
@@ -148,6 +146,19 @@ watch(isOpenMenu, () => {
   p:hover {
     color: $gray_700;
   }
+}
+
+.max_768_op {
+  @include max-desktop_768 {
+    opacity: 0;
+    max-width: 10px;
+  }
+}
+
+.header__btn:hover {
+  border-color: $gray_700;
+  color: $gray_700;
+  background: transparent;
 }
 
 @include max-desktop_375 {

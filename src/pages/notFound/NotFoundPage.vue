@@ -5,8 +5,8 @@
     
     <div class="container block_column align-center gap-0 full-width mt_80 p_x30">
       <div class="relative block_column align-center justify-center">
-        <img src="/img/404.png" class="maxw_700 maxh_200 br_30" alt="tao">
-        <h1 class="absolute text_gray_0 text_notFound">404</h1>
+        <img src="/img/404.png" class="maxw_700 minh_200 maxh_200 br_30" alt="tao">
+        <h1 class="absolute text_primary_0 text_notFound">404</h1>
       </div>
       
       <p class="text_gray_400 mt_40 full-width text_center">{{ $t('notFound.jokeStart') }}</p>

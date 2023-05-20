@@ -10,27 +10,30 @@
         {{ $t(getValue(selected_stat)) }}
       </p>
       
-      <span class="icon-arrow-down2 arrow"></span>
+      <ArrowDown :class="isHide ? '' : 'arrow_top'"/>
     </li>
     
     <!-- Divider -->
     <li :class="style('')" class="divider w_auto m10 mt_0"></li>
     
     <!-- Список характеристик -->
-    <li
-        class="stats-item image_align pointer mb_5"
-        v-for="stat in props.view"
-        :class="style(stat.name)"
-        @click="selectedStat(stat)"
-        v-if="!isHide"
-    >
-      <span :class='`icon-${stat.value} icon_16`'></span>
-      {{ $t(stat.value) }}
-    </li>
+    <TransitionGroup name="list" tag="ul">
+      <li
+          class="stats-item image_align pointer mb_5"
+          v-for="stat in props.view"
+          :class="style(stat.name)"
+          @click="selectedStat(stat)"
+          v-if="!isHide"
+      >
+        <span :class='`icon-${stat.value} icon_16`'></span>
+        {{ $t(stat.value) }}
+      </li>
+    </TransitionGroup>
   </ul>
 </template>
 
 <script lang="ts" setup>
+import ArrowDown from '/public/img/icon/arrow/chevron-down.svg?component'
 import { useCharacterStore } from '@/stores/character';
 import { onMounted, ref, watch } from 'vue';
 import { clearObj, getKey, getValue } from "@/handler";
@@ -181,7 +184,7 @@ function style(stat: string) {
     }
   }
   
-  &.active li:first-child * {
+  &.active > li:first-child * {
     &, &:after, {
       color: $color_active !important;
     }

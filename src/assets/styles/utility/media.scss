@@ -51,7 +51,7 @@
 
 
 @mixin min-desktop_992 {
-  @media (min-width: 992px) {
+  @media (min-width: 993px) {
     @content ;
   }
 }
@@ -146,6 +146,19 @@
 
 .min_576 {
   @include min-desktop_576 {
+    display: none !important;
+  }
+}
+
+
+.max_480 {
+  @include max-desktop_480 {
+    display: none !important;
+  }
+}
+
+.min_480 {
+  @include min-desktop_480 {
     display: none !important;
   }
 }

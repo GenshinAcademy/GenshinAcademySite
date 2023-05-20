@@ -1,0 +1,31 @@
+/* we will explain what these classes do next! */
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.4s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.4s ease;
+}
+
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+}
+
+
+.list-enter-to,
+.list-leave-from {
+  opacity: 1;
+}
+
+.arrow_top {
+  rotate: (180deg);
+}
