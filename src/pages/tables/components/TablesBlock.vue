@@ -6,7 +6,7 @@
         
         <div class="block_row justify-between table__title gap-30 align-center full-width">
           <div class="block_row table__title">
-            <img class="table__image" :src="conf.Preview" v-if="conf.Preview" alt="icon"/>
+            <img class="table__image" :src="conf.Icon" v-if="conf.Icon" alt="icon"/>
             
             <div class="block_column gap-10">
               <p v-if="conf.Title">{{ conf.Title }}</p>
