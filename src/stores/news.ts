@@ -14,7 +14,7 @@ export const useNewsStore = defineStore("news", () => {
   function useGetNews(limit: number = 5) {
     
     axios
-      .get(httpRoute.news)
+      .get(`${ httpRoute.news }?limit=${ limit }`)
       .then((res: AxiosResponse<INewsResponse[]>) => {
         logger.trace('Fetching news');
         news.value = res.data;

@@ -17,18 +17,16 @@
     <li :class="style('')" class="divider w_auto m10 mt_0"></li>
     
     <!-- Список характеристик -->
-    <TransitionGroup name="list" tag="ul">
-      <li
-          class="stats-item image_align pointer mb_5"
-          v-for="stat in props.view"
-          :class="style(stat.name)"
-          @click="selectedStat(stat)"
-          v-if="!isHide"
-      >
-        <span :class='`icon-${stat.value} icon_16`'></span>
-        {{ $t(stat.value) }}
-      </li>
-    </TransitionGroup>
+    <li
+        class="stats-item image_align pointer mb_5"
+        v-for="stat in props.view"
+        :class="style(stat.name)"
+        @click="selectedStat(stat)"
+        v-if="!isHide"
+    >
+      <span :class='`icon-${stat.value} icon_16`'></span>
+      {{ $t(stat.value) }}
+    </li>
   </ul>
 </template>
 

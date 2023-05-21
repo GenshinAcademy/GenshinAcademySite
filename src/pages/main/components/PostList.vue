@@ -1,5 +1,5 @@
 <template>
-  <div class="post__block container card card_outline mt_80 p40 block_column">
+  <div class="post__block container card card_outline mt_80 p40 block_column" v-if="postList.length !== 0">
     <div class="block_row justify-between full-width">
       <p id="news" class="text_title">
         {{ $t("news.lastNews") }}
@@ -43,7 +43,7 @@ const limit = 5
 
 const store = useNewsStore()
 
-store.useGetNews();
+store.useGetNews(limit);
 
 const postList = ref<INewsResponse[]>([]);
 
