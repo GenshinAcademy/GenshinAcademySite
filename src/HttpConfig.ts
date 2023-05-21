@@ -19,8 +19,6 @@ const config = axios.create({
   },
 });
 
-console.log(locale)
-
 export const httpRoute = {
   news: '/news/',
   characters: '/characters/stats',
