@@ -1,7 +1,7 @@
 import { createI18n } from 'vue-i18n'
-import messages from '@intlify/unplugin-vue-i18n/messages'
 import { ref, WritableComputedRef } from "vue";
 import locale from "@/_shared/locales/Locale.json"
+
 export interface ILanguage {
   ru: string,
   en: string,
@@ -15,7 +15,7 @@ export const langList = ref<ILanguage>({
 })
 
 export function SelectLocales(lang: string, locales: WritableComputedRef<string>) {
-  document.cookie = `locale=${lang}`
+  document.cookie = `locale=${ lang }`
   locales.value = lang
 }
 
@@ -23,28 +23,22 @@ export function SelectLocales(lang: string, locales: WritableComputedRef<string>
 export function checkLocale() {
   let results = document.cookie.match(/locale=(.+?)(;|$)/);
   
-  console.log(results)
   if (results) {
     return locales.value = <string>results[1] // ru/en/etc..
   }
   else {
     /** В зависимости от первого вхождения выбирает язык */
     for (let langIndex in window.navigator.languages) {
-      console.log(langIndex)
-      
-      let lang: string = <string>window.navigator.languages[langIndex]
-      console.log(lang)
-  
+      let lang: string = <string>window.navigator.languages[langIndex].split('-')[0]
       
       if (langList.value[lang as keyof ILanguage]) {
-  
-        locales.value = lang;
-        console.log(locales.value)
         
-        document.cookie = `locale=${lang}`
-        console.log(document.cookie)
+        locales.value = lang;
+        
+        document.cookie = `locale=${ lang }`
         return locales.value
       }
+      else  document.cookie = `locale=en`
     }
   }
 }
