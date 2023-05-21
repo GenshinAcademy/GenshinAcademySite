@@ -43,7 +43,7 @@ const limit = 5
 
 const store = useNewsStore()
 
-store.useGetNews();
+store.useGetNews(limit);
 
 const postList = ref<INewsResponse[]>([]);
 
