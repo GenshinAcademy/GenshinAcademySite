@@ -1,4 +1,4 @@
-name: Test build on Pull Request
+name: Test build on Pull Request PROD
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
       - reopened
       - synchronize
     branches:
-      - dev
+      - prod
 
 jobs:
   build:
@@ -22,6 +22,6 @@ jobs:
 
       - name: Test & Build
         env:
-          VITE_HOST_API: ${{ vars.VITE_HOST_API_DEV }}
-          VITE_LOG_LEVEL: ${{ vars.VITE_LOG_LEVEL_DEV }}
+          VITE_HOST_API: ${{ vars.VITE_HOST_API_PROD }}
+          VITE_LOG_LEVEL: ${{ vars.VITE_LOG_LEVEL_PROD }}
         run: npm run build
