@@ -5,7 +5,12 @@ import axios from "axios";
  *
  * @type {axios.AxiosInstance}
  */
-const locale = localStorage.getItem('locale');
+
+let cookie = document.cookie.match(/locale=(.+?)(;|$)/);
+let locale: string = ''
+
+if (cookie) locale = cookie[1]
+
 const config = axios.create({
   baseURL: import.meta.env.VITE_HOST_API,
   headers: {
@@ -13,6 +18,8 @@ const config = axios.create({
     'Accept-Languages': locale,
   },
 });
+
+console.log(locale)
 
 export const httpRoute = {
   news: '/news/',
