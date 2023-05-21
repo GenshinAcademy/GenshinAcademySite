@@ -53,12 +53,12 @@
       "guideBody": "Мини-гайды на всех персонажей: сборки артефактов, оружия, созвездия. Плюс мини-гайды на оружия. Постепенно обновляются."
     },
     "dungeon": {
-      "dungeonTitle": "Компас подземелий",
-      "dungeonBody": "Подскажет наиболее выгодные подземелья для фарма исходя из выбранных вами персонажей."
+      "dungeonTitle": "Калькулятор молитв",
+      "dungeonBody": "Позволит подсчитать вероятности получить нужное количество 5* или 4* предметов в зависимости от имеющегося количества молитв."
     },
     "weapon": {
-      "weaponTitle": "Эксперт по оружию",
-      "weaponBody": "Знает всё об оружии и каким персонажам они подходят. Автоматически анализирует оружейные баннеры!"
+      "weaponTitle": "Каталог бонусов",
+      "weaponBody": "База со всеми бонусами в игре, отсортированными по типам."
     },
     "news": {
       "PageTitle": "Новости",
@@ -149,7 +149,7 @@
       "Title": "Tables",
       "Body": "Gauge Units GU, Internal CoolDowns ICD, snapshots and other complex stuff - links to all tables from Genshin Academy can be found here.",
       "dev": {
-        "title": "Bonus catalog",
+        "title": "Catalog of bonuses",
         "body": "All possible bonuses in the game, sorted by type.",
         "message": "On dev"
       },
@@ -160,12 +160,12 @@
       "guideBody": "Mini-guides for all characters. So far we've been doing guides in Russian so this link may not be a big use for you. Instead we recommend KQM guides."
     },
     "dungeon": {
-      "dungeonTitle": "Dungeon compass [WIP]",
-      "dungeonBody": "It will suggest the most profitable dungeons for farming based on the characters you have chosen."
+      "dungeonTitle": "Wish calculator [WIP]",
+      "dungeonBody": "It will calculate the chances of pulling a certain number of 5* or 4* items in a certain amount of wishes."
     },
     "weapon": {
-      "weaponTitle": "Weapons expert [WIP]",
-      "weaponBody": "Knows everything about weapons and what characters they suit. Automatically analyzes weapon banners!"
+      "weaponTitle": "Catalog of bonuses [WIP]",
+      "weaponBody": "The collection of all possible bonuses in the game, sorted by type."
     },
     "news": {
       "PageTitle": "News",
