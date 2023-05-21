@@ -23,18 +23,26 @@ export function SelectLocales(lang: string, locales: WritableComputedRef<string>
 export function checkLocale() {
   let results = document.cookie.match(/locale=(.+?)(;|$)/);
   
+  console.log(results)
   if (results) {
     return locales.value = <string>results[1] // ru/en/etc..
   }
   else {
     /** В зависимости от первого вхождения выбирает язык */
     for (let langIndex in window.navigator.languages) {
+      console.log(langIndex)
+      
       let lang: string = <string>window.navigator.languages[langIndex]
+      console.log(lang)
+  
       
       if (langList.value[lang as keyof ILanguage]) {
+  
         locales.value = lang;
+        console.log(locales.value)
         
         document.cookie = `locale=${lang}`
+        console.log(document.cookie)
         return locales.value
       }
     }
