@@ -1,0 +1,177 @@
+@mixin min-desktop_1920 {
+  @media (min-width: 1920px) {
+    @content ;
+  }
+}
+
+@mixin max-desktop_1920 {
+  @media (max-width: 1920px) {
+    @content ;
+  }
+}
+
+
+@mixin min-desktop_1445 {
+  @media (min-width: 1445px) {
+    @content ;
+  }
+}
+
+@mixin max-desktop_1440 {
+  @media (max-width: 1440px) {
+    @content ;
+  }
+}
+
+
+@mixin min-desktop_1280 {
+  @media (min-width: 1280px) {
+    @content ;
+  }
+}
+
+@mixin max-desktop_1280 {
+  @media (max-width: 1280px) {
+    @content ;
+  }
+}
+
+
+@mixin min-desktop_1024 {
+  @media (min-width: 1024px) {
+    @content ;
+  }
+}
+
+@mixin max-desktop_1024 {
+  @media (max-width: 1024px) {
+    @content ;
+  }
+}
+
+
+@mixin min-desktop_992 {
+  @media (min-width: 993px) {
+    @content ;
+  }
+}
+
+@mixin max-desktop_992 {
+  @media (max-width: 992px) {
+    @content ;
+  }
+}
+
+@mixin min-desktop_768 {
+  @media (min-width: 769px) {
+    @content ;
+  }
+}
+
+@mixin max-desktop_768 {
+  @media (max-width: 768px) {
+    @content ;
+  }
+}
+
+
+@mixin min-desktop_576 {
+  @media (min-width: 577px) {
+    @content ;
+  }
+}
+
+@mixin max-desktop_576 {
+  @media (max-width: 576px) {
+    @content ;
+  }
+}
+
+
+@mixin min-desktop_480 {
+  @media (min-width: 480px) {
+    @content ;
+  }
+}
+
+@mixin max-desktop_480 {
+  @media (max-width: 480px) {
+    @content ;
+  }
+}
+
+@mixin min-desktop_375 {
+  @media (min-width: 375px) {
+    @content ;
+  }
+}
+
+@mixin max-desktop_375 {
+  @media (max-width: 380px) {
+    @content ;
+  }
+}
+
+
+/* 960 */
+.min_992 {
+  @include min-desktop_992 {
+    display: none !important;
+  }
+}
+
+.max_992 {
+  @include max-desktop_992 {
+    display: none !important;
+  }
+}
+
+.max_768 {
+  @include max-desktop_768 {
+    display: none !important;
+  }
+}
+
+.min_768 {
+  @include min-desktop_768 {
+    display: none !important;
+  }
+}
+
+.max_576 {
+  @include max-desktop_576 {
+    display: none !important;
+  }
+}
+
+.min_576 {
+  @include min-desktop_576 {
+    display: none !important;
+  }
+}
+
+
+.max_480 {
+  @include max-desktop_480 {
+    display: none !important;
+  }
+}
+
+.min_480 {
+  @include min-desktop_480 {
+    display: none !important;
+  }
+}
+
+
+.max_375 {
+  @include max-desktop_375 {
+    display: none !important;
+  }
+}
+
+.min_375 {
+  @include min-desktop_375 {
+    display: none !important;
+  }
+}

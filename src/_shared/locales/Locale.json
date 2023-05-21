@@ -1,0 +1,216 @@
+{
+  "ru": {
+    "language": "Язык",
+    "currentLanguage": "Русский",
+    "header": {
+      "main": "Главная",
+      "tools": "Инструменты",
+      "tables": "Таблицы",
+      "guides": "Гайды",
+      "contacts": "Контакты"
+    },
+    "footer": {
+      "right": "Все права защищены",
+      "object": "Другие объекты принадлежат их соответствующим владельцам",
+      "ads": "По вопросам рекламы"
+    },
+    "weasel": {
+      "PageTitle":"Хорёк-оценщик",
+      "breadCrumbs": "Инструменты / Хорёк-оценщик",
+      "weaselTitle": "Хорёк-оценщик",
+      "weaselBody": "Он оценивает артефакты и говорит, каким персонажам они могут подойти. Не можешь решить, оставить артефакт или отправить на «корм»? Хорёк-оценщик поможет!",
+      "request": "Вводные",
+      "response": "Результаты",
+      "weaselHint": "Выберите артефакт и нажмите «Оценить».",
+      "selectArt": "Выберите артефакт",
+      "subStats": "Доп. характеристики",
+      "appraise": "Оценить",
+      "tier": {
+        "S": "Идеально",
+        "A": "Отлично",
+        "B": "Хорошо",
+        "C": "Сойдёт"
+      }
+    },
+    "table": {
+      "tableTitle": "Таблицы",
+      "tableBody": "Силы наложения статусов GU, откаты наложения статусов ICD, снапшоты и прочие сложные штучки — ссылки на все таблицы от Genshin Academy можно найти здесь."
+    },
+    "tables": {
+      "PageTitle": "Таблицы",
+      "breadCrumbs": "Главная / Инструменты / Таблицы",
+      "Title": "Таблицы",
+      "Body": "Силы наложения статусов GU, откаты наложения статусов ICD, снапшоты и прочие сложные штучки — ссылки на все таблицы от Genshin Academy можно найти здесь.",
+      "dev": {
+        "title": "Каталог бонусов",
+        "body": "Все возможные бонусы в игре, отсортированные по типам.",
+        "message": "В разработке"
+      },
+      "go": "Перейти"
+    },
+    "guide": {
+      "guideTitle": "Сборник гайдов",
+      "guideBody": "Мини-гайды на всех персонажей: сборки артефактов, оружия, созвездия. Плюс мини-гайды на оружия. Постепенно обновляются."
+    },
+    "dungeon": {
+      "dungeonTitle": "Калькулятор молитв",
+      "dungeonBody": "Позволит подсчитать вероятности получить нужное количество 5* или 4* предметов в зависимости от имеющегося количества молитв."
+    },
+    "weapon": {
+      "weaponTitle": "Каталог бонусов",
+      "weaponBody": "База со всеми бонусами в игре, отсортированными по типам."
+    },
+    "news": {
+      "PageTitle": "Новости",
+      "lastNews": "Последние новости",
+      "seeAll": "Смотреть все",
+      "see": "Смотреть",
+      "allNews": "Все новости"
+    },
+    "main": {
+      "PageTitle": "Главная",
+      "mainTitle": "Полезные инструменты и гайды",
+      "mainTool": "Инструменты",
+      "mainPaimonText": "Мы занимаемся гайдами по Genshin Impact уже два года, но вот теперь решили сделать шаг вперёд, выйти за пределы соцсетей и создавать полезные инструменты по игре, которые вы нигде больше не найдёте!",
+      "news": "Новости",
+      "openPage": "Открыть страницу",
+      "onDev": "В разработке",
+      "support": "Поддержать",
+      "supportText": "Если вы хотите поддержать Академию монетой, то присоединяйтесь к нам на Boosty! Там в формате блога мы рассказываем о наших будущих планах и показываем наработки.",
+      "supportButton": "Перейти на Boosty"
+    },
+    "notFound": {
+      "pageTitle": "Страницы не существует",
+      "jokeStart": "Заходит как-то пользователь на страницу, а...",
+      "jokeEnd": "Такой страницы не существует",
+      "button": "На главную"
+    },
+    "HP": "HP",
+    "HP_P": "HP %",
+    "ATK": "Сила атаки",
+    "ATK_P": "Сила атаки %",
+    "DEF": "Защита",
+    "DEF_P": "Защита %",
+    "EM": "Мастерство стихий",
+    "ER": "Восст. энергии",
+    "CR": "Крит. шанс",
+    "CD": "Крит. урон",
+    "HEAL": "Бонус лечения",
+    "defaultValue": "Выберите характеристику...",
+    "PHYS": "Бонус физ. урона",
+    "Pyro": "Бонус Пиро урона",
+    "Hydro": "Бонус Гидро урона",
+    "Dendro": "Бонус Дендро урона",
+    "Electro": "Бонус Электро урона",
+    "Anemo": "Бонус Анемо урона",
+    "Cryo": "Бонус Крио урона",
+    "Geo": "Бонус Гео урона"
+  },
+  "en": {
+    "language": "Language",
+    "currentLanguage": "English",
+    "header": {
+      "main": "Home",
+      "tools": "Tools",
+      "tables": "Tables",
+      "guides": "Guides",
+      "contacts": "Contacts"
+    },
+    "footer": {
+      "right": "All rights reserved",
+      "object": "Other items belong to their respective owners",
+      "ads": "Contact us for advertising"
+    },
+    "weasel": {
+      "PageTitle":"Weasel Appraiser",
+      "breadCrumbs": "Tools / Weasel Appraiser",
+      "weaselTitle": "Weasel Appraiser",
+      "weaselBody": "It evaluates the artifacts and tells you which characters are they best suited for. Can't decide whether to keep the artifact or 'feed' it? Weasel appraiser will help!",
+      "request": "Input",
+      "response": "Results",
+      "weaselHint": "Select an artifact and click «Appraise».",
+      "selectArt": "Select Artifact",
+      "subStats": "Substats",
+      "appraise": "Appraise",
+      "tier": {
+        "S": "Perfect",
+        "A": "Great",
+        "B": "Good",
+        "C": "Fit"
+      }
+    },
+    "table": {
+      "tableTitle": "Tables",
+      "tableBody": "Gauge Units GU, Internal CoolDowns ICD, snapshots and other complex stuff - links to all tables from Genshin Academy can be found here."
+    },
+    "tables": {
+      "PageTitle": "Tables",
+      "breadCrumbs": "Tools / Tables",
+      "Title": "Tables",
+      "Body": "Gauge Units GU, Internal CoolDowns ICD, snapshots and other complex stuff - links to all tables from Genshin Academy can be found here.",
+      "dev": {
+        "title": "Catalog of bonuses",
+        "body": "All possible bonuses in the game, sorted by type.",
+        "message": "On dev"
+      },
+      "go": "Go"
+    },
+    "guide": {
+      "guideTitle": "Collection of guides",
+      "guideBody": "Mini-guides for all characters. So far we've been doing guides in Russian so this link may not be a big use for you. Instead we recommend KQM guides."
+    },
+    "dungeon": {
+      "dungeonTitle": "Wish calculator [WIP]",
+      "dungeonBody": "It will calculate the chances of pulling a certain number of 5* or 4* items in a certain amount of wishes."
+    },
+    "weapon": {
+      "weaponTitle": "Catalog of bonuses [WIP]",
+      "weaponBody": "The collection of all possible bonuses in the game, sorted by type."
+    },
+    "news": {
+      "PageTitle": "News",
+      "lastNews": "Last news",
+      "seeAll": "See all",
+      "see": "See",
+      "allNews": "All news"
+    },
+    "main": {
+      "PageTitle": "Home",
+      "mainTitle": "Useful tools and guides",
+      "mainTool": "Tools",
+      "mainPaimonText": "We've been making guides for Genshin Impact for two years now, but now we've decided to take a step further, go beyond social media platforns and create useful game tools that you won't find anywhere else!",
+      "news": "News",
+      "openPage": "Open page",
+      "onDev": "In development",
+      "support": "Support",
+      "supportText": "If you want to support us monetarily, you can do so here. Thank you.",
+      "supportButton": "Go to Boosty"
+    },
+    "notFound": {
+      "pageTitle": "Page does not exist",
+      "jokeStart": "Somehow the user comes to the page, and ...",
+      "jokeEnd": "This page does not exist",
+      "button": "To main"
+    },
+    "HP": "HP",
+    "HP_P": "HP %",
+    "ATK": "ATK",
+    "ATK_P": "ATK %",
+    "DEF": "DEF",
+    "DEF_P": "DEF %",
+    "EM": "Elemental Mastery",
+    "ER": "Energy Recharge",
+    "CR": "Crit Rate",
+    "CD": "Crit Damage",
+    "HEAL": "Healing Bonus",
+    "defaultValue": "Select feature...",
+    "PHYS": "Physical DMG %",
+    "Pyro": "Pyro DMG %",
+    "Hydro": "Hydro DMG %",
+    "Dendro": "Dendro DMG %",
+    "Electro": "Electro DMG %",
+    "Anemo": "Anemo DMG %",
+    "Cryo": "Cryo DMG %",
+    "Geo": "Geo DMG %"
+  }
+}
