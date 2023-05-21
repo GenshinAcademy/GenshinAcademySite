@@ -1,5 +1,5 @@
 <template>
-  <div class="post__item post__item_animate block_column card bg_100 minw_300 p0 gap-0 flex_1 overflow" @click="open" v-if="title">
+  <div class="post__item post__item_animate block_column card bg_100 minw_300 maxw_400 p0 gap-0 flex_1 overflow" @click="open" v-if="title">
     <img class="maxh_200 img_object-cover obj_top" :src="img" alt="news">
     
     <div class="block_column gap-10 p20">
