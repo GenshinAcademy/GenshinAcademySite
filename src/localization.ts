@@ -15,24 +15,26 @@ export const langList = ref<ILanguage>({
 })
 
 export function SelectLocales(lang: string, locales: WritableComputedRef<string>) {
-  localStorage.setItem('locale', lang)
+  document.cookie = `locale=${lang}`
   locales.value = lang
 }
 
 
 export function checkLocale() {
-  if (localStorage.getItem('locale')) {
-    return locales.value = <string>localStorage.getItem('locale')
-  } else {
-    
-    /** В зависимости от первого вхождения выбирает язык*/
+  let results = document.cookie.match(/locale=(.+?)(;|$)/);
+  
+  if (results) {
+    return locales.value = <string>results[1] // ru/en/etc..
+  }
+  else {
+    /** В зависимости от первого вхождения выбирает язык */
     for (let langIndex in window.navigator.languages) {
       let lang: string = <string>window.navigator.languages[langIndex]
       
       if (langList.value[lang as keyof ILanguage]) {
         locales.value = lang;
         
-        localStorage.setItem('locale', lang)
+        document.cookie = `locale=${lang}`
         return locales.value
       }
     }

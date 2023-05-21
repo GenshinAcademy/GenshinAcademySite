@@ -1,7 +1,7 @@
 <template>
   <div class="menu__close" @click.prevent.self="props.toggle()" :class="{view: props.isOpen}">
     <div :class="{menu__open: props.isOpen}" class="menu" @click.prevent>
-      <div class="card bg_200 br_20 block_column gap-20 min_768 card_gray">
+      <div class="card bg_200 br_20 block_column gap-20 card_gray">
         <p>
           <router-link to="/" @click="props.toggle()">{{ t("header.main") }}</router-link>
         </p>
