@@ -17,8 +17,8 @@
         </div>
         
         <div class="boosty__img block_column flex_5 relative">
-          <img class="z_1 max_576" src="/img/boosty.png" alt="boosty">
-          <img class="z_1 min_576" src="/img/boosty_576.png" alt="boosty">
+          <img class="z_1 max_576" src="/img/optimized/boosty.webp" alt="boosty">
+          <img class="z_1 min_576" src="/img/optimized/boosty_576.webp" alt="boosty">
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@
   <Header/>
   <WeaselBlock/>
   <div class="bg__image top_95 maxh_400">
-    <img class="full-height" src="/img/bg_art.png" alt="bg">
+    <img class="full-height" src="/img/optimized/bg_art.webp" alt="bg">
   </div>
   
   <div class="card container align-stretch p50">

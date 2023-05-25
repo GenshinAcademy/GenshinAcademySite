@@ -11,7 +11,7 @@
         <p class="text_body2 text_font-sub mt_15">{{ $t('tables.Body') }}</p>
       </div>
       <div class="tables__image">
-        <img class="traveler__img" src="/img/tables.png" alt="traveler">
+        <img class="traveler__img" src="/img/optimized/traveler.webp" alt="traveler">
       </div>
     </div>
   </div>
