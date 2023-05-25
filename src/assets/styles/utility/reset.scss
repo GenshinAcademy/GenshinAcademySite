@@ -8,7 +8,7 @@
   color: $gray_700;
   transition: 0.3s;
   font-family: $font_main;
-  font-display: fallback;
+  font-display: swap;
   font-size: $text_fs;
   font-weight: $text_fw;
 }

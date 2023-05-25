@@ -2,7 +2,7 @@
   <div class="hero block_row align-end" v-for="hero in heroes">
     <img
         :src="hero.icon_url"
-        @error="e => {if (e.target) {(e.target as HTMLImageElement).src = '/img/uchar.webp'}}"
+        @error="e => {if (e.target) {(e.target as HTMLImageElement).src = '/img/optimized/uchar.webp'}}"
         :alt="`${hero.name}`"
         class="pointer_all"
     />

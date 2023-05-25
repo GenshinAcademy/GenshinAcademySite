@@ -13,16 +13,16 @@
       </div>
       
       <div class="block_column flex_4 relative">
-        <img class="traveler__img" src="/img/traveler.png" alt="traveler">
+        <img class="traveler__img" src="/img/optimized/traveler.webp" alt="traveler">
       </div>
     </div>
     
     <!-- Weasel -->
     <div class="tool__block weasel__block block_row card bg_200 p50 overflow full-width">
       <div class="block_column flex_3 relative">
-        <img class="weasel__img max_992" src="/img/weasel.png" alt="traveler">
-        <img class="weasel__img_2 max_576 min_992" src="/img/weasel_bg.png" alt="weasel_bg">
-        <img class="weasel__img_2 min_576" src="/img/weasel_bg_576.png" alt="weasel_bg">
+        <img class="weasel__img max_992" src="/img/optimized/weasel.webp" alt="traveler">
+        <img class="weasel__img_2 max_576 min_992" src="/img/optimized/weasel_bg.webp" alt="weasel_bg">
+        <img class="weasel__img_2 min_576" src="/img/optimized/weasel_bg_576.webp" alt="weasel_bg">
       </div>
       
       <div class="relative block_column gap-10 flex_5 z_2">
@@ -45,7 +45,7 @@
       </div>
       
       <div class="block_column flex_4 relative">
-        <img class="guide__img" src="/img/guide.png" alt="traveler">
+        <img class="guide__img" src="/img/optimized/guide.webp" alt="traveler">
       </div>
     </div>
     

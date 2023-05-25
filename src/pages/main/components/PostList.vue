@@ -4,7 +4,7 @@
       <p id="news" class="text_title">
         {{ $t("news.lastNews") }}
         <span class="relative">
-          <img class="absolute bottom-5" src="/img/list.png" alt="lists">
+          <img class="absolute bottom-5" src="/img/optimized/list.webp" alt="lists">
         </span>
       </p>
       <a class="image_align max_576">

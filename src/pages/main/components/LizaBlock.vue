@@ -17,12 +17,12 @@
       </div>
       
       <div class="relative block_column liza__image maxw_500">
-        <img src="/img/liza.png" alt="liza">
+        <img src="/img/optimized/liza.webp" alt="liza">
       </div>
     </div>
     
     <div class="relative paimon__chat card block_row p_x50 p_y40">
-      <img src="/img/paimon.png" alt="paimon">
+      <img src="/img/optimized/paimon.webp" alt="paimon">
       
       <div class="paimon__text relative br_30 card bg_200 p_x60">
         <p class="text_active">Genshin Academy</p>
