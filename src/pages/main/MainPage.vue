@@ -2,8 +2,8 @@
   <Header divider="true"/>
   
   <div class="bg__image maxh_650">
-        <img class="img_object-unset full-height max_480" src="/img/main_bg.png" alt="bg">
-    <img class="img_object-unset minh_550 min_480" src="/img/main_bg_375.png" alt="bg">
+        <img class="img_object-unset full-height max_480" src="/img/optimized/main_bg.webp" alt="bg">
+    <img class="img_object-unset minh_550 min_480" src="/img/optimized/main_bg_375.webp" alt="bg">
   </div>
   
   <LizaBlock/>
