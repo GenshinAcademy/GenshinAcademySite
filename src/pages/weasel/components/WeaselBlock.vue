@@ -6,13 +6,13 @@
         
         <div class="relative">
           <h2 class="weasel__title mt_20">{{ $t('weasel.weaselTitle') }}</h2>
-          <img class="weasel_image_bg min_576" src="/img/weasel_bg2.png" alt="weasel">
+          <img class="weasel_image_bg min_576" src="/img/optimized/weasel_bg2.webp" alt="weasel">
         </div>
         
         <p class="text_body2 text_font-sub mt_15">{{ $t('weasel.weaselBody') }}</p>
       </div>
       <div class="weasel__image">
-        <img class="weasel_image_bg max_576" src="/img/weasel_bg.png" alt="weasel_bg">
+        <img class="weasel_image_bg max_576" src="/img/optimized/weasel_bg.webp" alt="weasel_bg">
       </div>
     </div>
   </div>
