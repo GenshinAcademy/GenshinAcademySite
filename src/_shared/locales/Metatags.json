@@ -1,0 +1,56 @@
+{
+    "ru": {
+        "main": {
+            "PageTitle": "Genshin Academy - Гайды, таблицы, инструменты",
+            "PageDescription": "Здесь вы найдете все необходимое для игры Genshin Impact: гайды, советы, инструменты. Это место для тех, кто хочет извлечь из своих персонажей максимум",
+            "PageImage": ""
+        },
+        "weasel": {
+            "PageTitle": "Хорёк-оценщик - оптимизация артефактов Genshin Impact | Genshin Academy",
+            "PageDescription": "Оценка артефактов Genshin Impact. Не можешь решить, оставить артефакт или отправить на «корм»? Хорёк-оценщик поможет!",
+            "PageImage": ""
+        },
+        "tables": {
+            "PageTitle": "Таблицы | Genshin Academy",
+            "PageDescription": "Силы наложения статусов GU, откаты наложения статусов ICD, снапшоты и прочие сложные штучки — ссылки на все таблицы от Genshin Academy можно найти здесь.",
+            "PageImage": ""
+        },
+        "news": {
+            "PageTitle": "Новости | Genshin Academy",
+            "PageDescription": "Будьте в курсе последних материалов и обновлений от Genshin Academy",
+            "PageImage": ""
+        },
+        "notFound": {
+            "PageTitle": "Страница не существует",
+            "PageDescription": "Мы пытались найти её, но её правда не существует...",
+            "PageImage": ""
+        }
+    },
+    "en": {
+        "main": {
+            "PageTitle": "Genshin Academy - Guides, Tools and Tables",
+            "PageDescription": "Here you'll find everything you need to play Genshin Impact: guides, tips, tools. This is the place for those who want to get the most out of their characters.",
+            "PageImage": ""
+        },
+        "weasel": {
+            "PageTitle": "Weasel Appraiser - Genshin Artifacts Optimizer | Genshin Academy",
+            "PageDescription": "Evaluate and optimize Genshin Impact artifacts for characters. Weasel Appraiser helps you choose the best-suited artifacts and decide whether to keep or feed them.",
+            "PageImage": ""
+        },
+        "tables": {
+            "PageTitle": "Tables | Genshin Academy",
+            "PageDescription": "Explore Gauge Units (GU), Internal Cooldowns (ICD), snapshots, and more in Genshin Impact. Find comprehensive tables from Genshin Academy for quick reference and in-depth knowledge of these complex mechanics. Enhance your understanding of Genshin Impact's intricate systems with easy access to valuable information.",
+            "PageImage": ""
+        },
+        "news": {
+            "PageTitle": "News | Genshin Academy",
+            "PageDescription": "Stay up to date with the latest materials and updates from Genshin Academy",
+            "PageImage": ""
+        },
+        "notFound": {
+            "PageTitle": "Page does not exist",
+            "PageDescription": "We tried to find it, but it really does not...",
+            "PageImage": ""
+        }
+    }
+}
