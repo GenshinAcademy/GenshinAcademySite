@@ -26,8 +26,8 @@
     
     </div>
     
-    <a class="image_align min_576 full-width text_start">
-      <a href="/news" class="text_font-sub">{{ $t("news.seeAll") }}</a>
+    <a href="/news" class="image_align min_576 full-width text_start">
+      <a class="text_font-sub">{{ $t("news.seeAll") }}</a>
       <span class="icon icon-arrow-right2 icon_gray_700"></span>
     </a>
   </div>

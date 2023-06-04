@@ -1,7 +1,7 @@
 <template>
   <div
     id="tableHeader"
-    class="card container align-stretch p50"
+    class="card container container_m0 align-stretch p50"
   >
     <div class="block_column full-width gap-20">
       <div

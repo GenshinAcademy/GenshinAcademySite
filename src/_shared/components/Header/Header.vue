@@ -26,34 +26,14 @@
         
         <div class="header__button block_row gap-20">
           
-          <!-- Todo: Accordion вынести в отдельный компонент -->
-          <div class="relative block_row gap-20">
-            <button class="button header__btn button_outline-white max_768_op block_row gap-15 relative z_15" @click="toggleAccordion">
-              {{ t('language') }}:
-              <span>{{ t('currentLanguage') }}</span>
-              <ArrowDown :class="isOpenAccordion ? 'arrow_top' : ''" />
-            </button>
-            
-            <div class="accordion__overlay" @click="closeAccordion" v-show="isOpenAccordion"></div>
-            <div class="accordion__panel block_column gap-15 bg_100 p20 br_10" v-show="isOpenAccordion">
-              <p
-                  class="active"
-                  v-for="(lang, key) in langList"
-                  @click="switchLang(key)" :key="key"
-              >
-                {{ t(lang) }}
-              </p>
-            </div>
-          </div>
-          
-          <!-- <button class="button button_outline-white max_768">{{ t("header.contacts") }}</button>-->
+          <ChangeLanguage is-mobile="true" panel="bg_100"/>
           
           <!-- Menu button -->
           <button @click.prevent="toggleMenu"
                   class="button button_outline-white button_svg header__btn min_992"
                   v-if="!isOpenMenu">
             <img src="/img/menu.svg" alt="menu">
-            <span class="max_375">Меню</span>
+            <span class="max_480">{{ t('header.menu') }}</span>
           </button>
           
           <!-- Menu close button -->
@@ -74,30 +54,17 @@
 </template>
 
 <script lang="ts" setup>
-import ArrowDown from '/public/img/icon/arrow/chevron-down.svg?component'
 import HeaderMenu from "@/_shared/components/Header/HeaderMenu.vue";
 import { watch } from "vue";
 import { useI18n } from "vue-i18n";
-import { langList, SelectLocales } from "@/localization";
 import { useOpen } from "@/use/useOpen";
+import ChangeLanguage from "@/_shared/components/ChangeLanguage/ChangeLanguage.vue";
 
 const props = defineProps(['divider'])
 
 const { isOpen: isOpenMenu, toggle: toggleMenu } = useOpen();
-const { isOpen: isOpenAccordion, toggle: toggleAccordion, close: closeAccordion } = useOpen();
 
-const { t, locale } = useI18n()
-
-function setLang(lang: string) {
-  locale.value = lang
-  closeAccordion()
-  SelectLocales(lang, locale)
-}
-
-function switchLang(key: string) {
-  setLang(key)
-  location.reload()
-}
+const { t } = useI18n()
 
 
 /** Прокручивает экран в 0, и блокирует прокрутку страниы*/
@@ -116,43 +83,6 @@ watch(isOpenMenu, () => {
 <style lang="scss">
 .header__link p {
   padding: 10px 15px;
-}
-
-.accordion__overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 10;
-}
-
-.accordion__panel {
-  min-width: 200px;
-  position: absolute;
-  top: 65px;
-  left: 0;
-  z-index: 100;
-  
-  p {
-    padding: 5px;
-    width: fit-content;
-    cursor: pointer;
-    color: $gray_500;
-  }
-  
-  p:hover {
-    color: $gray_700;
-  }
-}
-
-.max_768_op {
-  @include max-desktop_768 {
-    opacity: 0;
-    max-width: 10px;
-  }
 }
 
 .header__btn:hover {

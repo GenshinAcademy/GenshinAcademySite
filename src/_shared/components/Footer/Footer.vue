@@ -1,7 +1,7 @@
 <template>
   <footer class="block_row container p_y40 justify-between mt_20">
-    <p class="text_note lineh_125p text_gray_500">© {{ t('footer.right') }} COGNOSPHERE. <br> {{ t('footer.object') }}.
-    </p>
+    <p class="text_note lineh_125p text_gray_500">© {{ t('footer.right') }}<br> {{ t('footer.object') }}</p>
+
     
     <p class="text_note lineh_125p text_gray_500">
       {{ t('footer.ads') }}. <br>
@@ -9,22 +9,22 @@
     </p>
     
     <div class="block_row gap-15">
-      <a href="https://vk.com/genshinacademy" class="icon icon-vk" target="_blank">
+      <a href="https://vk.com/genshinacademy" class="icon icon-vk" target="_blank" aria-label="vk">
         <span class="icon-vk path1"></span>
         <span class="icon-vk path2"></span>
       
       </a>
-      <a href="https://t.me/genshin_academy" class="icon icon-telegram" target="_blank">
+      <a href="https://t.me/genshin_academy" class="icon icon-telegram" target="_blank" aria-label="telegram">
         <span class="icon-telegram path1"></span>
         <span class="icon-telegram path2"></span>
       </a>
       
-      <a href="https://www.youtube.com/c/genshinacademy" class="icon icon-youtube" target="_blank">
+      <a href="https://www.youtube.com/c/genshinacademy" class="icon icon-youtube" target="_blank" aria-label="youtube">
         <span class="icon-youtube path1"></span>
         <span class="icon-youtube path2"></span>
       </a>
       
-      <a href="https://www.hoyolab.com/accountCenter/postList?id=37721496" class="icon icon-hoyolab" target="_blank">
+      <a href="https://www.hoyolab.com/accountCenter/postList?id=37721496" class="icon icon-hoyolab" target="_blank" aria-label="hoyolab">
         <span class="icon-hoyolab path1"></span>
         <span class="icon-hoyolab path2"></span>
         <span class="icon-hoyolab path3"></span>

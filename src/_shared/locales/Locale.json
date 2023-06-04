@@ -7,11 +7,12 @@
       "tools": "Инструменты",
       "tables": "Таблицы",
       "guides": "Гайды",
-      "contacts": "Контакты"
+      "contacts": "Контакты",
+      "menu": "Меню"
     },
     "footer": {
-      "right": "Все права защищены",
-      "object": "Другие объекты принадлежат их соответствующим владельцам",
+      "right": "Все права защищены COGNOSPHERE.",
+      "object": "Genshin Impact и все связанные материалы принадлежат miHoYo и другим соответствующим законным владельцам (правообладателям).Веб-сайт не является официальным ресурсом miHoYo.",
       "ads": "По вопросам рекламы"
     },
     "weasel": {
@@ -109,11 +110,12 @@
       "tools": "Tools",
       "tables": "Tables",
       "guides": "Guides",
-      "contacts": "Contacts"
+      "contacts": "Contacts",
+      "menu": "Menu"
     },
     "footer": {
-      "right": "All rights reserved",
-      "object": "Other items belong to their respective owners",
+      "right": "All rights reserved COGNOSPHERE.",
+      "object": "Genshin Impact and all related materials are owned by miHoYo and their respective rightful owners (right holders). The website is not an official miHoYo resource.",
       "ads": "Contact us for advertising"
     },
     "weasel": {

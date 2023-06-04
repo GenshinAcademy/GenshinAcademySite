@@ -941,11 +941,18 @@
     background: transparent;
 
     &:hover {
+      transition: 0.3s ease-in-out;
       color: $gray_0 !important;
       border-color: $gray_700;
       background: $gray_700;
 
       &:hover * {
+        color: $gray_0 !important;
+        fill: $gray_0 !important;
+      }
+
+      & *:before, & > *:after {
+        transition: 0.3s ease-in-out;
         color: $gray_0 !important;
       }
     }

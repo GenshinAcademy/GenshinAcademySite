@@ -1,5 +1,5 @@
 <template>
-  <div class="art-sub-stats card full-width br_20 bg_200">
+  <div class="art-sub-stats card card_bg full-width br_20 bg_200">
     <p class="text_body text_start mb_20">{{ $t("weasel.subStats") }}</p>
 
     <ul class="block_wrap gap-10 justify-around">
