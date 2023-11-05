@@ -86,6 +86,10 @@ function clearStats(stat: string) {
 function weasel() {
   if (store.chosen_art.main_stat.hasOwnProperty('name'))
     if (store.chosen_art.sub_stats.length >= 1) {
+      if (!hero.$state.sortedCharactersStats.length) {
+        hero.get_hero();
+      }
+      
       hero.weasel(store.chosen_art);
 
       // Analytic

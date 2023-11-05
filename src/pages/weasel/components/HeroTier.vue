@@ -25,10 +25,6 @@
   
   const heroes = useCharacterStore();
   const tiers = useListsStore().tiers;
-  
-  onMounted(() => {
-    heroes.get_hero();
-  });
 
 </script>
 
