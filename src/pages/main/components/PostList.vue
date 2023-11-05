@@ -1,5 +1,5 @@
 <template>
-  <div class="post__block container card card_outline mt_80 p40 block_column" v-if="postList.length !== 0">
+  <div class="post__block container card card_outline mt_80 p40 block_column">
     <div class="block_row justify-between full-width">
       <p id="news" class="text_title">
         {{ $t("news.lastNews") }}
@@ -12,8 +12,8 @@
         <span class="icon icon-arrow-right2 icon_gray_700"></span>
       </a>
     </div>
-    <div class="post_list block_row relative overflow-x_auto full-width justify-start minh_400 p_x20">
-      
+    
+    <div id="post-list-wrapper" class="post_list block_row relative overflow-x_auto full-width justify-start minh_400 p_x20" v-if="store.news.length">
       <PostListItem
           :img="post.Preview"
           :title="post.Title"
@@ -21,9 +21,12 @@
           :description="post.Description"
           :url="post.RedirectUrl"
           :key="post.Id"
-          v-for="post in postList.slice(0, limit)"
+          v-for="post in store.news.slice(0, limit)"
       />
+    </div>
     
+    <div id="post-list-wrapper" class="post_list block_row relative overflow-x_auto full-width justify-start minh_400 p_x20" v-if="!store.news.length">
+      <PostListItemLoader />
     </div>
     
     <a href="/news" class="image_align min_576 full-width text_start">
@@ -34,22 +37,26 @@
 </template>
 
 <script lang="ts" setup>
-import PostListItem from "@/_shared/components/Post/PostListItem.vue";
 import { useNewsStore } from "@/stores/news";
-import { ref, watchEffect } from "vue";
-import { INewsResponse } from "@/scripts/models/News";
+import { onMounted } from "vue";
+import PostListItem from "@/_shared/components/Post/PostListItem.vue";
+import PostListItemLoader from "@/_shared/components/Post/PostListItemLoader.vue";
 
 const limit = 5
 
 const store = useNewsStore()
 
-store.useGetNews(limit);
+onMounted(() => {
+  let postListWrapper = document.getElementById('post-list-wrapper')
+  
+  const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting && !store.news.length) store.useGetNews(limit)
+      }
+  )
+  
+  observer.observe(postListWrapper as HTMLElement)
+})
 
-const postList = ref<INewsResponse[]>([]);
-
-watchEffect(() => {
-  postList.value = store.news
-});
 </script>
 
 
