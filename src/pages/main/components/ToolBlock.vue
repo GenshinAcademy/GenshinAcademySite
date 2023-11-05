@@ -152,6 +152,9 @@
   img {
     //display: none;
   }
+  .text_title {
+    white-space: unset;
+  }
 }
 
 .dev__tools {

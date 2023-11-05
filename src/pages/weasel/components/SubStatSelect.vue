@@ -167,7 +167,7 @@ function styleBtn() {
   }
 
   & .button.disable_bg_2:hover {
-    cursor: unset !important;
+    cursor: default !important;
     opacity: unset !important;
   }
 }
