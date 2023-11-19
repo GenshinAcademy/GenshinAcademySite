@@ -1,5 +1,5 @@
 <template>
-  <div class="art-sub-stats card full-width br_20 bg_200">
+  <div class="art-sub-stats card card_bg full-width br_20 bg_200">
     <p class="text_body text_start mb_20">{{ $t("weasel.subStats") }}</p>
 
     <ul class="block_wrap gap-10 justify-around">
@@ -86,6 +86,10 @@ function clearStats(stat: string) {
 function weasel() {
   if (store.chosen_art.main_stat.hasOwnProperty('name'))
     if (store.chosen_art.sub_stats.length >= 1) {
+      if (!hero.$state.sortedCharactersStats.length) {
+        hero.get_hero();
+      }
+      
       hero.weasel(store.chosen_art);
 
       // Analytic
@@ -167,7 +171,7 @@ function styleBtn() {
   }
 
   & .button.disable_bg_2:hover {
-    cursor: unset !important;
+    cursor: default !important;
     opacity: unset !important;
   }
 }

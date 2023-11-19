@@ -25,8 +25,8 @@
       <img src="/img/optimized/paimon.webp" alt="paimon">
       
       <div class="paimon__text relative br_30 card bg_200 p_x60">
-        <p class="text_active">Genshin Academy</p>
-        <h5 class="mt_10 lineh_140p text_font-sub">{{ $t("main.mainPaimonText") }}</h5>
+        <h1 class="text_active text_title2">Genshin Academy</h1>
+        <p class="mt_10 lineh_140p text_font-sub">{{ $t("main.mainPaimonText") }}</p>
       </div>
     </div>
   </div>
@@ -95,7 +95,7 @@ import { useScroll } from "@/use/useScroll";</script>
     margin: 0 !important;
   }
   h1 {
-    font-size: 35px !important;
+    font-size: 35px;
   }
   .main__header {
     padding: 0 30px;
@@ -108,6 +108,7 @@ import { useScroll } from "@/use/useScroll";</script>
   }
   
   .liza__image {
+    width: 1px !important;
     min-height: 400px;
   }
 }

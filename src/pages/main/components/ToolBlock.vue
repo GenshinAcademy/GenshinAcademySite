@@ -5,7 +5,7 @@
     <!-- Table -->
     <div class="tool__block block_row card bg_200 p50 overflow full-width">
       <div class="relative block_column gap-10 flex_5 z_2">
-        <p class="text_title lineh_125p">{{ $t("table.tableTitle") }}</p>
+        <h2 class="text_title lineh_125p">{{ $t("table.tableTitle") }}</h2>
         <p class="text_body2 text_font-sub lineh_125p">{{ $t("table.tableBody") }}</p>
         <router-link to="/tables" class="fit-content">
           <button class="button button_outline-white fit-content mt_10">{{ $t("main.openPage") }}</button>
@@ -26,7 +26,7 @@
       </div>
       
       <div class="relative block_column gap-10 flex_5 z_2">
-        <p class="text_title lineh_125p">{{ $t("weasel.weaselTitle") }}</p>
+        <h2 class="text_title lineh_125p">{{ $t("weasel.weaselTitle") }}</h2>
         <p class="text_body2 text_font-sub lineh_125p">{{ $t("weasel.weaselBody") }}</p>
         <router-link to="/weasel" class="fit-content">
           <button class="button button_outline-white fit-content mt_10">{{ $t("main.openPage") }}</button>
@@ -37,7 +37,7 @@
     <!-- Guide -->
     <div class="tool__block block_row card bg_200 p50 overflow full-width">
       <div class="relative block_column gap-10 flex_5 z_2">
-        <p class="text_title lineh_125p">{{ $t("guide.guideTitle") }}</p>
+        <h2 class="text_title lineh_125p">{{ $t("guide.guideTitle") }}</h2>
         <p class="text_body2 text_font-sub lineh_125p">{{ $t("guide.guideBody") }}</p>
         <a href="https://teletype.in/@genshinacademy/mini-guides" target="_blank" class="fit-content">
           <button class="button button_outline-white fit-content mt_10">{{ $t("main.openPage") }}</button>
@@ -52,13 +52,13 @@
     <!-- Dev -->
     <div class="dev__tools block_row gap-30 align-stretch">
       <div class="card p50 block_column gap-10 full-width justify-start">
-        <p class="text_title lineh_125p">{{ $t("dungeon.dungeonTitle") }}</p>
+        <h2 class="text_title lineh_125p">{{ $t("dungeon.dungeonTitle") }}</h2>
         <p class="text_body2 text_font-sub lineh_125p">{{ $t("dungeon.dungeonBody") }}</p>
         <p class="text_active mt_20">{{ $t("main.onDev") }}</p>
       </div>
       
       <div class="card p50 block_column gap-10 full-width justify-start">
-        <p class="text_title lineh_125p">{{ $t("weapon.weaponTitle") }}</p>
+        <h2 class="text_title lineh_125p">{{ $t("weapon.weaponTitle") }}</h2>
         <p class="text_body2 text_font-sub lineh_125p">{{ $t("weapon.weaponBody") }}</p>
         <p class="text_active mt_20">{{ $t("main.onDev") }}</p>
       </div>
@@ -151,6 +151,9 @@
   }
   img {
     //display: none;
+  }
+  .text_title {
+    white-space: unset;
   }
 }
 

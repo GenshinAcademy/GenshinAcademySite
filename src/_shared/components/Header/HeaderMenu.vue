@@ -19,11 +19,16 @@
 <!--      <div class="menu__button mt_20 card bg_200 br_20">-->
 <!--        <p><a>Контакты</a></p>-->
 <!--      </div>-->
+      
+      <div class="card p0 mt_40 full-width">
+        <ChangeLanguage panel="bg_200 top_90" />
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import ChangeLanguage from "@/_shared/components/ChangeLanguage/ChangeLanguage.vue";
 import { useI18n } from "vue-i18n";
 
 const props = defineProps(['isOpen', 'toggle'])
@@ -32,6 +37,7 @@ const { t } = useI18n()
 </script>
 
 <style lang="scss" scoped>
+
 .menu {
   position: fixed;
   top: 80px;

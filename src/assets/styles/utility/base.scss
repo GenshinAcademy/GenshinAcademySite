@@ -27,6 +27,7 @@ body {
   @include max-desktop_375 {
     &.container_m0 {
       margin: 0 !important;
+      padding: 30px !important;
     }
   }
 }
@@ -61,6 +62,12 @@ body {
   border-radius: $card_radius;
   gap: $card_gap;
   background: $card_bg;
+}
+
+@include max-desktop_480 {
+  .card.card_bg {
+    padding: 30px 15px !important;
+  }
 }
 
 .card_outline {

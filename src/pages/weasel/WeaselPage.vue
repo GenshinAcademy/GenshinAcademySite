@@ -63,6 +63,7 @@ import ScrollBtn from "@/pages/weasel/components/ScrollBtn.vue";
     left: -20px;
     width: calc(100% + 40px);
   }
+
 }
 
 @include max-desktop_375 {

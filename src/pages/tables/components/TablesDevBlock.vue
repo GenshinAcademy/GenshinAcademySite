@@ -1,5 +1,5 @@
 <template>
-  <div class="card container align-stretch p50">
+  <div class="card container container_m0  align-stretch p50">
     <div class="block_column full-width gap-20" v-for="conf in configDev">
       <div class="block_row justify-between table__title gap-30 align-center full-width">
         <div class="block_row table__title">
