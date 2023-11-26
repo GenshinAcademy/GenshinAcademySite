@@ -1,5 +1,7 @@
+import { ElementsEnum } from "@/scripts/enums/elements";
+
 export interface Data {
-  data: characterStats[];
+  data: CharacterStats[];
 }
 
 export interface Stat {
@@ -12,23 +14,23 @@ export interface Artifact {
   stats: Stat[];
 }
 
-export interface characterStats {
+
+export interface CharacterStats {
   character_id: string,
   name: string,
-  element: number,
+  element: ElementsEnum,
   icon_url: string,
-  stats_profit: ArtStat[];
+  artifact_profits: ArtProfit;
 }
 
-// export interface StatsProfit {
-//   [key: number]: Flower,
-//
-//   feather: Feather,
-//   sands: Sands,
-//   goblet: Goblet,
-//   circlet: Circlet,
-//   substats: ArtStat[];
-// }
+export interface ArtProfit {
+  circlet: AllStats,
+  flower: AllStats,
+  goblet: AllStats,
+  plume: AllStats,
+  sands: AllStats,
+  substats: AllStats;
+}
 
 export interface ArtStat {
   slot: string,
@@ -47,47 +49,7 @@ export interface ArtStat {
   ELEM?: number;
 }
 
-export interface Flower {
-  slot: string,
-  HP: number;
-}
-
-export interface Feather {
-  slot: string,
-  ATK: number;
-}
-
-export interface Sands {
-  slot: string,
-  ATK_P?: number,
-  HP_P?: number,
-  DEF_P?: number,
-  EM?: number,
-  ER?: number;
-}
-
-export interface Goblet {
-  slot: string,
-  ATK_P?: number,
-  HP_P?: number,
-  DEF_P?: number,
-  EM?: number,
-  PHYS?: number,
-  ELEM?: number;
-}
-
-export interface Circlet {
-  slot: string,
-  ATK_P?: number,
-  DEF_P?: number,
-  HP_P?: number,
-  EM?: number,
-  CR?: number,
-  CD?: number,
-  HEAL?: number;
-}
-
-export interface Substats {
+export interface AllStats {
   ATK?: number,
   ATK_P?: number,
   HP?: number,
@@ -97,23 +59,10 @@ export interface Substats {
   EM?: number,
   DEF?: number,
   DEF_P?: number,
-  ER?: number;
-}
-
-export interface AllStats {
-  ATK: number | null,
-  ATK_P: number | null,
-  HP: number | null,
-  HP_P: number | null,
-  CD: number | null,
-  CR: number | null,
-  EM: number | null,
-  DEF: number | null,
-  DEF_P: number | null,
-  ER: number | null,
-  HEAL: number | null,
-  PHYS: number | null,
-  ELEM: number | null;
+  ER?: number,
+  ELEM?: number,
+  HEAL?: number,
+  PHYS?: number;
 }
 
 export interface Elements {
