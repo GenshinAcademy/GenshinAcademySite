@@ -83,11 +83,12 @@ function clearStats(stat: string) {
  * 1. Был выбрана основная характеристика
  * 2. Побочных характеристик не менее 1
  */
-function weasel() {
+async function weasel() {
   if (store.chosen_art.main_stat.hasOwnProperty('name'))
     if (store.chosen_art.sub_stats.length >= 1) {
-      if (!hero.$state.sortedCharactersStats.length) {
-        hero.get_hero();
+      /** Если список сортировки пуст, значит запуск происходит первый раз */
+      if (!hero.sortedCharactersStats.length) {
+        await hero.get_hero();
       }
       
       hero.weasel(store.chosen_art);

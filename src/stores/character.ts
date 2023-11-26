@@ -1,15 +1,12 @@
-import { ArtStat, characterStats, Elements, Stat, Substats } from '@/scripts/models/weaselAppraiser';
+import { AllStats, ArtProfit, CharacterStats, Stat } from '@/scripts/models/weaselAppraiser';
 import { defineStore } from "pinia";
 import { ref } from "vue";
 import axios, { httpRoute } from "@/HttpConfig.js";
 import { Logger } from "tslog";
-import { test_data } from "@/stores/test";
+import { ElementsEnum } from "@/scripts/enums/elements";
 
 export const useCharacterStore = defineStore("character", () => {
   const logger = new Logger({ name: "characterLogger", minLevel: import.meta.env.VITE_LOG_LEVEL });
-  
-  const elements = ref<Elements[]>(['UndefinedElement', 'Pyro', 'Hydro', 'Geo', 'Anemo', 'Electro', 'Cryo', 'Dendro',])
-  
   
   interface ChosenArtifact {
     slot: string,
@@ -38,25 +35,23 @@ export const useCharacterStore = defineStore("character", () => {
   
   const sortedCharactersStats = ref<CharacterResult[][]>([]);
   
-  const charactersList = ref<characterStats[]>([]);
+  const charactersList = ref<CharacterStats[]>([]);
   
   /** Помогает убрать превью, после нажатия "Оценки" */
   const appraiser_start = ref(false);
   
   /** Получает персонажей с сервера */
-  function get_hero() {
-    axios
-      .get(httpRoute.characters)
-      .then((res) => {
-        logger.trace('Fetching character stats');
-        charactersList.value = res.data;
-      })
-      .catch((error) => {
-        logger.error(error.message);
-      });
-    
-    charactersList.value = test_data;
+  async function get_hero() {
+    try {
+      const res = await axios.get(httpRoute.characters)
+      logger.trace('Fetching character stats');
+      charactersList.value = res.data;
+    }
+    catch (error) {
+      logger.error(error);
+    }
   }
+  
   
   /** Очищает все характеристики артефакта пользователя
    *  Todo: Понять почему, default_art ломается и перезаписывается.
@@ -113,23 +108,16 @@ export const useCharacterStore = defineStore("character", () => {
    */
   function weasel(chosenArtifact: ChosenArtifact) {
     sort_default();
-    
     charactersList.value.filter((char) => {
       
-      /** substats всегда последний */
-      const substats = char.stats_profit.length - 1;
-      let selectSlot: ArtStat = { slot: '' };
-      
       /** Обнуляю main stat */
-      const newTableSub = { ...char.stats_profit[substats] };
-      
-      newTableSub[chosenArtifact.main_stat.value as keyof Substats] = 0;
+      const newTableSub = { ...char.artifact_profits.substats, [chosenArtifact.main_stat.value]: 0 };
       
       /** Пересобираю substats в массив, для удобной сортировки */
       let subList: number[] = [];
       
       for (let n in newTableSub) {
-        subList.push(<number>newTableSub[n as keyof Substats]);
+        subList.push(<number>newTableSub[n as keyof AllStats]);
       }
       
       /** Выбираю 4 наибольших substats */
@@ -140,28 +128,15 @@ export const useCharacterStore = defineStore("character", () => {
 
       /** Нахожу вес лучшей основы */
       let weight: number = 0;
-      let stats: ArtStat = selectSlot;
-      
-      
-      char.stats_profit.forEach((artSlot, index) => {
-        if (artSlot.slot === chosen_art.value.slot) {
-          selectSlot = artSlot;
-          stats = artSlot
-        }
-      })
+      let stats: AllStats = char.artifact_profits[chosen_art.value.slot as keyof ArtProfit];
       
       weight = Object.entries(stats).reduce((prev, curr) => prev[1] > curr[1] ? prev : curr)[1]
       
       /** Находим взешенный сабстаты */
+      let weightSub: AllStats = { ...char.artifact_profits.substats }
       
-      let weightSub: Substats = { ...char.stats_profit[substats] }
-      let subName
-      
-      for (subName in char.stats_profit[substats]) {
-        
-        if (subName !== 'slot') { // @ts-ignore
-          weightSub[subName] = (((400 - weight) / A) * char.stats_profit[substats][subName])
-        }
+      for (let subName in char.artifact_profits.substats) {
+        weightSub[subName as keyof AllStats] = (((400 - weight) / A) * <number>char.artifact_profits.substats[subName as keyof AllStats])
       }
       
       
@@ -169,9 +144,8 @@ export const useCharacterStore = defineStore("character", () => {
       let sumWeightSub = 0;
       
       chosen_art.value.sub_stats.map((value) => {
-        if (weightSub[value as keyof Substats])
-          // @ts-ignore
-          sumWeightSub += weightSub[value as keyof Substats];
+        if (weightSub[value as keyof AllStats])
+          sumWeightSub += weightSub[value as keyof AllStats] || 0;
         else
           sumWeightSub += 0
       });
@@ -179,23 +153,17 @@ export const useCharacterStore = defineStore("character", () => {
       
       /** Сумма */
       let score: number = 0
+      let main_stat_score = char.artifact_profits[chosen_art.value.slot as keyof ArtProfit][chosen_art.value.main_stat.value as keyof AllStats]
       
-      
-      if (selectSlot[chosen_art.value.main_stat.value as keyof ArtStat])
-        // @ts-ignore
-        score = selectSlot[chosen_art.value.main_stat.value as keyof ArtStat] + sumWeightSub
+      if (main_stat_score)
+        score = main_stat_score + sumWeightSub
       else
         score = sumWeightSub
       
       /** Проверка на элемент */
-      elements.value.forEach((value, index) => {
-        /** Проверка pyro === pyro && 1 === 1 */
-        if (value === chosen_art.value.main_stat.value && index === char.element) {
-          if (selectSlot.ELEM)
-            score = selectSlot.ELEM + sumWeightSub;
-        }
-      })
-      
+      if (Object.values(ElementsEnum).includes(chosen_art.value.main_stat.value as ElementsEnum)) {
+        score = <number>char.artifact_profits.goblet.ELEM + sumWeightSub
+      }
       
       let i = {
         id: char.character_id,
